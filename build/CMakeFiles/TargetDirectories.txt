@@ -1,0 +1,3 @@
+D:/university/CS102/GoGame/build/CMakeFiles/GoGame.dir
+D:/university/CS102/GoGame/build/CMakeFiles/edit_cache.dir
+D:/university/CS102/GoGame/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,8 @@
+[
+{
+  "directory": "D:/university/CS102/GoGame/build",
+  "command": "C:\\mingw64\\bin\\g++.exe   -g -o CMakeFiles\\GoGame.dir\\src\\main.cpp.obj -c D:\\university\\CS102\\GoGame\\src\\main.cpp",
+  "file": "D:/university/CS102/GoGame/src/main.cpp",
+  "output": "CMakeFiles/GoGame.dir/src/main.cpp.obj"
+}
+]
