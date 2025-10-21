@@ -256,6 +256,9 @@ GoGame_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 GoGame_SOURCE_DIR:STATIC=D:/Git/GoGame
 
+//The directory containing a CMake configuration file for SDL2.
+SDL2_DIR:PATH=SDL2_DIR-NOTFOUND
+
 
 ########################
 # INTERNAL cache entries

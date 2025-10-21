@@ -1,8 +1,0 @@
-[
-{
-  "directory": "D:/Git/GoGame/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe   -g -o CMakeFiles\\GoGame.dir\\src\\main.cpp.obj -c D:\\Git\\GoGame\\src\\main.cpp",
-  "file": "D:/Git/GoGame/src/main.cpp",
-  "output": "CMakeFiles/GoGame.dir/src/main.cpp.obj"
-}
-]
