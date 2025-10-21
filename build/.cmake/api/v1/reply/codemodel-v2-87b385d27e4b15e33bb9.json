@@ -50,8 +50,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/university/CS102/GoGame/build",
-		"source" : "D:/university/CS102/GoGame"
+		"build" : "D:/Git/GoGame/build",
+		"source" : "D:/Git/GoGame"
 	},
 	"version" : 
 	{

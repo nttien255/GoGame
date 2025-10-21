@@ -123,7 +123,12 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-C.cmake"
+			"path" : "C:/Program Files/CMake/share/cmake-4.2/Modules/Linker/GNU-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-4.2/Modules/Linker/GNU.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -193,7 +198,12 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-CXX.cmake"
+			"path" : "C:/Program Files/CMake/share/cmake-4.2/Modules/Linker/GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-4.2/Modules/Linker/GNU.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -209,8 +219,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "D:/university/CS102/GoGame/build",
-		"source" : "D:/university/CS102/GoGame"
+		"build" : "D:/Git/GoGame/build",
+		"source" : "D:/Git/GoGame"
 	},
 	"version" : 
 	{
