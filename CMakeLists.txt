@@ -17,6 +17,8 @@ find_package(SDL2_ttf REQUIRED)
 add_executable(GoGame 
     src/main.cpp
     src/info_board.cpp
+    src/player.cpp
+    src/scoring.cpp
 )
 
 

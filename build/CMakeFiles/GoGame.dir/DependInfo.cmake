@@ -10,6 +10,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/Git/GoGame/src/info_board.cpp" "CMakeFiles/GoGame.dir/src/info_board.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/info_board.cpp.obj.d"
   "D:/Git/GoGame/src/main.cpp" "CMakeFiles/GoGame.dir/src/main.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/main.cpp.obj.d"
+  "D:/Git/GoGame/src/player.cpp" "CMakeFiles/GoGame.dir/src/player.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/player.cpp.obj.d"
+  "D:/Git/GoGame/src/scoring.cpp" "CMakeFiles/GoGame.dir/src/scoring.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/scoring.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -1,8 +1,5 @@
 #pragma once
-#include <bits/stdc++.h>
-
-using namespace std;
-
+#include <iostream>
 
 class Player{
     public:

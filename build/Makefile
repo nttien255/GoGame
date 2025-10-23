@@ -176,6 +176,54 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/player.obj: src/player.cpp.obj
+.PHONY : src/player.obj
+
+# target to build an object file
+src/player.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/player.cpp.obj
+.PHONY : src/player.cpp.obj
+
+src/player.i: src/player.cpp.i
+.PHONY : src/player.i
+
+# target to preprocess a source file
+src/player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/player.cpp.i
+.PHONY : src/player.cpp.i
+
+src/player.s: src/player.cpp.s
+.PHONY : src/player.s
+
+# target to generate assembly for a file
+src/player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/player.cpp.s
+.PHONY : src/player.cpp.s
+
+src/scoring.obj: src/scoring.cpp.obj
+.PHONY : src/scoring.obj
+
+# target to build an object file
+src/scoring.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/scoring.cpp.obj
+.PHONY : src/scoring.cpp.obj
+
+src/scoring.i: src/scoring.cpp.i
+.PHONY : src/scoring.i
+
+# target to preprocess a source file
+src/scoring.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/scoring.cpp.i
+.PHONY : src/scoring.cpp.i
+
+src/scoring.s: src/scoring.cpp.s
+.PHONY : src/scoring.s
+
+# target to generate assembly for a file
+src/scoring.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/scoring.cpp.s
+.PHONY : src/scoring.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -191,6 +239,12 @@ help:
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/player.obj
+	@echo ... src/player.i
+	@echo ... src/player.s
+	@echo ... src/scoring.obj
+	@echo ... src/scoring.i
+	@echo ... src/scoring.s
 .PHONY : help
 
 
