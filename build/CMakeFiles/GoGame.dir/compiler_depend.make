@@ -340,7 +340,8 @@ CMakeFiles/GoGame.dir/src/info_board.cpp.obj: D:/Git/GoGame/src/info_board.cpp \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
-  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xmmintrin.h
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xmmintrin.h \
+  D:/Git/GoGame/src/info_board.h
 
 CMakeFiles/GoGame.dir/src/main.cpp.obj: D:/Git/GoGame/src/main.cpp \
   C:/msys64/ucrt64/include/_mingw.h \
