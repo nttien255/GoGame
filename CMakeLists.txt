@@ -14,7 +14,13 @@ find_package(SDL2_ttf REQUIRED)
 
 # --- PHẦN 2: TẠO FILE THỰC THI ---
 # (Nếu main.cpp ở thư mục 'src')
-add_executable(GoGame src/main.cpp)
+add_executable(GoGame 
+    src/main.cpp
+    src/info_board.cpp
+)
+
+
+
 # (Nếu main.cpp ở ngang hàng)
 # add_executable(GoGame main.cpp)
 
@@ -25,3 +31,4 @@ target_link_libraries(GoGame PRIVATE
     SDL2_mixer::SDL2_mixer-static
     SDL2_ttf::SDL2_ttf-static
 )
+

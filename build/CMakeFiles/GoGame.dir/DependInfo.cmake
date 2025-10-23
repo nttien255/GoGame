@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "D:/Git/GoGame/src/info_board.cpp" "CMakeFiles/GoGame.dir/src/info_board.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/info_board.cpp.obj.d"
   "D:/Git/GoGame/src/main.cpp" "CMakeFiles/GoGame.dir/src/main.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/main.cpp.obj.d"
   )
 

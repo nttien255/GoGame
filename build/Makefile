@@ -128,6 +128,30 @@ GoGame/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/build
 .PHONY : GoGame/fast
 
+src/info_board.obj: src/info_board.cpp.obj
+.PHONY : src/info_board.obj
+
+# target to build an object file
+src/info_board.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/info_board.cpp.obj
+.PHONY : src/info_board.cpp.obj
+
+src/info_board.i: src/info_board.cpp.i
+.PHONY : src/info_board.i
+
+# target to preprocess a source file
+src/info_board.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/info_board.cpp.i
+.PHONY : src/info_board.cpp.i
+
+src/info_board.s: src/info_board.cpp.s
+.PHONY : src/info_board.s
+
+# target to generate assembly for a file
+src/info_board.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/info_board.cpp.s
+.PHONY : src/info_board.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -161,6 +185,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... GoGame
+	@echo ... src/info_board.obj
+	@echo ... src/info_board.i
+	@echo ... src/info_board.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

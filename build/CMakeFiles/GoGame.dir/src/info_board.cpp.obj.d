@@ -1,4 +1,5 @@
-CMakeFiles/GoGame.dir/src/main.cpp.obj: D:\Git\GoGame\src\main.cpp \
+CMakeFiles/GoGame.dir/src/info_board.cpp.obj: \
+ D:\Git\GoGame\src\info_board.cpp D:\Git\GoGame\src\info_board.h \
  C:/msys64/ucrt64/include/c++/14.2.0/x86_64-w64-mingw32/bits/stdc++.h \
  C:/msys64/ucrt64/include/c++/14.2.0/cassert \
  C:/msys64/ucrt64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -332,5 +333,4 @@ CMakeFiles/GoGame.dir/src/main.cpp.obj: D:\Git\GoGame\src\main.cpp \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/fs_path.h \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/fs_dir.h \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/fs_ops.h \
- C:/msys64/ucrt64/include/c++/14.2.0/memory_resource \
- D:\Git\GoGame\src\info_board.h
+ C:/msys64/ucrt64/include/c++/14.2.0/memory_resource
