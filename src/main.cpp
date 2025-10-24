@@ -6,5 +6,6 @@ using namespace std;
 int main(){
     InputBoard();
     cout << "Board Size: " << Size << " " << Size<< endl;
+    cout << "Board Size: " << Size << " " << Size << " " << Size << endl;
     return 0;
 }
