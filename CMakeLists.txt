@@ -15,9 +15,9 @@ find_package(SDL2_ttf REQUIRED)
 # --- PHẦN 2: TẠO FILE THỰC THI ---
 # (Nếu main.cpp ở thư mục 'src')
 add_executable(GoGame
-        src/main.cpp 
-        src/move.cpp 
-        src/board.cpp
+    src/main.cpp 
+    src/move.cpp 
+    src/board.cpp
 )
 # (Nếu main.cpp ở ngang hàng)
 # add_executable(GoGame main.cpp)
