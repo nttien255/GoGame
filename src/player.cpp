@@ -1,4 +1,3 @@
-#pragma once
 #include "player.h"
 #include <bits/stdc++.h>
 using namespace std;
