@@ -18,6 +18,8 @@ add_executable(GoGame
         src/main.cpp 
         src/move.cpp 
         src/board.cpp
+        src/player.cpp
+        src/scoring.cpp
 )
 # (Nếu main.cpp ở ngang hàng)
 # add_executable(GoGame main.cpp)
