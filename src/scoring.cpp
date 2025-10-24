@@ -1,7 +1,7 @@
 #pragma once
 #include "scoring.h"
 #include "player.h"
-#include "info_board.h"
+#include "board.h"
 #include <bits/stdc++.h>
 using namespace std;
 
