@@ -1,6 +1,8 @@
 #pragma one
 #include<bits/stdc++.h>
 
-extern int Size;
+enum Stone { EMPTY, BLACK, WHITE };
+extern std::vector<std::vector<Stone>> board;
 
-void InputBoard();
+void init_board(int size);
+int board_size();

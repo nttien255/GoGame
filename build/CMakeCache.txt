@@ -264,7 +264,11 @@ CMAKE_STRIP:FILEPATH=C:/msys64/ucrt64/bin/strip.exe
 CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 
 //No help, variable specified on the command line.
+<<<<<<< Updated upstream
 CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=D:/Git/.MyRepo/vcpkg/scripts/buildsystems/vcpkg.cmake
+=======
+CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=D:/university/CS102/vcpkg/scripts/buildsystems/vcpkg.cmake
+>>>>>>> Stashed changes
 
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
@@ -377,6 +381,9 @@ _VCPKG_INSTALLED_DIR:PATH=D:/Git/.MyRepo/vcpkg/installed
 
 //The directory containing a CMake configuration file for wavpack.
 wavpack_DIR:PATH=D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/share/wavpack
+
+//No help, variable specified on the command line.
+VCPKG_TARGET_TRIPLET:UNINITIALIZED=x64-mingw-static
 
 
 ########################

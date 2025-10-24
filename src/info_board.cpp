@@ -4,6 +4,12 @@
 using namespace std;
 int Size;
 
-void InputBoard(){
-    cin >> Size;   
+vector<vector<Stone>> board;
+
+void init_board(int size){
+    board.resize(size, vector<Stone>(size, EMPTY));
+}
+
+int board_size(){
+    return board.size();
 }
