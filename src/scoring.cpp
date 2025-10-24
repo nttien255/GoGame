@@ -1,22 +1,62 @@
 #include "scoring.h"
 #include "player.h"
 #include "board.h"
-#include <bits/stdc++.h>
+#include "move.h"
+#include "inside.h"
+#include <iostream>
+#include <queue>
+#include <vector>
 using namespace std;
 
 
-void calc_place_score(){
-    int size = board.size();
-    for(int i=0;i<size;i++){
-        for(int j=0;j<size;j++){
-            // if(board[i][j] == 0){
-            //     BFS(i,j);
-            // }
+int cnt;
+bool check_black;
+bool check_white;
+
+void BFS_Score(int x, int y){
+    queue<pair<int,int>> Q;
+    vector<vector<bool>> visited( BOARD_SIZE,vector<bool>( BOARD_SIZE,false));
+    Q.push({x,y});
+    visited[x][y] = true;
+    while(!Q.empty()){ 
+        int x = Q.front().first;
+        int y = Q.front().second;
+        cnt++;
+        Q.pop();
+        for(int i=0; i<4; i++){
+            int u = x + dx[i];
+            int v = y + dy[i];
+            if(Inside(u,v) && board[u][v] == BLACK) check_black = true;
+            if(Inside(u,v) && board[u][v] == WHITE) check_white = true;
+            if(Inside(u,v) && !visited[u][v] && board[u][v] == 0){
+                visited[u][v] = true;
+                Q.push({u,v});
+            }
         }
     }
 }
 
-void Run(){
+void calc_place_score(){
+    for(int i=0;i<BOARD_SIZE;i++){
+        for(int j=0;j<BOARD_SIZE;j++){
+            if(board[i][j] == 0){
+                cnt = 0;
+                check_black = false;
+                check_white = false;
+                BFS_Score(i,j);
+                if(check_black && check_white) continue;
+                else if(check_black) 
+                    player1.Score += cnt;
+                else if(check_white)
+                    player2.Score += cnt;
+                
+            }
+        }
+    }
+}
+
+void Run_Score(){
+    Reset_Player();
     calc_place_score();
 
 }

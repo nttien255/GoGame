@@ -6,6 +6,12 @@
 
 using namespace std;
 
+const int BOARD_SIZE = 19;
+const int CELL_SIZE = 30;
+const int MARGIN = 40;
+const int WINDOW_SIZE = MARGIN * 2 + CELL_SIZE * (BOARD_SIZE - 1);
+const int STONE_RADIUS = 10;
+const int CLICK_RADIUS = 12; 
 int main(int argc, char* argv[]) {
     if (SDL_Init(SDL_INIT_VIDEO) < 0) return -1;
 
