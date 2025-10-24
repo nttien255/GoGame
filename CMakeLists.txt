@@ -17,18 +17,14 @@ find_package(SDL2_ttf REQUIRED)
 add_executable(GoGame
         src/main.cpp 
         src/move.cpp 
-        src/scoring.cpp
-        src/info_board.cpp
-        src/player.cpp
+        src/board.cpp
 )
-
-
-
 # (Nếu main.cpp ở ngang hàng)
 # add_executable(GoGame main.cpp)
 
 # --- PHẦN 3: LIÊN KẾT CÁC THƯ VIỆN VÀO GAME ---
 target_link_libraries(GoGame PRIVATE 
+    SDL2::SDL2main
     SDL2::SDL2-static
     SDL2_image::SDL2_image-static
     SDL2_mixer::SDL2_mixer-static
