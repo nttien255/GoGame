@@ -6,7 +6,7 @@
 
 using namespace std;
 
-const int BOARD_SIZE = 19;
+const int BOARD_SIZE = 5;
 const int CELL_SIZE = 30;
 const int MARGIN = 40;
 const int WINDOW_SIZE = MARGIN * 2 + CELL_SIZE * (BOARD_SIZE - 1);

@@ -14,21 +14,27 @@ bool TH1(int &x, int &y, Stone &player){
     return true;
 }
 bool TH2(int &x, int &y, Stone &player){
-    if(Inside(x-1,y) && (board[x-1][y] == player || board[x-1][y] == EMPTY)) return true;
-    if(Inside(x+1,y) && (board[x+1][y] == player || board[x+1][y] == EMPTY)) return true;
-    if(Inside(x,y-1) && (board[x][y-1] == player || board[x][y-1] == EMPTY)) return true;
-    if(Inside(x,y+1) && (board[x][y+1] == player || board[x][y+1] == EMPTY)) return true;
+    //check free adjacent
+    if(Inside(x-1,y) && board[x-1][y] == EMPTY) return true;
+    if(Inside(x+1,y) && board[x+1][y] == EMPTY) return true;
+    if(Inside(x,y-1) && board[x][y-1] == EMPTY) return true;
+    if(Inside(x,y+1) && board[x][y+1] == EMPTY) return true;
+    //check kill enemy stones
     for(int i=0; i<4; i++){
         int nx = x + dx[i];
         int ny = y + dy[i];
+        if(!Inside(nx,ny)) continue;    
         board[x][y] = player;
         bool check_kill = check_kill_enemy_stones(nx,ny, (player == BLACK ? WHITE : BLACK));
         board[x][y] = EMPTY;
-        if(Inside(nx,ny) && check_kill){
-            return true;
-        }
+        if(check_kill) return true;
     }
-    return false;
+    //check self kill
+    board[x][y] = player;
+    bool check_kill = check_kill_enemy_stones(x,y, player);
+    board[x][y] = EMPTY;
+    if(check_kill) return false;
+    else return true;
 }
 
 bool TH3(int &x, int &y, Stone &player){
