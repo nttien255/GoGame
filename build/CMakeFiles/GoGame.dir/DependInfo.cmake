@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/university/CS102/GoGame/src/board.cpp" "CMakeFiles/GoGame.dir/src/board.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/board.cpp.obj.d"
+  "D:/university/CS102/GoGame/src/history.cpp" "CMakeFiles/GoGame.dir/src/history.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/history.cpp.obj.d"
   "D:/university/CS102/GoGame/src/inside.cpp" "CMakeFiles/GoGame.dir/src/inside.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/inside.cpp.obj.d"
   "D:/university/CS102/GoGame/src/kill_enemy.cpp" "CMakeFiles/GoGame.dir/src/kill_enemy.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/kill_enemy.cpp.obj.d"
   "D:/university/CS102/GoGame/src/main.cpp" "CMakeFiles/GoGame.dir/src/main.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/main.cpp.obj.d"

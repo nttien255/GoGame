@@ -23,6 +23,8 @@ add_executable(GoGame
         src/valid.cpp
         src/kill_enemy.cpp
         src/inside.cpp
+        src/history.cpp
+        
 )
 # (Nếu main.cpp ở ngang hàng)
 # add_executable(GoGame main.cpp)

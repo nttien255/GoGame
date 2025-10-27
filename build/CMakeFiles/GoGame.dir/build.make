@@ -191,6 +191,21 @@ CMakeFiles/GoGame.dir/src/inside.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GoGame.dir/src/inside.cpp.s"
 	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\university\CS102\GoGame\src\inside.cpp -o CMakeFiles\GoGame.dir\src\inside.cpp.s
 
+CMakeFiles/GoGame.dir/src/history.cpp.obj: CMakeFiles/GoGame.dir/flags.make
+CMakeFiles/GoGame.dir/src/history.cpp.obj: CMakeFiles/GoGame.dir/includes_CXX.rsp
+CMakeFiles/GoGame.dir/src/history.cpp.obj: D:/university/CS102/GoGame/src/history.cpp
+CMakeFiles/GoGame.dir/src/history.cpp.obj: CMakeFiles/GoGame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\university\CS102\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/GoGame.dir/src/history.cpp.obj"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/history.cpp.obj -MF CMakeFiles\GoGame.dir\src\history.cpp.obj.d -o CMakeFiles\GoGame.dir\src\history.cpp.obj -c D:\university\CS102\GoGame\src\history.cpp
+
+CMakeFiles/GoGame.dir/src/history.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GoGame.dir/src/history.cpp.i"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\university\CS102\GoGame\src\history.cpp > CMakeFiles\GoGame.dir\src\history.cpp.i
+
+CMakeFiles/GoGame.dir/src/history.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GoGame.dir/src/history.cpp.s"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\university\CS102\GoGame\src\history.cpp -o CMakeFiles\GoGame.dir\src\history.cpp.s
+
 # Object files for target GoGame
 GoGame_OBJECTS = \
 "CMakeFiles/GoGame.dir/src/main.cpp.obj" \
@@ -200,7 +215,8 @@ GoGame_OBJECTS = \
 "CMakeFiles/GoGame.dir/src/scoring.cpp.obj" \
 "CMakeFiles/GoGame.dir/src/valid.cpp.obj" \
 "CMakeFiles/GoGame.dir/src/kill_enemy.cpp.obj" \
-"CMakeFiles/GoGame.dir/src/inside.cpp.obj"
+"CMakeFiles/GoGame.dir/src/inside.cpp.obj" \
+"CMakeFiles/GoGame.dir/src/history.cpp.obj"
 
 # External object files for target GoGame
 GoGame_EXTERNAL_OBJECTS =
@@ -213,6 +229,7 @@ GoGame.exe: CMakeFiles/GoGame.dir/src/scoring.cpp.obj
 GoGame.exe: CMakeFiles/GoGame.dir/src/valid.cpp.obj
 GoGame.exe: CMakeFiles/GoGame.dir/src/kill_enemy.cpp.obj
 GoGame.exe: CMakeFiles/GoGame.dir/src/inside.cpp.obj
+GoGame.exe: CMakeFiles/GoGame.dir/src/history.cpp.obj
 GoGame.exe: CMakeFiles/GoGame.dir/build.make
 GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2maind.a
 GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2d.a
@@ -237,7 +254,7 @@ GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/lib/libbrotlico
 GoGame.exe: CMakeFiles/GoGame.dir/linkLibs.rsp
 GoGame.exe: CMakeFiles/GoGame.dir/objects1.rsp
 GoGame.exe: CMakeFiles/GoGame.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\university\CS102\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable GoGame.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\university\CS102\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable GoGame.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\GoGame.dir\link.txt --verbose=$(VERBOSE)
 	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file D:/university/CS102/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/university/CS102/GoGame/build/GoGame.exe -installedDir D:/university/CS102/vcpkg/installed/x64-mingw-static/bin -OutVariable out
 

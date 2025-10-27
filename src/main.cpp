@@ -4,7 +4,7 @@
 #include <SDL2/SDL_image.h>
 #include "board.h"
 #include "move.h"
-
+#include "history.h"
 using namespace std;
 
 const int BOARD_SIZE = 5;
@@ -36,6 +36,7 @@ int main(int argc, char* argv[]) {
         return -1;
     }
     init_board(BOARD_SIZE);
+    Init_History();
     bool running = true;
     bool blackTurn = true;
     int hoverRow = -1, hoverCol = -1;

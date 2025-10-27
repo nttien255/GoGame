@@ -6,8 +6,7 @@
 #include "valid.h"
 #include "kill_enemy.h"
 #include "scoring.h"
-#include <cassert>
-
+#include "history.h"
 
 bool make_move(SDL_Event& e, std::vector<std::vector<Stone>>& board, bool& blackTurn) {
     // if (e.type != SDL_MOUSEBUTTONDOWN || e.button.button != SDL_BUTTON_LEFT) return;
@@ -31,11 +30,14 @@ bool make_move(SDL_Event& e, std::vector<std::vector<Stone>>& board, bool& black
         }
     }
     if (bestRow != -1 && valid(bestRow, bestCol, blackTurn)) { // thêm điều kiện valid(bestRow, bestCol, blackTurn)
+        Pop_History();
         board[bestRow][bestCol] = blackTurn ? BLACK : WHITE;
         blackTurn = !blackTurn;
-        kill_enemy_stones(bestRow, bestCol, blackTurn);
+        kill_enemy_stones(bestRow, bestCol, blackTurn, 1);
         Run_Score();
+        Push_History();
         return 1;
+        // thêm hàm kill_enemy_stones(bestRow, bestCol, blackTurn);
     }
     return 0;
 }

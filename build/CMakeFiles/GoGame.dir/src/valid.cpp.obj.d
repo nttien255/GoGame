@@ -351,4 +351,9 @@ CMakeFiles/GoGame.dir/src/valid.cpp.obj: \
  D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_locale.h \
  D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_misc.h \
  D:\university\CS102\GoGame\src\inside.h \
- D:\university\CS102\GoGame\src\kill_enemy.h
+ D:\university\CS102\GoGame\src\kill_enemy.h \
+ D:\university\CS102\GoGame\src\history.h \
+ D:\university\CS102\GoGame\src\player.h \
+ C:/mingw64/include/c++/15.2.0/deque \
+ C:/mingw64/include/c++/15.2.0/bits/stl_deque.h \
+ C:/mingw64/include/c++/15.2.0/bits/deque.tcc

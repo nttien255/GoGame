@@ -152,6 +152,30 @@ src/board.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/board.cpp.s
 .PHONY : src/board.cpp.s
 
+src/history.obj: src/history.cpp.obj
+.PHONY : src/history.obj
+
+# target to build an object file
+src/history.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/history.cpp.obj
+.PHONY : src/history.cpp.obj
+
+src/history.i: src/history.cpp.i
+.PHONY : src/history.i
+
+# target to preprocess a source file
+src/history.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/history.cpp.i
+.PHONY : src/history.cpp.i
+
+src/history.s: src/history.cpp.s
+.PHONY : src/history.s
+
+# target to generate assembly for a file
+src/history.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/history.cpp.s
+.PHONY : src/history.cpp.s
+
 src/inside.obj: src/inside.cpp.obj
 .PHONY : src/inside.obj
 
@@ -332,6 +356,9 @@ help:
 	@echo ... src/board.obj
 	@echo ... src/board.i
 	@echo ... src/board.s
+	@echo ... src/history.obj
+	@echo ... src/history.i
+	@echo ... src/history.s
 	@echo ... src/inside.obj
 	@echo ... src/inside.i
 	@echo ... src/inside.s

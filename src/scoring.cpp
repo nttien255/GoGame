@@ -13,6 +13,10 @@ int cnt;
 bool check_black;
 bool check_white;
 
+void add_score(Player &player, int score){
+    player.kill += score;
+}
+
 void BFS_Score(int x, int y){
     queue<pair<int,int>> Q;
     vector<vector<bool>> visited( BOARD_SIZE,vector<bool>( BOARD_SIZE,false));
@@ -58,6 +62,5 @@ void calc_place_score(){
 void Run_Score(){
     Reset_Player();
     calc_place_score();
-
 }
 
