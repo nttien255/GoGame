@@ -41,7 +41,7 @@ bool TH2(int &x, int &y, Stone &player){
 bool TH3(int &x, int &y, Stone &player){
     board[x][y] = player;
     vector<pair<int,int>> killed_stones = kill_enemy_stones(x, y, (player == BLACK ? false : true), 0);
-    for(int i = PosStatus; i >= 0; i -= 2){
+    for(int i = PosStatus - 1; i >= 0; i -= 2){
         if(history[i].boardStatus == board){
             board[x][y] = EMPTY;
             for (auto [x, y] : killed_stones)
