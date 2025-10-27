@@ -6,7 +6,7 @@
 #include "valid.h"
 #include "kill_enemy.h"
 #include "scoring.h"
-
+#include "history.h"
 
 
 void make_move(SDL_Event& e, std::vector<std::vector<Stone>>& board, bool& blackTurn) {
@@ -33,10 +33,12 @@ void make_move(SDL_Event& e, std::vector<std::vector<Stone>>& board, bool& black
     }
 
     if (bestRow != -1 && valid(bestRow, bestCol, blackTurn)) { // thêm điều kiện valid(bestRow, bestCol, blackTurn)
+        Pop_History();
         board[bestRow][bestCol] = blackTurn ? BLACK : WHITE;
         blackTurn = !blackTurn;
         kill_enemy_stones(bestRow, bestCol, blackTurn);
         Run_Score();
+        Push_History();
         // thêm hàm kill_enemy_stones(bestRow, bestCol, blackTurn);
     }
 }

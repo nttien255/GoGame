@@ -5,6 +5,7 @@
 #include "board.h"
 #include "inside.h"
 #include "kill_enemy.h"
+#include "history.h"
 #include <iostream>
 using namespace std;
 
@@ -38,7 +39,14 @@ bool TH2(int &x, int &y, Stone &player){
 }
 
 bool TH3(int &x, int &y, Stone &player){
-
+    board[x][y] = player;
+    for(int i = PosStatus - 1; i >= 0; i-=2){
+        if(history[i].boardStatus == board){
+            board[x][y] = EMPTY;
+            return false;
+        }
+    }
+    board[x][y] = EMPTY;
     return true;
 }
 
@@ -49,5 +57,6 @@ bool valid(int x, int y, bool blackTurn){
     if(!TH1(x,y,player)) return false;
     if(!TH2(x,y,player)) return false;
     if(!TH3(x,y,player)) return false;
+    cout << history.size() << endl;
     return true;
 }

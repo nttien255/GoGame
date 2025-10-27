@@ -3,7 +3,7 @@
 #include <SDL2/SDL.h>
 #include "board.h"
 #include "move.h"
-
+#include "history.h"
 using namespace std;
 
 const int BOARD_SIZE = 5;
