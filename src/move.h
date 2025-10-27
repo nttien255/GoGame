@@ -1,5 +1,3 @@
-#ifndef MOVE_H
-#define MOVE_H
 #pragma once
 #include <SDL.h>
 #include <vector>
@@ -14,4 +12,3 @@ extern const int CLICK_RADIUS;
 
 void make_move(SDL_Event& e, std::vector<std::vector<Stone>>& board, bool& blackTurn);
 
-#endif
