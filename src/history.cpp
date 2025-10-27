@@ -36,4 +36,11 @@ void Pop_History(){
 void Push_History(){
     PosStatus++;
     history.push_back({board, player1, player2, (PosStatus % 2 == 0)});
+    // cout << PosStatus <<":\n";
+    // for(int i=0; i<BOARD_SIZE; i++){
+    //     for(int j=0; j<BOARD_SIZE; j++){
+    //         cout << history[PosStatus].boardStatus[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
 }

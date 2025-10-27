@@ -60,6 +60,5 @@ bool valid(int x, int y, bool blackTurn){
     if(!TH1(x,y,player)) return false;
     if(!TH2(x,y,player)) return false;
     if(!TH3(x,y,player)) return false;
-    cout << history.size() << endl;
     return true;
 }
