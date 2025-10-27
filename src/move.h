@@ -10,5 +10,5 @@ extern const int WINDOW_SIZE;
 extern const int STONE_RADIUS;
 extern const int CLICK_RADIUS;
 
-void make_move(SDL_Event& e, std::vector<std::vector<Stone>>& board, bool& blackTurn);
+bool make_move(SDL_Event& e, std::vector<std::vector<Stone>>& board, bool& blackTurn);
 

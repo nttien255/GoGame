@@ -16,4 +16,4 @@ extern std::vector<std::vector<Stone>> board;
 
 void init_board(int size);
 int board_size();
-void draw_board(SDL_Renderer* renderer);
+void draw_board(int x, int y, bool blackTurn, SDL_Renderer* renderer, SDL_Texture* black_stone, SDL_Texture* white_stone);

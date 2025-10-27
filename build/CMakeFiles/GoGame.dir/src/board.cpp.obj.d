@@ -348,6 +348,8 @@ CMakeFiles/GoGame.dir/src/board.cpp.obj: \
  D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_version.h \
  D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_locale.h \
  D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_misc.h \
+ D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_image.h \
+ D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL.h \
  D:\university\CS102\GoGame\src\board.h \
  D:\university\CS102\GoGame\src\move.h \
  D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL.h

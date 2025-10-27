@@ -350,4 +350,9 @@ CMakeFiles/GoGame.dir/src/move.cpp.obj: \
  D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_misc.h \
  D:\university\CS102\GoGame\src\board.h \
  D:\university\CS102\GoGame\src\move.h \
- D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL.h
+ D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL.h \
+ D:\university\CS102\GoGame\src\valid.h \
+ D:\university\CS102\GoGame\src\kill_enemy.h \
+ D:\university\CS102\GoGame\src\scoring.h \
+ C:/mingw64/include/c++/15.2.0/cassert \
+ C:/mingw64/x86_64-w64-mingw32/include/assert.h

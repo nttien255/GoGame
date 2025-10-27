@@ -6,12 +6,11 @@
 #include "valid.h"
 #include "kill_enemy.h"
 #include "scoring.h"
+#include <cassert>
 
 
-
-void make_move(SDL_Event& e, std::vector<std::vector<Stone>>& board, bool& blackTurn) {
-    if (e.type != SDL_MOUSEBUTTONDOWN || e.button.button != SDL_BUTTON_LEFT)
-        return;
+bool make_move(SDL_Event& e, std::vector<std::vector<Stone>>& board, bool& blackTurn) {
+    // if (e.type != SDL_MOUSEBUTTONDOWN || e.button.button != SDL_BUTTON_LEFT) return;
 
     int x = e.button.x;
     int y = e.button.y;
@@ -21,8 +20,8 @@ void make_move(SDL_Event& e, std::vector<std::vector<Stone>>& board, bool& black
 
     for (int r = 0; r < BOARD_SIZE; ++r) {
         for (int c = 0; c < BOARD_SIZE; ++c) {
-            int cx = MARGIN + c * CELL_SIZE;
-            int cy = MARGIN + r * CELL_SIZE;
+            int cx = MARGIN + r * CELL_SIZE;
+            int cy = MARGIN + c * CELL_SIZE;
             double dist = std::sqrt((x - cx) * (x - cx) + (y - cy) * (y - cy));
             if (dist < minDist) {
                 minDist = dist;
@@ -31,12 +30,12 @@ void make_move(SDL_Event& e, std::vector<std::vector<Stone>>& board, bool& black
             }
         }
     }
-
     if (bestRow != -1 && valid(bestRow, bestCol, blackTurn)) { // thêm điều kiện valid(bestRow, bestCol, blackTurn)
         board[bestRow][bestCol] = blackTurn ? BLACK : WHITE;
         blackTurn = !blackTurn;
         kill_enemy_stones(bestRow, bestCol, blackTurn);
         Run_Score();
-        // thêm hàm kill_enemy_stones(bestRow, bestCol, blackTurn);
+        return 1;
     }
+    return 0;
 }
