@@ -26,6 +26,8 @@ add_executable(GoGame
         src/history.cpp
         src/WINDOW_PLAYING.cpp
         src/playing_interface.cpp
+        src/skip.cpp
+        src/check_game_state.cpp
 )
 # (Nếu main.cpp ở ngang hàng)
 # add_executable(GoGame main.cpp)
