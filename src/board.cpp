@@ -20,15 +20,13 @@ int board_size(){
 }
 
 void draw_board(int hoverRow, int hoverCol, bool blackTurn, SDL_Renderer* renderer, SDL_Texture* black_stone, SDL_Texture* white_stone) {
-    SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
-    SDL_RenderClear(renderer);
     
     // draw grid
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     for (int i = 0; i < BOARD_SIZE; ++i) {
         int pos = MARGIN + i * CELL_SIZE;
-        SDL_RenderDrawLine(renderer, MARGIN, pos, WINDOW_SIZE - MARGIN, pos);
-        SDL_RenderDrawLine(renderer, pos, MARGIN, pos, WINDOW_SIZE - MARGIN);
+        SDL_RenderDrawLine(renderer, MARGIN, pos, MARGIN + (BOARD_SIZE - 1) * CELL_SIZE, pos);
+        SDL_RenderDrawLine(renderer, pos, MARGIN, pos, MARGIN + (BOARD_SIZE - 1) * CELL_SIZE);
     }
 
     // draw stones
@@ -54,6 +52,34 @@ void draw_board(int hoverRow, int hoverCol, bool blackTurn, SDL_Renderer* render
         SDL_RenderCopy(renderer, stone_texture, NULL, &rect);
         SDL_SetTextureAlphaMod(stone_texture, 255);
     }
-    SDL_RenderPresent(renderer);
-    SDL_Delay(16);
+}
+
+void board_handle_event(SDL_Event& e, int& hoverRow, int& hoverCol) {
+    if (e.type == SDL_MOUSEMOTION) {
+        int x = e.motion.x;
+        int y = e.motion.y;
+
+        int bestRow = -1, bestCol = -1;
+        double minDist = CLICK_RADIUS;
+
+        for (int r = 0; r < BOARD_SIZE; ++r) {
+            for (int c = 0; c < BOARD_SIZE; ++c) {
+                int cx = MARGIN + r * CELL_SIZE;
+                int cy = MARGIN + c * CELL_SIZE;
+                double dist = std::sqrt((x - cx) * (x - cx) + (y - cy) * (y - cy));
+                if (dist < minDist) {
+                    minDist = dist;
+                    bestRow = r;
+                    bestCol = c;
+                }
+            }
+        }
+        if (bestRow != -1 && board[bestRow][bestCol] == EMPTY) {
+            hoverRow = bestRow;
+            hoverCol = bestCol;
+        } else {
+            hoverRow = -1;
+            hoverCol = -1;
+        }
+    }
 }

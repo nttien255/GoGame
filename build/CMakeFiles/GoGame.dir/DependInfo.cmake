@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "D:/university/CS102/GoGame/src/WINDOW_PLAYING.cpp" "CMakeFiles/GoGame.dir/src/WINDOW_PLAYING.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/WINDOW_PLAYING.cpp.obj.d"
   "D:/university/CS102/GoGame/src/board.cpp" "CMakeFiles/GoGame.dir/src/board.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/board.cpp.obj.d"
   "D:/university/CS102/GoGame/src/history.cpp" "CMakeFiles/GoGame.dir/src/history.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/history.cpp.obj.d"
   "D:/university/CS102/GoGame/src/inside.cpp" "CMakeFiles/GoGame.dir/src/inside.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/inside.cpp.obj.d"
@@ -15,6 +16,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/university/CS102/GoGame/src/main.cpp" "CMakeFiles/GoGame.dir/src/main.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/main.cpp.obj.d"
   "D:/university/CS102/GoGame/src/move.cpp" "CMakeFiles/GoGame.dir/src/move.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/move.cpp.obj.d"
   "D:/university/CS102/GoGame/src/player.cpp" "CMakeFiles/GoGame.dir/src/player.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/player.cpp.obj.d"
+  "D:/university/CS102/GoGame/src/playing_interface.cpp" "CMakeFiles/GoGame.dir/src/playing_interface.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/playing_interface.cpp.obj.d"
   "D:/university/CS102/GoGame/src/scoring.cpp" "CMakeFiles/GoGame.dir/src/scoring.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/scoring.cpp.obj.d"
   "D:/university/CS102/GoGame/src/valid.cpp" "CMakeFiles/GoGame.dir/src/valid.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/valid.cpp.obj.d"
   )

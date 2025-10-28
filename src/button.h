@@ -14,10 +14,11 @@ struct Button{
     Button(int x, int y, int w, int h, const string& path, SDL_Renderer* renderer, const string& label){
         position = {x, y, w, h};
         texture = IMG_LoadTexture(renderer, path.c_str());
-        is_hovered = false;
+        is_hover = false;
         button_label = label;
         if (!texture){
-            SDL_Log("Failed to load button texture: %s", SDL_GetError());
+            cout << -1 << '\n';
+            // SDL_Log("Failed to load button texture: %s", SDL_GetError());
         }
     }   
 
@@ -43,9 +44,9 @@ struct Button{
     }
 
     void draw_button(SDL_Renderer* renderer){
-        if (is_hover) SDL_SetTextureAlphaMod(texture, 200); // Slightly transparent when hovered
+        if (is_hover) SDL_SetTextureAlphaMod(texture, 155); // Slightly transparent when hovered
         else SDL_SetTextureAlphaMod(texture, 255); // Fully opaque otherwise
-        SDL_RendererCopy(renderer, texture, NULL, &position);
+        SDL_RenderCopy(renderer, texture, NULL, &position);
     }
 
     void destroy(){

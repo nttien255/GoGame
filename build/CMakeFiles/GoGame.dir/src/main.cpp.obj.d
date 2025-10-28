@@ -351,10 +351,4 @@ CMakeFiles/GoGame.dir/src/main.cpp.obj: \
  D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_image.h \
  D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL.h \
  D:\university\CS102\GoGame\src\board.h \
- D:\university\CS102\GoGame\src\move.h \
- D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL.h \
- D:\university\CS102\GoGame\src\history.h \
- D:\university\CS102\GoGame\src\player.h \
- C:/mingw64/include/c++/15.2.0/deque \
- C:/mingw64/include/c++/15.2.0/bits/stl_deque.h \
- C:/mingw64/include/c++/15.2.0/bits/deque.tcc
+ D:\university\CS102\GoGame\src\WINDOW_PLAYING.h

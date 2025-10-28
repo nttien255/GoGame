@@ -354,8 +354,8 @@ CMakeFiles/GoGame.dir/src/move.cpp.obj: \
  D:\university\CS102\GoGame\src\valid.h \
  D:\university\CS102\GoGame\src\kill_enemy.h \
  D:\university\CS102\GoGame\src\scoring.h \
- D:\university\CS102\GoGame\src\history.h \
  D:\university\CS102\GoGame\src\player.h \
+ D:\university\CS102\GoGame\src\history.h \
  C:/mingw64/include/c++/15.2.0/deque \
  C:/mingw64/include/c++/15.2.0/bits/stl_deque.h \
  C:/mingw64/include/c++/15.2.0/bits/deque.tcc

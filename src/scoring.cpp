@@ -59,6 +59,9 @@ void calc_place_score(){
     }
 }
 
+int Score_Player(Player &player){
+    return player.Score + player.kill;
+}
 void Run_Score(){
     Reset_Player();
     calc_place_score();

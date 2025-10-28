@@ -128,6 +128,30 @@ GoGame/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/build
 .PHONY : GoGame/fast
 
+src/WINDOW_PLAYING.obj: src/WINDOW_PLAYING.cpp.obj
+.PHONY : src/WINDOW_PLAYING.obj
+
+# target to build an object file
+src/WINDOW_PLAYING.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/WINDOW_PLAYING.cpp.obj
+.PHONY : src/WINDOW_PLAYING.cpp.obj
+
+src/WINDOW_PLAYING.i: src/WINDOW_PLAYING.cpp.i
+.PHONY : src/WINDOW_PLAYING.i
+
+# target to preprocess a source file
+src/WINDOW_PLAYING.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/WINDOW_PLAYING.cpp.i
+.PHONY : src/WINDOW_PLAYING.cpp.i
+
+src/WINDOW_PLAYING.s: src/WINDOW_PLAYING.cpp.s
+.PHONY : src/WINDOW_PLAYING.s
+
+# target to generate assembly for a file
+src/WINDOW_PLAYING.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/WINDOW_PLAYING.cpp.s
+.PHONY : src/WINDOW_PLAYING.cpp.s
+
 src/board.obj: src/board.cpp.obj
 .PHONY : src/board.obj
 
@@ -296,6 +320,30 @@ src/player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/player.cpp.s
 .PHONY : src/player.cpp.s
 
+src/playing_interface.obj: src/playing_interface.cpp.obj
+.PHONY : src/playing_interface.obj
+
+# target to build an object file
+src/playing_interface.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/playing_interface.cpp.obj
+.PHONY : src/playing_interface.cpp.obj
+
+src/playing_interface.i: src/playing_interface.cpp.i
+.PHONY : src/playing_interface.i
+
+# target to preprocess a source file
+src/playing_interface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/playing_interface.cpp.i
+.PHONY : src/playing_interface.cpp.i
+
+src/playing_interface.s: src/playing_interface.cpp.s
+.PHONY : src/playing_interface.s
+
+# target to generate assembly for a file
+src/playing_interface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/playing_interface.cpp.s
+.PHONY : src/playing_interface.cpp.s
+
 src/scoring.obj: src/scoring.cpp.obj
 .PHONY : src/scoring.obj
 
@@ -353,6 +401,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... GoGame
+	@echo ... src/WINDOW_PLAYING.obj
+	@echo ... src/WINDOW_PLAYING.i
+	@echo ... src/WINDOW_PLAYING.s
 	@echo ... src/board.obj
 	@echo ... src/board.i
 	@echo ... src/board.s
@@ -374,6 +425,9 @@ help:
 	@echo ... src/player.obj
 	@echo ... src/player.i
 	@echo ... src/player.s
+	@echo ... src/playing_interface.obj
+	@echo ... src/playing_interface.i
+	@echo ... src/playing_interface.s
 	@echo ... src/scoring.obj
 	@echo ... src/scoring.i
 	@echo ... src/scoring.s
