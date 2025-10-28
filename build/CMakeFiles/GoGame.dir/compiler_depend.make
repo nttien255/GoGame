@@ -355,7 +355,8 @@ CMakeFiles/GoGame.dir/src/board.cpp.obj: D:/university/CS102/GoGame/src/board.cp
   D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/begin_code.h \
   D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/close_code.h \
   D:/university/CS102/GoGame/src/board.h \
-  D:/university/CS102/GoGame/src/move.h
+  D:/university/CS102/GoGame/src/move.h \
+  D:/university/CS102/GoGame/src/valid.h
 
 CMakeFiles/GoGame.dir/src/history.cpp.obj: D:/university/CS102/GoGame/src/history.cpp \
   C:/mingw64/include/c++/15.2.0/backward/binders.h \

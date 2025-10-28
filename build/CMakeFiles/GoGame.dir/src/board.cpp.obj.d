@@ -352,4 +352,5 @@ CMakeFiles/GoGame.dir/src/board.cpp.obj: \
  D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL.h \
  D:\university\CS102\GoGame\src\board.h \
  D:\university\CS102\GoGame\src\move.h \
- D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL.h
+ D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL.h \
+ D:\university\CS102\GoGame\src\valid.h
