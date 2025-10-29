@@ -14,15 +14,13 @@
 
 using namespace std;
 
-int BOARD_SIZE = 13;
+int BOARD_SIZE = 19;
 int CELL_SIZE = 63;
 int STONE_RADIUS = 20;
 int CLICK_RADIUS = 22; 
 const int BOARD_LENGTH = 72 * 7; // 72 = lcm(8, 18)
-const int MARGIN = 148;
-const int WINDOW_SIZE = 800;
-
-
+const int MARGIN = 123;
+const int WINDOW_SIZE = 750;
 
 int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     SDL_SetWindowSize(window, WINDOW_SIZE, WINDOW_SIZE);

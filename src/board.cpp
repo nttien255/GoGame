@@ -18,12 +18,11 @@ void init_board(int size, int &BOARD_SIZE, int &CELL_SIZE, int &STONE_RADIUS, in
     if (size == 19) {
         STONE_RADIUS = 15;
         CLICK_RADIUS = 17;
-    } else if (size == 13) {
-        STONE_RADIUS = 20;
-        CLICK_RADIUS = 22;
     } else if (size == 9) {
         STONE_RADIUS = 27;
         CLICK_RADIUS = 29;
+    } else {
+        SDL_Log("Unsupported board size!");
     }
 }
 

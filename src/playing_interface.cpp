@@ -19,8 +19,8 @@ void draw_interface(SDL_Renderer* renderer, SDL_Texture* black_stone, SDL_Textur
         button->draw_button(renderer);
     }
     // Draw player scores
-    string score_text1 = "Player 1 Score: " + to_string(player1.Score + player1.kill);
-    string score_text2 = "Player 2 Score: " + to_string(player2.Score + player2.kill);
+    string score_text1 = "Player 1 Score: " + to_string(Score_Player(player1));
+    string score_text2 = "Player 2 Score: " + to_string(Score_Player(player2));
     SDL_DestroyTexture(player1_score);
     SDL_DestroyTexture(player2_score);
     player1_score = renderText(renderer, font, score_text1, color);
