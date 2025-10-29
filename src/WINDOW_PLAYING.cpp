@@ -10,6 +10,8 @@
 #include "WINDOW_PLAYING.h"
 #include "playing_interface.h"
 #include "text_utlish.h"
+#include "skip.h"
+#include "check_game_state.h"
 
 using namespace std;
 
@@ -21,11 +23,7 @@ const int BOARD_LENGTH = 72 * 7; // 72 = lcm(8, 18)
 const int MARGIN = 148;
 const int WINDOW_SIZE = 800;
 
-enum class GameState {
-    MENU,
-    PLAYING,
-    END_GAME
-};
+
 
 int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     SDL_SetWindowSize(window, WINDOW_SIZE, WINDOW_SIZE);
@@ -82,9 +80,9 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
                 if (redo_button.clicked(e)) {
                     Redo_Move();
                 }
-                // if (pass_button.clicked(e)) {
-                //    skip(blackTurn);
-                // }
+                if (pass_button.clicked(e)) {
+                    skip_turn(blackTurn);
+                }
 
                 if (e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT) {
                     if (hoverRow != -1 && board[hoverRow][hoverCol] == EMPTY){
@@ -96,6 +94,7 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
         // draw board background
         // current_state = check_game_state();
 
+        current_state = check_game_state();
         if (current_state == GameState::PLAYING){
             SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
             SDL_RenderClear(renderer);
