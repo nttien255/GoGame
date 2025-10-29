@@ -6,6 +6,7 @@
 #include "button.h"
 #include "playing_interface.h"
 #include "scoring.h"
+#include "text_utlish.h"
 
 using namespace std;
 
@@ -18,7 +19,12 @@ void draw_interface(SDL_Renderer* renderer, SDL_Texture* black_stone, SDL_Textur
         button->draw_button(renderer);
     }
     // Draw player scores
-
+    string score_text1 = "Player 1 Score: " + to_string(player1.Score + player1.kill);
+    string score_text2 = "Player 2 Score: " + to_string(player2.Score + player2.kill);
+    SDL_DestroyTexture(player1_score);
+    SDL_DestroyTexture(player2_score);
+    player1_score = renderText(renderer, font, score_text1, color);
+    player2_score = renderText(renderer, font, score_text2, color);
     int w1, h1;
     int w2, h2;
     SDL_QueryTexture(player1_score, NULL, NULL, &w1, &h1);

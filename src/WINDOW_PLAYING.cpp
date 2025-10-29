@@ -9,7 +9,6 @@
 #include "button.h"
 #include "WINDOW_PLAYING.h"
 #include "playing_interface.h"
-#include "text_utlish.h"
 #include "skip.h"
 #include "check_game_state.h"
 
@@ -49,6 +48,7 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
 
     init_board(BOARD_SIZE, BOARD_SIZE, CELL_SIZE, STONE_RADIUS, CLICK_RADIUS, BOARD_LENGTH);
     Init_History();
+    Init_Player();
     bool running = true;
     bool blackTurn = true;
     int hoverRow = -1, hoverCol = -1;
@@ -98,13 +98,6 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
         if (current_state == GameState::PLAYING){
             SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
             SDL_RenderClear(renderer);
-
-            string score_text1 = "Player 1 Score: " + to_string(player1.Score + player1.kill);
-            string score_text2 = "Player 2 Score: " + to_string(player2.Score + player2.kill);
-            SDL_DestroyTexture(player1_score);
-            SDL_DestroyTexture(player2_score);
-            player1_score = renderText(renderer, font, score_text1, color);
-            player2_score = renderText(renderer, font, score_text2, color);
 
             draw_interface(renderer, black_stone, white_stone, hoverRow, hoverCol, blackTurn, button_list, player1_score, player2_score, font, color);
 
