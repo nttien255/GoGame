@@ -259,45 +259,23 @@ CMakeFiles/GoGame.dir/src/playing_interface.cpp.obj: \
  D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_misc.h \
  D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_image.h \
  D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL.h \
- D:\university\CS102\GoGame\src\board.h \
- C:/mingw64/include/c++/15.2.0/vector \
- C:/mingw64/include/c++/15.2.0/bits/allocator.h \
- C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
- C:/mingw64/include/c++/15.2.0/bits/new_allocator.h \
- C:/mingw64/include/c++/15.2.0/new \
- C:/mingw64/include/c++/15.2.0/bits/exception.h \
- C:/mingw64/include/c++/15.2.0/bits/memoryfwd.h \
- C:/mingw64/include/c++/15.2.0/bits/stl_construct.h \
- C:/mingw64/include/c++/15.2.0/bits/stl_uninitialized.h \
- C:/mingw64/include/c++/15.2.0/ext/alloc_traits.h \
- C:/mingw64/include/c++/15.2.0/bits/alloc_traits.h \
- C:/mingw64/include/c++/15.2.0/bits/stl_vector.h \
- C:/mingw64/include/c++/15.2.0/initializer_list \
- C:/mingw64/include/c++/15.2.0/bits/stl_bvector.h \
- C:/mingw64/include/c++/15.2.0/bits/functional_hash.h \
- C:/mingw64/include/c++/15.2.0/bits/hash_bytes.h \
- C:/mingw64/include/c++/15.2.0/bits/refwrap.h \
- C:/mingw64/include/c++/15.2.0/bits/invoke.h \
- C:/mingw64/include/c++/15.2.0/bits/stl_function.h \
- C:/mingw64/include/c++/15.2.0/backward/binders.h \
- C:/mingw64/include/c++/15.2.0/bits/range_access.h \
- C:/mingw64/include/c++/15.2.0/bits/vector.tcc \
- C:/mingw64/include/c++/15.2.0/bits/memory_resource.h \
- C:/mingw64/include/c++/15.2.0/cstddef \
- C:/mingw64/include/c++/15.2.0/bits/uses_allocator.h \
- C:/mingw64/include/c++/15.2.0/bits/uses_allocator_args.h \
- C:/mingw64/include/c++/15.2.0/tuple \
+ D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_ttf.h \
+ D:\university\CS102\GoGame\src\player.h \
  C:/mingw64/include/c++/15.2.0/iostream \
  C:/mingw64/include/c++/15.2.0/ostream \
  C:/mingw64/include/c++/15.2.0/bits/ostream.h \
  C:/mingw64/include/c++/15.2.0/ios C:/mingw64/include/c++/15.2.0/iosfwd \
  C:/mingw64/include/c++/15.2.0/bits/stringfwd.h \
+ C:/mingw64/include/c++/15.2.0/bits/memoryfwd.h \
  C:/mingw64/include/c++/15.2.0/bits/postypes.h \
  C:/mingw64/include/c++/15.2.0/cwchar \
  C:/mingw64/include/c++/15.2.0/exception \
+ C:/mingw64/include/c++/15.2.0/bits/exception.h \
  C:/mingw64/include/c++/15.2.0/bits/exception_ptr.h \
  C:/mingw64/include/c++/15.2.0/bits/cxxabi_init_exception.h \
  C:/mingw64/include/c++/15.2.0/typeinfo \
+ C:/mingw64/include/c++/15.2.0/bits/hash_bytes.h \
+ C:/mingw64/include/c++/15.2.0/new \
  C:/mingw64/include/c++/15.2.0/bits/nested_exception.h \
  C:/mingw64/include/c++/15.2.0/bits/char_traits.h \
  C:/mingw64/include/c++/15.2.0/bits/localefwd.h \
@@ -323,16 +301,34 @@ CMakeFiles/GoGame.dir/src/playing_interface.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/atomic_word.h \
  C:/mingw64/include/c++/15.2.0/bits/locale_classes.h \
  C:/mingw64/include/c++/15.2.0/string \
+ C:/mingw64/include/c++/15.2.0/bits/allocator.h \
+ C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
+ C:/mingw64/include/c++/15.2.0/bits/new_allocator.h \
  C:/mingw64/include/c++/15.2.0/bits/ostream_insert.h \
  C:/mingw64/include/c++/15.2.0/bits/cxxabi_forced.h \
+ C:/mingw64/include/c++/15.2.0/bits/stl_function.h \
+ C:/mingw64/include/c++/15.2.0/backward/binders.h \
+ C:/mingw64/include/c++/15.2.0/bits/refwrap.h \
+ C:/mingw64/include/c++/15.2.0/bits/invoke.h \
+ C:/mingw64/include/c++/15.2.0/bits/range_access.h \
+ C:/mingw64/include/c++/15.2.0/initializer_list \
  C:/mingw64/include/c++/15.2.0/bits/basic_string.h \
+ C:/mingw64/include/c++/15.2.0/ext/alloc_traits.h \
+ C:/mingw64/include/c++/15.2.0/bits/alloc_traits.h \
+ C:/mingw64/include/c++/15.2.0/bits/stl_construct.h \
  C:/mingw64/include/c++/15.2.0/string_view \
+ C:/mingw64/include/c++/15.2.0/bits/functional_hash.h \
  C:/mingw64/include/c++/15.2.0/bits/string_view.tcc \
  C:/mingw64/include/c++/15.2.0/ext/string_conversions.h \
  C:/mingw64/include/c++/15.2.0/cstdio \
  C:/mingw64/include/c++/15.2.0/cerrno \
  C:/mingw64/include/c++/15.2.0/bits/charconv.h \
  C:/mingw64/include/c++/15.2.0/bits/basic_string.tcc \
+ C:/mingw64/include/c++/15.2.0/bits/memory_resource.h \
+ C:/mingw64/include/c++/15.2.0/cstddef \
+ C:/mingw64/include/c++/15.2.0/bits/uses_allocator.h \
+ C:/mingw64/include/c++/15.2.0/bits/uses_allocator_args.h \
+ C:/mingw64/include/c++/15.2.0/tuple \
  C:/mingw64/include/c++/15.2.0/bits/locale_classes.tcc \
  C:/mingw64/include/c++/15.2.0/system_error \
  C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/error_constants.h \
@@ -351,5 +347,12 @@ CMakeFiles/GoGame.dir/src/playing_interface.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/bits/ostream.tcc \
  C:/mingw64/include/c++/15.2.0/istream \
  C:/mingw64/include/c++/15.2.0/bits/istream.tcc \
+ D:\university\CS102\GoGame\src\board.h \
+ C:/mingw64/include/c++/15.2.0/vector \
+ C:/mingw64/include/c++/15.2.0/bits/stl_uninitialized.h \
+ C:/mingw64/include/c++/15.2.0/bits/stl_vector.h \
+ C:/mingw64/include/c++/15.2.0/bits/stl_bvector.h \
+ C:/mingw64/include/c++/15.2.0/bits/vector.tcc \
  D:\university\CS102\GoGame\src\button.h \
- D:\university\CS102\GoGame\src\playing_interface.h
+ D:\university\CS102\GoGame\src\playing_interface.h \
+ D:\university\CS102\GoGame\src\scoring.h

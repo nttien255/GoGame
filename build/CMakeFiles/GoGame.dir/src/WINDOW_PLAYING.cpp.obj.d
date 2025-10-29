@@ -350,6 +350,7 @@ CMakeFiles/GoGame.dir/src/WINDOW_PLAYING.cpp.obj: \
  D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_misc.h \
  D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_image.h \
  D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL.h \
+ D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_ttf.h \
  D:\university\CS102\GoGame\src\board.h \
  D:\university\CS102\GoGame\src\move.h \
  D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL.h \
@@ -360,4 +361,5 @@ CMakeFiles/GoGame.dir/src/WINDOW_PLAYING.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/bits/deque.tcc \
  D:\university\CS102\GoGame\src\button.h \
  D:\university\CS102\GoGame\src\WINDOW_PLAYING.h \
- D:\university\CS102\GoGame\src\playing_interface.h
+ D:\university\CS102\GoGame\src\playing_interface.h \
+ D:\university\CS102\GoGame\src\text_utlish.h

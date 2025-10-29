@@ -2,21 +2,24 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <SDL2/SDL_ttf.h>
 #include "board.h"
 #include "move.h"
 #include "history.h"
 #include "button.h"
 #include "WINDOW_PLAYING.h"
 #include "playing_interface.h"
+#include "text_utlish.h"
 
 using namespace std;
 
-int BOARD_SIZE = 9;
+int BOARD_SIZE = 13;
 int CELL_SIZE = 63;
+int STONE_RADIUS = 20;
+int CLICK_RADIUS = 22; 
+const int BOARD_LENGTH = 72 * 7; // 72 = lcm(8, 18)
 const int MARGIN = 148;
 const int WINDOW_SIZE = 800;
-const int STONE_RADIUS = 20;
-const int CLICK_RADIUS = 22; 
 
 enum class GameState {
     MENU,
@@ -28,7 +31,9 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     SDL_SetWindowSize(window, WINDOW_SIZE, WINDOW_SIZE);
     SDL_Texture* black_stone = IMG_LoadTexture(renderer, "../assets/black.png");
     SDL_Texture* white_stone = IMG_LoadTexture(renderer, "../assets/white.png");
-    
+    TTF_Font* font = TTF_OpenFont("../assets/BAUHS93.ttf", 24);
+    SDL_Color color = {0, 0, 0};
+
     if (!black_stone) {
         SDL_Log("Failed to load black stone images");
         return -1;
@@ -41,8 +46,10 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     Button undo_button(10, WINDOW_SIZE - 60, 60, 40, "../assets/undo.png", renderer, "Undo");
     Button redo_button(80, WINDOW_SIZE - 60, 60, 40, "../assets/redo.png", renderer, "Redo");
     Button pass_button(WINDOW_SIZE / 2 - 40, WINDOW_SIZE - 65, 120, 42, "../assets/pass.png", renderer, "Pass");
+    SDL_Texture* player1_score = nullptr;
+    SDL_Texture* player2_score = nullptr;
 
-    init_board(BOARD_SIZE);
+    init_board(BOARD_SIZE, BOARD_SIZE, CELL_SIZE, STONE_RADIUS, CLICK_RADIUS, BOARD_LENGTH);
     Init_History();
     bool running = true;
     bool blackTurn = true;
@@ -88,11 +95,20 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
         }
         // draw board background
         // current_state = check_game_state();
-        
+
         if (current_state == GameState::PLAYING){
             SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
             SDL_RenderClear(renderer);
-            draw_interface(renderer, black_stone, white_stone, hoverRow, hoverCol, blackTurn, button_list);
+
+            string score_text1 = "Player 1 Score: " + to_string(player1.Score + player1.kill);
+            string score_text2 = "Player 2 Score: " + to_string(player2.Score + player2.kill);
+            SDL_DestroyTexture(player1_score);
+            SDL_DestroyTexture(player2_score);
+            player1_score = renderText(renderer, font, score_text1, color);
+            player2_score = renderText(renderer, font, score_text2, color);
+
+            draw_interface(renderer, black_stone, white_stone, hoverRow, hoverCol, blackTurn, button_list, player1_score, player2_score, font, color);
+
             SDL_RenderPresent(renderer);
             SDL_Delay(16);
         }

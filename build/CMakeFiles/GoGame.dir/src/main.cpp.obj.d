@@ -350,5 +350,6 @@ CMakeFiles/GoGame.dir/src/main.cpp.obj: \
  D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_misc.h \
  D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_image.h \
  D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL.h \
+ D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_ttf.h \
  D:\university\CS102\GoGame\src\board.h \
  D:\university\CS102\GoGame\src\WINDOW_PLAYING.h

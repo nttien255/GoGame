@@ -353,6 +353,7 @@ CMakeFiles/GoGame.dir/src/WINDOW_PLAYING.cpp.obj: D:/university/CS102/GoGame/src
   D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_thread.h \
   D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_timer.h \
   D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_touch.h \
+  D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_ttf.h \
   D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_version.h \
   D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_video.h \
   D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/begin_code.h \
@@ -363,7 +364,8 @@ CMakeFiles/GoGame.dir/src/WINDOW_PLAYING.cpp.obj: D:/university/CS102/GoGame/src
   D:/university/CS102/GoGame/src/history.h \
   D:/university/CS102/GoGame/src/move.h \
   D:/university/CS102/GoGame/src/player.h \
-  D:/university/CS102/GoGame/src/playing_interface.h
+  D:/university/CS102/GoGame/src/playing_interface.h \
+  D:/university/CS102/GoGame/src/text_utlish.h
 
 CMakeFiles/GoGame.dir/src/board.cpp.obj: D:/university/CS102/GoGame/src/board.cpp \
   C:/mingw64/include/c++/15.2.0/backward/binders.h \
@@ -2147,6 +2149,7 @@ CMakeFiles/GoGame.dir/src/main.cpp.obj: D:/university/CS102/GoGame/src/main.cpp 
   D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_thread.h \
   D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_timer.h \
   D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_touch.h \
+  D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_ttf.h \
   D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_version.h \
   D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_video.h \
   D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/begin_code.h \
@@ -3199,13 +3202,16 @@ CMakeFiles/GoGame.dir/src/playing_interface.cpp.obj: D:/university/CS102/GoGame/
   D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_thread.h \
   D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_timer.h \
   D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_touch.h \
+  D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_ttf.h \
   D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_version.h \
   D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_video.h \
   D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/begin_code.h \
   D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/close_code.h \
   D:/university/CS102/GoGame/src/board.h \
   D:/university/CS102/GoGame/src/button.h \
-  D:/university/CS102/GoGame/src/playing_interface.h
+  D:/university/CS102/GoGame/src/player.h \
+  D:/university/CS102/GoGame/src/playing_interface.h \
+  D:/university/CS102/GoGame/src/scoring.h
 
 CMakeFiles/GoGame.dir/src/scoring.cpp.obj: D:/university/CS102/GoGame/src/scoring.cpp \
   C:/mingw64/include/c++/15.2.0/backward/binders.h \
@@ -4020,6 +4026,8 @@ C:/mingw64/include/c++/15.2.0/new:
 
 C:/mingw64/include/c++/15.2.0/bits/cxxabi_forced.h:
 
+D:/university/CS102/GoGame/src/text_utlish.h:
+
 C:/mingw64/include/c++/15.2.0/bits/stl_iterator_base_types.h:
 
 C:/mingw64/include/c++/15.2.0/bits/cxxabi_init_exception.h:
@@ -4815,6 +4823,8 @@ D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_surface.h:
 D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_thread.h:
 
 D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_timer.h:
+
+D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_ttf.h:
 
 D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL_version.h:
 
