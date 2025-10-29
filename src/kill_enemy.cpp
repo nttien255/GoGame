@@ -5,6 +5,8 @@
 #include <iostream>
 #include <queue>
 #include <vector>
+#include <algorithm>
+
 using namespace std;
 vector<pair<int,int>> stones_to_kill;
 
@@ -49,8 +51,10 @@ vector<pair<int,int>> kill_enemy_stones(int x, int y, bool blackTurn, bool scori
                 killed_stones.push_back({x,y});
         }
     }
+    sort(killed_stones.begin(), killed_stones.end());
+    killed_stones.erase(unique(killed_stones.begin(), killed_stones.end()), killed_stones.end());
     for(auto [x,y] : killed_stones) board[x][y] = EMPTY;
-    if (enemy == WHITE) player1.kill += scoring_mode * stones_to_kill.size();
-    else player2.kill += scoring_mode * stones_to_kill.size();
+    if (enemy == WHITE) player1.kill += scoring_mode * (int)killed_stones.size();
+    else player2.kill += scoring_mode * (int)killed_stones.size();
     return killed_stones;
 }

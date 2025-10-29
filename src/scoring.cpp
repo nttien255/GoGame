@@ -12,14 +12,14 @@ using namespace std;
 int cnt;
 bool check_black;
 bool check_white;
+queue<pair<int,int>> Q;
+vector<vector<bool>> visited( BOARD_SIZE,vector<bool>( BOARD_SIZE,false));
 
 void add_score(Player &player, int score){
     player.kill += score;
 }
 
 void BFS_Score(int x, int y){
-    queue<pair<int,int>> Q;
-    vector<vector<bool>> visited( BOARD_SIZE,vector<bool>( BOARD_SIZE,false));
     Q.push({x,y});
     visited[x][y] = true;
     while(!Q.empty()){ 
@@ -41,9 +41,13 @@ void BFS_Score(int x, int y){
 }
 
 void calc_place_score(){
+    for(int i=0;i<BOARD_SIZE;i++)
+        for(int j=0;j<BOARD_SIZE;j++)
+            visited[i][j] = false;
+    
     for(int i=0;i<BOARD_SIZE;i++){
         for(int j=0;j<BOARD_SIZE;j++){
-            if(board[i][j] == 0){
+            if(board[i][j] == 0 && !visited[i][j]){
                 cnt = 0;
                 check_black = false;
                 check_white = false;
