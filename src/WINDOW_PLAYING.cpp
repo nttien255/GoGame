@@ -18,8 +18,8 @@ int BOARD_SIZE = 19;
 int CELL_SIZE = 63;
 int STONE_RADIUS = 20;
 int CLICK_RADIUS = 22; 
+int MARGIN = 123;
 const int BOARD_LENGTH = 72 * 7; // 72 = lcm(8, 18)
-const int MARGIN = 123;
 const int WINDOW_SIZE = 750;
 
 int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
@@ -44,7 +44,7 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     SDL_Texture* player1_score = nullptr;
     SDL_Texture* player2_score = nullptr;
 
-    init_board(BOARD_SIZE, BOARD_SIZE, CELL_SIZE, STONE_RADIUS, CLICK_RADIUS, BOARD_LENGTH);
+    init_board(BOARD_SIZE, BOARD_SIZE, CELL_SIZE, STONE_RADIUS, CLICK_RADIUS, MARGIN, BOARD_LENGTH);
     Init_History();
     Init_Player();
     bool running = true;
