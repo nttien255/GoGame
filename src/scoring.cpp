@@ -6,6 +6,8 @@
 #include <iostream>
 #include <queue>
 #include <vector>
+#include <string>
+
 using namespace std;
 
 
@@ -63,9 +65,10 @@ void calc_place_score(){
     }
 }
 
-int Score_Player(Player &player){
-    return player.Score + player.kill;
+string Score_Player(Player &player){
+    return "tmp";
 }
+
 void Run_Score(){
     Reset_Player();
     calc_place_score();

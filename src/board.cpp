@@ -11,8 +11,20 @@ int Size;
 pair<int,int> tmp;
 vector<vector<Stone>> board;
 
-void init_board(int size){
+void init_board(int size, int &BOARD_SIZE, int &CELL_SIZE, int &STONE_RADIUS, int &CLICK_RADIUS, int &MARGIN, int BOARD_LENGTH) {
     board.resize(size, vector<Stone>(size, EMPTY));
+    BOARD_SIZE = size;
+    CELL_SIZE = BOARD_LENGTH / (size - 1);
+    MARGIN = (WINDOW_SIZE - BOARD_LENGTH) / 2;
+    if (size == 19) {
+        STONE_RADIUS = 15;
+        CLICK_RADIUS = 17;
+    } else if (size == 9) {
+        STONE_RADIUS = 27;
+        CLICK_RADIUS = 29;
+    } else {
+        SDL_Log("Unsupported board size!");
+    }
 }
 
 int board_size(){

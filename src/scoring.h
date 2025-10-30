@@ -1,7 +1,11 @@
 #pragma once
 #include <iostream>
 #include "player.h"
+#include <string>
+
+using namespace std;
+
 void BFS_Score(int x, int y);
 void calc_place_score();
 void Run_Score();
-int Score_Player(Player &player);
+string Score_Player(Player &player);
