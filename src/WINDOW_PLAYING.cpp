@@ -18,6 +18,7 @@ int BOARD_SIZE = 19;
 int CELL_SIZE = 63;
 int STONE_RADIUS = 20;
 int CLICK_RADIUS = 22; 
+
 int MARGIN = 123;
 const int BOARD_LENGTH = 72 * 7; // 72 = lcm(8, 18)
 const int WINDOW_SIZE = 750;
