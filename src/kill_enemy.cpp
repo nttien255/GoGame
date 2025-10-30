@@ -49,8 +49,6 @@ vector<pair<int,int>> kill_enemy_stones(int x, int y, bool blackTurn, bool scori
         if(check_kill_enemy_stones(x + dx[i], y + dy[i], enemy)) {
             for(auto [x,y] : stones_to_kill)
                 killed_stones.push_back({x,y});
-            if (enemy == WHITE) player1.kill += scoring_mode * (int)stones_to_kill.size();
-            else player2.kill += scoring_mode * (int)stones_to_kill.size();
         }
     }
     sort(killed_stones.begin(), killed_stones.end());
