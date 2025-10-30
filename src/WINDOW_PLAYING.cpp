@@ -16,7 +16,7 @@ using namespace std;
 int BOARD_SIZE = 9;
 int CELL_SIZE = 63;
 const int MARGIN = 148;
-const int WINDOW_SIZE = 800;
+const int WINDOW_SIZE = 750;
 const int STONE_RADIUS = 20;
 const int CLICK_RADIUS = 22; 
 
