@@ -11,6 +11,7 @@ find_package(SDL2 REQUIRED)
 find_package(SDL2_image REQUIRED)
 find_package(SDL2_mixer REQUIRED)
 find_package(SDL2_ttf REQUIRED)
+find_package(nlohmann_json REQUIRED)
 
 # --- PHẦN 2: TẠO FILE THỰC THI ---
 # (Nếu main.cpp ở thư mục 'src')
@@ -28,6 +29,7 @@ add_executable(GoGame
         src/playing_interface.cpp
         src/skip.cpp
         src/check_game_state.cpp
+        src/save_load_game.cpp
 )
 # (Nếu main.cpp ở ngang hàng)
 # add_executable(GoGame main.cpp)
@@ -39,5 +41,6 @@ target_link_libraries(GoGame PRIVATE
     SDL2_image::SDL2_image-static
     SDL2_mixer::SDL2_mixer-static
     SDL2_ttf::SDL2_ttf-static
+    nlohmann_json::nlohmann_json
 )
 

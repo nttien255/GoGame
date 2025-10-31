@@ -7,6 +7,8 @@
 #include <queue>
 #include <vector>
 #include <string>
+#include <sstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -56,9 +58,9 @@ void calc_place_score(){
                 BFS_Score(i,j);
                 if(check_black && check_white) continue;
                 else if(check_black) 
-                    player1.Score += cnt;
+                    player1.Score += cnt * 10;
                 else if(check_white)
-                    player2.Score += cnt;
+                    player2.Score += cnt * 10;
                 
             }
         }
@@ -66,7 +68,9 @@ void calc_place_score(){
 }
 
 string Score_Player(Player &player){
-    return "tmp";
+    stringstream ss;
+    ss << fixed << setprecision(1) << (player.Score + player.kill) / 10.0;
+    return ss.str();
 }
 
 void Run_Score(){

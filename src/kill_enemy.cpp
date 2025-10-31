@@ -54,7 +54,7 @@ vector<pair<int,int>> kill_enemy_stones(int x, int y, bool blackTurn, bool scori
     sort(killed_stones.begin(), killed_stones.end());
     killed_stones.erase(unique(killed_stones.begin(), killed_stones.end()), killed_stones.end());
     for(auto [x,y] : killed_stones) board[x][y] = EMPTY;
-    if (enemy == WHITE) player1.kill += scoring_mode * (int)killed_stones.size();
-    else player2.kill += scoring_mode * (int)killed_stones.size();
+    if (enemy == WHITE) player1.kill += scoring_mode * (int)killed_stones.size() * 10;
+    else player2.kill += scoring_mode * (int)killed_stones.size() * 10;
     return killed_stones;
 }

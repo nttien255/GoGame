@@ -11,6 +11,7 @@
 #include "playing_interface.h"
 #include "skip.h"
 #include "check_game_state.h"
+#include "save_load_game.h"
 
 using namespace std;
 
@@ -75,9 +76,12 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
 
                 if (undo_button.clicked(e)) {
                     Undo_Move();
+                    SaveGame(blackTurn,"test");
                 }
                 if (redo_button.clicked(e)) {
                     Redo_Move();
+                    LoadGame(blackTurn,"test");
+
                 }
                 if (pass_button.clicked(e)) {
                     skip_turn(blackTurn);
