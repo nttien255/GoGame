@@ -4,6 +4,9 @@
 enum class GameState {
     MENU,
     PLAYING,
-    END_GAME
+    SETTINGS_PLAYING,
+    LOAD_GAME,
+    END_GAME,
+    NONE
 };
 int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer);

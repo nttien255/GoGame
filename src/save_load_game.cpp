@@ -3,6 +3,18 @@
 
 filesystem::path currentPath;
 
+
+string getTime(){
+    auto now = chrono::system_clock::now();
+    time_t now_t = chrono::system_clock::to_time_t(now);
+    tm* realTime = localtime(&now_t);
+
+    stringstream ss;
+    ss << put_time(realTime, "%Y-%m-%d_%H-%M-%S");
+    return ss.str();
+}
+
+
 bool createFolders(string namefolder){
     try {
         currentPath = filesystem::current_path();
@@ -17,22 +29,12 @@ bool createFolders(string namefolder){
 }
 
 
-int countFiles(filesystem::path &path){
-    int cnt = 0;
-    for(auto &entry : filesystem::directory_iterator(path)){
-        if(entry.is_regular_file())
-            ++cnt;
-    }
-    return cnt;
-}
-
-void SaveGame(bool &blackTurn, string filename){
+void SaveGame(bool &blackTurn){
     SaveDataGame currentState(board, player1, player2, blackTurn, history, PosStatus, cnt_skips_turn);
-
+    string filename = currentState.Time;
     if(!createFolders("saves")) return;
-    // int numbers = files.size;
-    // int numbers = countFiles(currentPath);
-    
+
+    cout << filename << endl;
     string newPath = currentPath.u8string() + "/" + filename + ".json";  
 
     ofstream file(newPath);
@@ -42,15 +44,12 @@ void SaveGame(bool &blackTurn, string filename){
     file.close();
 }
 
-void LoadGame(bool &blackTurn, string filename){
+void LoadGame(bool &blackTurn, string Path){
     SaveDataGame currentState;
     
-    if(!createFolders("saves")) return;
-
-    string newPath = currentPath.u8string() + "/" + filename + ".json";  
-    ifstream file(newPath);
+    ifstream file(Path);
     if(!file.is_open()){
-        cerr << "Error opening file: " << newPath << endl;
+        cerr << "Error opening file: " << Path << endl;
         return;
     }
 
@@ -61,3 +60,19 @@ void LoadGame(bool &blackTurn, string filename){
     currentState = j["currentState"].get<SaveDataGame>();
     currentState.Update(board, player1, player2, blackTurn, history, PosStatus, cnt_skips_turn);
 }
+
+
+vector<string> allFileLoadGame(){
+    vector<string> vectorFileJson;
+    if(!createFolders("saves")) return vectorFileJson;
+    for(auto &entry : filesystem::directory_iterator(currentPath)){
+        if(entry.is_regular_file()){
+            vectorFileJson.push_back(entry.path().string());
+        }
+    }
+    return vectorFileJson;
+}
+
+
+
+

@@ -12,6 +12,7 @@
 #include "skip.h"
 #include "check_game_state.h"
 #include "save_load_game.h"
+#include "load_playing_interface.h"
 
 using namespace std;
 
@@ -43,6 +44,7 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     Button undo_button(10, WINDOW_SIZE - 60, 60, 40, "../assets/undo.png", renderer, "Undo");
     Button redo_button(80, WINDOW_SIZE - 60, 60, 40, "../assets/redo.png", renderer, "Redo");
     Button pass_button(WINDOW_SIZE / 2 - 40, WINDOW_SIZE - 65, 120, 42, "../assets/pass.png", renderer, "Pass");
+
     SDL_Texture* player1_score = nullptr;
     SDL_Texture* player2_score = nullptr;
 
@@ -52,13 +54,15 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     bool running = true;
     bool blackTurn = true;
     int hoverRow = -1, hoverCol = -1;
-    GameState current_state = GameState::PLAYING;
+    GameState current_state = GameState::LOAD_GAME;
+    GameState next_state = current_state;
+    
     vector<Button*> button_list = {
         &undo_button, 
         &redo_button, 
         &pass_button
     };
-
+    
     SDL_Event e;
 
     while (running) {
@@ -76,12 +80,10 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
 
                 if (undo_button.clicked(e)) {
                     Undo_Move();
-                    SaveGame(blackTurn,"test");
+                    SaveGame(blackTurn);
                 }
                 if (redo_button.clicked(e)) {
                     Redo_Move();
-                    LoadGame(blackTurn,"test");
-
                 }
                 if (pass_button.clicked(e)) {
                     skip_turn(blackTurn);
@@ -93,11 +95,15 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
                     }
                 }
             }
+
+            if(current_state == GameState::LOAD_GAME){
+                vector<string> save_files = allFileLoadGame();
+                load_handle_event(e, save_files, blackTurn);
+            }
         }
         // draw board background
         // current_state = check_game_state();
 
-        current_state = check_game_state();
         if (current_state == GameState::PLAYING){
             SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
             SDL_RenderClear(renderer);
@@ -107,10 +113,28 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
             SDL_RenderPresent(renderer);
             SDL_Delay(16);
         }
+        if (current_state == GameState::LOAD_GAME){
+            SDL_SetRenderDrawColor(renderer, 130, 80, 50, 255);
+            SDL_RenderClear(renderer);
 
+            draw_loadgame_interface(renderer);
+
+            SDL_RenderPresent(renderer);
+            SDL_Delay(16);
+            // draw_list_load_game(rendere);
+        }
         if (current_state == GameState::END_GAME) {
             // Handle end game state (not implemented yet)
             // ???
+        }
+
+        next_state = check_game_state();
+        if(next_state != GameState::NONE && next_state != current_state){
+            cout << "STATE IS CHANGED \n ";
+            current_state = next_state;
+            if(current_state == GameState::LOAD_GAME){
+                init_loadgame_interface();
+            }
         }
     }
 
