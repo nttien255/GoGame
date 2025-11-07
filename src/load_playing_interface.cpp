@@ -25,11 +25,11 @@ void draw_loadgame_interface(SDL_Renderer* renderer){
         SDL_Texture* text = renderText(renderer, font, list_file_shown[i], color);        
         int w, h;
         SDL_QueryTexture(text, NULL, NULL, &w, &h);
-        SDL_Rect rect = {button.position.x + (button.position.w  - w) / 2,
+        SDL_Rect rect = {button.position.x + (button.position.h  - h) / 2,
                          button.position.y + (button.position.h - h) / 2,
                          w, h};
-        SDL_RenderCopy(renderer, text, NULL, &rect);
         button.draw_button(renderer);
+        SDL_RenderCopy(renderer, text, NULL, &rect);
     }    
 }
 
