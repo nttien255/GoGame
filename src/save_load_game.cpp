@@ -44,9 +44,10 @@ void SaveGame(bool &blackTurn){
     file.close();
 }
 
-void LoadGame(bool &blackTurn, string Path){
+void LoadGame(bool &blackTurn, string filename){
     SaveDataGame currentState;
-    
+    if(!createFolders("saves")) return;
+    string Path = currentPath.u8string() + "/" + filename + ".json";
     ifstream file(Path);
     if(!file.is_open()){
         cerr << "Error opening file: " << Path << endl;
@@ -67,7 +68,7 @@ vector<string> allFileLoadGame(){
     if(!createFolders("saves")) return vectorFileJson;
     for(auto &entry : filesystem::directory_iterator(currentPath)){
         if(entry.is_regular_file()){
-            vectorFileJson.push_back(entry.path().string());
+            vectorFileJson.push_back(entry.path().stem().string());
         }
     }
     return vectorFileJson;
