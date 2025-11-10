@@ -2,7 +2,7 @@
 #include "check_game_state.h"
 #include "skip.h"
 #include "board.h"
-#include "load_playing_interface.h"
+#include "loadgame_interface.h"
 #include "WINDOW_PLAYING.h"
 
 bool check_two_skips() {
