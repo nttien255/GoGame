@@ -272,29 +272,29 @@ src/kill_enemy.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/kill_enemy.cpp.s
 .PHONY : src/kill_enemy.cpp.s
 
-src/load_playing_interface.obj: src/load_playing_interface.cpp.obj
-.PHONY : src/load_playing_interface.obj
+src/loadgame_interface.obj: src/loadgame_interface.cpp.obj
+.PHONY : src/loadgame_interface.obj
 
 # target to build an object file
-src/load_playing_interface.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/load_playing_interface.cpp.obj
-.PHONY : src/load_playing_interface.cpp.obj
+src/loadgame_interface.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.obj
+.PHONY : src/loadgame_interface.cpp.obj
 
-src/load_playing_interface.i: src/load_playing_interface.cpp.i
-.PHONY : src/load_playing_interface.i
+src/loadgame_interface.i: src/loadgame_interface.cpp.i
+.PHONY : src/loadgame_interface.i
 
 # target to preprocess a source file
-src/load_playing_interface.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/load_playing_interface.cpp.i
-.PHONY : src/load_playing_interface.cpp.i
+src/loadgame_interface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.i
+.PHONY : src/loadgame_interface.cpp.i
 
-src/load_playing_interface.s: src/load_playing_interface.cpp.s
-.PHONY : src/load_playing_interface.s
+src/loadgame_interface.s: src/loadgame_interface.cpp.s
+.PHONY : src/loadgame_interface.s
 
 # target to generate assembly for a file
-src/load_playing_interface.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/load_playing_interface.cpp.s
-.PHONY : src/load_playing_interface.cpp.s
+src/loadgame_interface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.s
+.PHONY : src/loadgame_interface.cpp.s
 
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
@@ -515,9 +515,9 @@ help:
 	@echo ... src/kill_enemy.obj
 	@echo ... src/kill_enemy.i
 	@echo ... src/kill_enemy.s
-	@echo ... src/load_playing_interface.obj
-	@echo ... src/load_playing_interface.i
-	@echo ... src/load_playing_interface.s
+	@echo ... src/loadgame_interface.obj
+	@echo ... src/loadgame_interface.i
+	@echo ... src/loadgame_interface.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

@@ -14,7 +14,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/university/CS102/GoGame/src/history.cpp" "CMakeFiles/GoGame.dir/src/history.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/history.cpp.obj.d"
   "D:/university/CS102/GoGame/src/inside.cpp" "CMakeFiles/GoGame.dir/src/inside.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/inside.cpp.obj.d"
   "D:/university/CS102/GoGame/src/kill_enemy.cpp" "CMakeFiles/GoGame.dir/src/kill_enemy.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/kill_enemy.cpp.obj.d"
-  "D:/university/CS102/GoGame/src/load_playing_interface.cpp" "CMakeFiles/GoGame.dir/src/load_playing_interface.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/load_playing_interface.cpp.obj.d"
+  "D:/university/CS102/GoGame/src/loadgame_interface.cpp" "CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.obj.d"
   "D:/university/CS102/GoGame/src/main.cpp" "CMakeFiles/GoGame.dir/src/main.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/main.cpp.obj.d"
   "D:/university/CS102/GoGame/src/move.cpp" "CMakeFiles/GoGame.dir/src/move.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/move.cpp.obj.d"
   "D:/university/CS102/GoGame/src/player.cpp" "CMakeFiles/GoGame.dir/src/player.cpp.obj" "gcc" "CMakeFiles/GoGame.dir/src/player.cpp.obj.d"

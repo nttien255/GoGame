@@ -353,7 +353,7 @@ CMakeFiles/GoGame.dir/src/check_game_state.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/bits/stl_bvector.h \
  C:/mingw64/include/c++/15.2.0/bits/vector.tcc \
  D:/university/CS102/vcpkg/installed/x64-mingw-static/include/SDL2/SDL.h \
- D:\university\CS102\GoGame\src\load_playing_interface.h \
+ D:\university\CS102\GoGame\src\loadgame_interface.h \
  D:\university\CS102\GoGame\src\save_load_game.h \
  C:/mingw64/include/c++/15.2.0/deque \
  C:/mingw64/include/c++/15.2.0/bits/stl_deque.h \

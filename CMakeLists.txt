@@ -30,7 +30,7 @@ add_executable(GoGame
         src/skip.cpp
         src/check_game_state.cpp
         src/save_load_game.cpp
-        src/load_playing_interface.cpp
+        src/loadgame_interface.cpp
 )
 # (Nếu main.cpp ở ngang hàng)
 # add_executable(GoGame main.cpp)

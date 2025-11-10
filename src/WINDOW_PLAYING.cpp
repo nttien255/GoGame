@@ -12,7 +12,7 @@
 #include "skip.h"
 #include "check_game_state.h"
 #include "save_load_game.h"
-#include "load_playing_interface.h"
+#include "loadgame_interface.h"
 
 using namespace std;
 
@@ -108,7 +108,7 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
             SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
             SDL_RenderClear(renderer);
 
-            draw_interface(renderer, black_stone, white_stone, hoverRow, hoverCol, blackTurn, button_list, player1_score, player2_score, font, color);
+            draw_playing_interface(renderer, black_stone, white_stone, hoverRow, hoverCol, blackTurn, button_list, player1_score, player2_score, font, color);
 
             SDL_RenderPresent(renderer);
             SDL_Delay(16);
