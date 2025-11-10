@@ -114,7 +114,7 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
             SDL_Delay(16);
         }
         if (current_state == GameState::LOAD_GAME){
-            SDL_SetRenderDrawColor(renderer, 130, 80, 50, 255);
+            SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
             SDL_RenderClear(renderer);
 
             draw_loadgame_interface(renderer);
