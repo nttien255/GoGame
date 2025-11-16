@@ -31,6 +31,7 @@ add_executable(GoGame
         src/check_game_state.cpp
         src/save_load_game.cpp
         src/loadgame_interface.cpp
+        src/endgame_interface.cpp
 )
 # (Nếu main.cpp ở ngang hàng)
 # add_executable(GoGame main.cpp)

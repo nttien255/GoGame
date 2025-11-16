@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/GoGame.dir/src/board.cpp.obj.d"
   "CMakeFiles/GoGame.dir/src/check_game_state.cpp.obj"
   "CMakeFiles/GoGame.dir/src/check_game_state.cpp.obj.d"
+  "CMakeFiles/GoGame.dir/src/endgame_interface.cpp.obj"
+  "CMakeFiles/GoGame.dir/src/endgame_interface.cpp.obj.d"
   "CMakeFiles/GoGame.dir/src/history.cpp.obj"
   "CMakeFiles/GoGame.dir/src/history.cpp.obj.d"
   "CMakeFiles/GoGame.dir/src/inside.cpp.obj"

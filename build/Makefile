@@ -200,6 +200,30 @@ src/check_game_state.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/check_game_state.cpp.s
 .PHONY : src/check_game_state.cpp.s
 
+src/endgame_interface.obj: src/endgame_interface.cpp.obj
+.PHONY : src/endgame_interface.obj
+
+# target to build an object file
+src/endgame_interface.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/endgame_interface.cpp.obj
+.PHONY : src/endgame_interface.cpp.obj
+
+src/endgame_interface.i: src/endgame_interface.cpp.i
+.PHONY : src/endgame_interface.i
+
+# target to preprocess a source file
+src/endgame_interface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/endgame_interface.cpp.i
+.PHONY : src/endgame_interface.cpp.i
+
+src/endgame_interface.s: src/endgame_interface.cpp.s
+.PHONY : src/endgame_interface.s
+
+# target to generate assembly for a file
+src/endgame_interface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/endgame_interface.cpp.s
+.PHONY : src/endgame_interface.cpp.s
+
 src/history.obj: src/history.cpp.obj
 .PHONY : src/history.obj
 
@@ -506,6 +530,9 @@ help:
 	@echo ... src/check_game_state.obj
 	@echo ... src/check_game_state.i
 	@echo ... src/check_game_state.s
+	@echo ... src/endgame_interface.obj
+	@echo ... src/endgame_interface.i
+	@echo ... src/endgame_interface.s
 	@echo ... src/history.obj
 	@echo ... src/history.i
 	@echo ... src/history.s

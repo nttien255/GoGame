@@ -29,8 +29,8 @@ void draw_playing_interface(SDL_Renderer* renderer, SDL_Texture* black_stone, SD
     int w2, h2;
     SDL_QueryTexture(player1_score, NULL, NULL, &w1, &h1);
     SDL_QueryTexture(player2_score, NULL, NULL, &w2, &h2);
-    SDL_Rect dst1 = {10, 10, w1, h1};
-    SDL_Rect dst2 = {WINDOW_SIZE - w2 - 10, 10, w2, h2};
+    SDL_Rect dst1 = {15, 50, w1, h1};
+    SDL_Rect dst2 = {WINDOW_SIZE - w2 - 15, 50, w2, h2};
     SDL_RenderCopy(renderer, player1_score, NULL, &dst1);
     SDL_RenderCopy(renderer, player2_score, NULL, &dst2);
 }
