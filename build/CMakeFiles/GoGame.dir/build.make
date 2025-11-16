@@ -296,6 +296,21 @@ CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.s"
 	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\university\CS102\GoGame\src\loadgame_interface.cpp -o CMakeFiles\GoGame.dir\src\loadgame_interface.cpp.s
 
+CMakeFiles/GoGame.dir/src/endgame_interface.cpp.obj: CMakeFiles/GoGame.dir/flags.make
+CMakeFiles/GoGame.dir/src/endgame_interface.cpp.obj: CMakeFiles/GoGame.dir/includes_CXX.rsp
+CMakeFiles/GoGame.dir/src/endgame_interface.cpp.obj: D:/university/CS102/GoGame/src/endgame_interface.cpp
+CMakeFiles/GoGame.dir/src/endgame_interface.cpp.obj: CMakeFiles/GoGame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\university\CS102\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/GoGame.dir/src/endgame_interface.cpp.obj"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/endgame_interface.cpp.obj -MF CMakeFiles\GoGame.dir\src\endgame_interface.cpp.obj.d -o CMakeFiles\GoGame.dir\src\endgame_interface.cpp.obj -c D:\university\CS102\GoGame\src\endgame_interface.cpp
+
+CMakeFiles/GoGame.dir/src/endgame_interface.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GoGame.dir/src/endgame_interface.cpp.i"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\university\CS102\GoGame\src\endgame_interface.cpp > CMakeFiles\GoGame.dir\src\endgame_interface.cpp.i
+
+CMakeFiles/GoGame.dir/src/endgame_interface.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GoGame.dir/src/endgame_interface.cpp.s"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\university\CS102\GoGame\src\endgame_interface.cpp -o CMakeFiles\GoGame.dir\src\endgame_interface.cpp.s
+
 # Object files for target GoGame
 GoGame_OBJECTS = \
 "CMakeFiles/GoGame.dir/src/main.cpp.obj" \
@@ -312,7 +327,8 @@ GoGame_OBJECTS = \
 "CMakeFiles/GoGame.dir/src/skip.cpp.obj" \
 "CMakeFiles/GoGame.dir/src/check_game_state.cpp.obj" \
 "CMakeFiles/GoGame.dir/src/save_load_game.cpp.obj" \
-"CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.obj"
+"CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.obj" \
+"CMakeFiles/GoGame.dir/src/endgame_interface.cpp.obj"
 
 # External object files for target GoGame
 GoGame_EXTERNAL_OBJECTS =
@@ -332,6 +348,7 @@ GoGame.exe: CMakeFiles/GoGame.dir/src/skip.cpp.obj
 GoGame.exe: CMakeFiles/GoGame.dir/src/check_game_state.cpp.obj
 GoGame.exe: CMakeFiles/GoGame.dir/src/save_load_game.cpp.obj
 GoGame.exe: CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.obj
+GoGame.exe: CMakeFiles/GoGame.dir/src/endgame_interface.cpp.obj
 GoGame.exe: CMakeFiles/GoGame.dir/build.make
 GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2maind.a
 GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2d.a
@@ -356,7 +373,7 @@ GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/lib/libbrotlico
 GoGame.exe: CMakeFiles/GoGame.dir/linkLibs.rsp
 GoGame.exe: CMakeFiles/GoGame.dir/objects1.rsp
 GoGame.exe: CMakeFiles/GoGame.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\university\CS102\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable GoGame.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\university\CS102\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable GoGame.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\GoGame.dir\link.txt --verbose=$(VERBOSE)
 	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file D:/university/CS102/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/university/CS102/GoGame/build/GoGame.exe -installedDir D:/university/CS102/vcpkg/installed/x64-mingw-static/bin -OutVariable out
 

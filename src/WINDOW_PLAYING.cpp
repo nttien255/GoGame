@@ -13,6 +13,7 @@
 #include "check_game_state.h"
 #include "save_load_game.h"
 #include "loadgame_interface.h"
+#include "endgame_interface.h"
 
 using namespace std;
 
@@ -44,6 +45,7 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     Button undo_button(10, WINDOW_SIZE - 60, 60, 40, "../assets/undo.png", renderer, "Undo");
     Button redo_button(80, WINDOW_SIZE - 60, 60, 40, "../assets/redo.png", renderer, "Redo");
     Button pass_button(WINDOW_SIZE / 2 - 40, WINDOW_SIZE - 65, 120, 42, "../assets/pass.png", renderer, "Pass");
+    Button menu_button(5, 5, 120, 40, "../assets/menu.png", renderer, "Menu");
 
     SDL_Texture* player1_score = nullptr;
     SDL_Texture* player2_score = nullptr;
@@ -57,12 +59,17 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     GameState current_state = GameState::LOAD_GAME;
     GameState next_state = current_state;
     
-    vector<Button*> button_list = {
+    vector<Button*> playing_button_list = {
         &undo_button, 
         &redo_button, 
-        &pass_button
+        &pass_button,
+        &menu_button
     };
     
+    vector<Button*> endgame_button_list = {
+        &menu_button
+    };
+
     SDL_Event e;
 
     while (running) {
@@ -74,9 +81,9 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
             
             if (current_state == GameState::PLAYING) {
                 board_handle_event(e, hoverRow, hoverCol);
-                undo_button.handleEvent(e);
-                redo_button.handleEvent(e);
-                pass_button.handleEvent(e);
+                for (auto btn : playing_button_list) {
+                    btn->handleEvent(e);
+                }
 
                 if (undo_button.clicked(e)) {
                     Undo_Move();
@@ -87,6 +94,10 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
                 }
                 if (pass_button.clicked(e)) {
                     skip_turn(blackTurn);
+                }
+                if (menu_button.clicked(e)) {
+                    // Handle menu button click (not implemented yet)
+                    current_state = GameState::LOAD_GAME;
                 }
 
                 if (e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT) {
@@ -100,6 +111,15 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
                 vector<string> save_files = allFileLoadGame();
                 load_handle_event(e, save_files, blackTurn);
             }
+
+            if (current_state == GameState::END_GAME) {
+                for (auto btn : endgame_button_list) {
+                    btn->handleEvent(e);
+                }
+                if (menu_button.clicked(e)) {
+                    current_state = GameState::LOAD_GAME;
+                }
+            }
         }
         // draw board background
         // current_state = check_game_state();
@@ -108,7 +128,7 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
             SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
             SDL_RenderClear(renderer);
 
-            draw_playing_interface(renderer, black_stone, white_stone, hoverRow, hoverCol, blackTurn, button_list, player1_score, player2_score, font, color);
+            draw_playing_interface(renderer, black_stone, white_stone, hoverRow, hoverCol, blackTurn, playing_button_list, player1_score, player2_score, font, color);
 
             SDL_RenderPresent(renderer);
             SDL_Delay(16);
@@ -125,10 +145,18 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
         }
         if (current_state == GameState::END_GAME) {
             // Handle end game state (not implemented yet)
-            // ???
+            // draw yellow screen like board background
+            SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
+            SDL_RenderClear(renderer);
+
+            draw_endgame_interface(renderer, font, color, endgame_button_list);
+
+            SDL_RenderPresent(renderer);
+            SDL_Delay(16);
         }
 
-        next_state = check_game_state();
+        next_state = check_game_state(); // check cái này nha ông
+
         if(next_state != GameState::NONE && next_state != current_state){
             cout << "STATE IS CHANGED \n ";
             current_state = next_state;

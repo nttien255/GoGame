@@ -501,4 +501,5 @@ CMakeFiles/GoGame.dir/src/WINDOW_PLAYING.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++io.h \
  C:/mingw64/include/c++/15.2.0/bits/fstream.tcc \
  D:\university\CS102\GoGame\src\loadgame_interface.h \
- D:\university\CS102\GoGame\src\text_utlish.h
+ D:\university\CS102\GoGame\src\text_utlish.h \
+ D:\university\CS102\GoGame\src\endgame_interface.h
