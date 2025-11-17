@@ -39,10 +39,10 @@ BZIP2_LIBRARY_RELEASE:FILEPATH=D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/l
 BZip2_DIR:PATH=BZip2_DIR-NOTFOUND
 
 //Path to a program.
-CMAKE_ADDR2LINE:FILEPATH=C:/msys64/ucrt64/bin/addr2line.exe
+CMAKE_ADDR2LINE:FILEPATH=C:/mingw64/bin/addr2line.exe
 
 //Path to a program.
-CMAKE_AR:FILEPATH=C:/msys64/ucrt64/bin/ar.exe
+CMAKE_AR:FILEPATH=C:/mingw64/bin/ar.exe
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
@@ -52,15 +52,15 @@ CMAKE_BUILD_TYPE:STRING=
 CMAKE_COLOR_MAKEFILE:BOOL=ON
 
 //CXX compiler
-CMAKE_CXX_COMPILER:FILEPATH=C:/msys64/ucrt64/bin/c++.exe
+CMAKE_CXX_COMPILER:FILEPATH=C:/mingw64/bin/c++.exe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_CXX_COMPILER_AR:FILEPATH=C:/msys64/ucrt64/bin/gcc-ar.exe
+CMAKE_CXX_COMPILER_AR:FILEPATH=C:/mingw64/bin/gcc-ar.exe
 
 //A wrapper around 'ranlib' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_CXX_COMPILER_RANLIB:FILEPATH=C:/msys64/ucrt64/bin/gcc-ranlib.exe
+CMAKE_CXX_COMPILER_RANLIB:FILEPATH=C:/mingw64/bin/gcc-ranlib.exe
 
 //Flags used by the CXX compiler during all build types.
 CMAKE_CXX_FLAGS:STRING=
@@ -81,15 +81,15 @@ CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 CMAKE_CXX_STANDARD_LIBRARIES:STRING=-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
 
 //C compiler
-CMAKE_C_COMPILER:FILEPATH=C:/msys64/ucrt64/bin/cc.exe
+CMAKE_C_COMPILER:FILEPATH=C:/mingw64/bin/gcc.exe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_C_COMPILER_AR:FILEPATH=C:/msys64/ucrt64/bin/gcc-ar.exe
+CMAKE_C_COMPILER_AR:FILEPATH=C:/mingw64/bin/gcc-ar.exe
 
 //A wrapper around 'ranlib' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_C_COMPILER_RANLIB:FILEPATH=C:/msys64/ucrt64/bin/gcc-ranlib.exe
+CMAKE_C_COMPILER_RANLIB:FILEPATH=C:/mingw64/bin/gcc-ranlib.exe
 
 //Flags used by the C compiler during all build types.
 CMAKE_C_FLAGS:STRING=
@@ -110,7 +110,7 @@ CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 CMAKE_C_STANDARD_LIBRARIES:STRING=-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
 
 //Path to a program.
-CMAKE_DLLTOOL:FILEPATH=C:/msys64/ucrt64/bin/dlltool.exe
+CMAKE_DLLTOOL:FILEPATH=C:/mingw64/bin/dlltool.exe
 
 //Flags used by the linker during all build types.
 CMAKE_EXE_LINKER_FLAGS:STRING=
@@ -137,10 +137,10 @@ CMAKE_GNUtoMS:BOOL=OFF
 CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/GoGame
 
 //Path to a program.
-CMAKE_LINKER:FILEPATH=C:/msys64/ucrt64/bin/ld.exe
+CMAKE_LINKER:FILEPATH=C:/mingw64/bin/ld.exe
 
 //Path to a program.
-CMAKE_MAKE_PROGRAM:FILEPATH=C:/msys64/ucrt64/bin/mingw32-make.exe
+CMAKE_MAKE_PROGRAM:FILEPATH=C:/mingw64/bin/mingw32-make.exe
 
 //Flags used by the linker during the creation of modules during
 // all build types.
@@ -163,13 +163,13 @@ CMAKE_MODULE_LINKER_FLAGS_RELEASE:STRING=
 CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //Path to a program.
-CMAKE_NM:FILEPATH=C:/msys64/ucrt64/bin/nm.exe
+CMAKE_NM:FILEPATH=C:/mingw64/bin/nm.exe
 
 //Path to a program.
-CMAKE_OBJCOPY:FILEPATH=C:/msys64/ucrt64/bin/objcopy.exe
+CMAKE_OBJCOPY:FILEPATH=C:/mingw64/bin/objcopy.exe
 
 //Path to a program.
-CMAKE_OBJDUMP:FILEPATH=C:/msys64/ucrt64/bin/objdump.exe
+CMAKE_OBJDUMP:FILEPATH=C:/mingw64/bin/objdump.exe
 
 //Value Computed by CMake
 CMAKE_PROJECT_COMPAT_VERSION:STATIC=
@@ -187,10 +187,10 @@ CMAKE_PROJECT_NAME:STATIC=GoGame
 CMAKE_PROJECT_SPDX_LICENSE:STATIC=
 
 //Path to a program.
-CMAKE_RANLIB:FILEPATH=C:/msys64/ucrt64/bin/ranlib.exe
+CMAKE_RANLIB:FILEPATH=C:/mingw64/bin/ranlib.exe
 
 //RC compiler
-CMAKE_RC_COMPILER:FILEPATH=C:/msys64/ucrt64/bin/windres.exe
+CMAKE_RC_COMPILER:FILEPATH=C:/mingw64/bin/windres.exe
 
 //Flags for Windows Resource Compiler during all build types.
 CMAKE_RC_FLAGS:STRING=
@@ -208,7 +208,7 @@ CMAKE_RC_FLAGS_RELEASE:STRING=
 CMAKE_RC_FLAGS_RELWITHDEBINFO:STRING=
 
 //Path to a program.
-CMAKE_READELF:FILEPATH=C:/msys64/ucrt64/bin/readelf.exe
+CMAKE_READELF:FILEPATH=C:/mingw64/bin/readelf.exe
 
 //Flags used by the linker during the creation of shared libraries
 // during all build types.
@@ -258,13 +258,13 @@ CMAKE_STATIC_LINKER_FLAGS_RELEASE:STRING=
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //Path to a program.
-CMAKE_STRIP:FILEPATH=C:/msys64/ucrt64/bin/strip.exe
+CMAKE_STRIP:FILEPATH=C:/mingw64/bin/strip.exe
 
 //Path to a program.
 CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 
-//The CMake toolchain file
-CMAKE_TOOLCHAIN_FILE:FILEPATH=D:/Git/.MyRepo/vcpkg/scripts/buildsystems/vcpkg.cmake
+//No help, variable specified on the command line.
+CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=D:/Git/.MyRepo/vcpkg/scripts/buildsystems/vcpkg.cmake
 
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
@@ -333,8 +333,8 @@ VCPKG_PREFER_SYSTEM_LIBS:BOOL=OFF
 //Enable the setup of CMAKE_PROGRAM_PATH to vcpkg paths
 VCPKG_SETUP_CMAKE_PROGRAM_PATH:BOOL=ON
 
-//Vcpkg target triplet (ex. x86-windows)
-VCPKG_TARGET_TRIPLET:STRING=x64-mingw-static
+//No help, variable specified on the command line.
+VCPKG_TARGET_TRIPLET:UNINITIALIZED=x64-mingw-static
 
 //Trace calls to find_package()
 VCPKG_TRACE_FIND_PACKAGE:BOOL=OFF
@@ -572,12 +572,8 @@ FIND_PACKAGE_MESSAGE_DETAILS_PNG:INTERNAL=[D:/Git/.MyRepo/vcpkg/installed/x64-mi
 FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/lib/libzlib.a][D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/include][ ][v1.3.1()]
 //Details about finding nlohmann_json
 FIND_PACKAGE_MESSAGE_DETAILS_nlohmann_json:INTERNAL=[D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/share/nlohmann_json/nlohmann_jsonConfig.cmake][v3.12.0()]
-//ADVANCED property for variable: FREETYPE_LIBRARY_DEBUG
-FREETYPE_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //vcpkg
 FREETYPE_LIBRARY_DEBUG:INTERNAL=D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/debug/lib/libfreetyped.a
-//ADVANCED property for variable: FREETYPE_LIBRARY_RELEASE
-FREETYPE_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //vcpkg
 FREETYPE_LIBRARY_RELEASE:INTERNAL=D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/lib/libfreetype.a
 //ADVANCED property for variable: PNG_LIBRARY_DEBUG

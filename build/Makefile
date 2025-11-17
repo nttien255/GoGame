@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Git\GoGame
+CMAKE_SOURCE_DIR = D:\university\CS102\GoGame
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Git\GoGame\build
+CMAKE_BINARY_DIR = D:\university\CS102\GoGame\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git\GoGame\build\CMakeFiles D:\Git\GoGame\build\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\university\CS102\GoGame\build\CMakeFiles D:\university\CS102\GoGame\build\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git\GoGame\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\university\CS102\GoGame\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -200,6 +200,30 @@ src/check_game_state.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/check_game_state.cpp.s
 .PHONY : src/check_game_state.cpp.s
 
+src/endgame_interface.obj: src/endgame_interface.cpp.obj
+.PHONY : src/endgame_interface.obj
+
+# target to build an object file
+src/endgame_interface.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/endgame_interface.cpp.obj
+.PHONY : src/endgame_interface.cpp.obj
+
+src/endgame_interface.i: src/endgame_interface.cpp.i
+.PHONY : src/endgame_interface.i
+
+# target to preprocess a source file
+src/endgame_interface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/endgame_interface.cpp.i
+.PHONY : src/endgame_interface.cpp.i
+
+src/endgame_interface.s: src/endgame_interface.cpp.s
+.PHONY : src/endgame_interface.s
+
+# target to generate assembly for a file
+src/endgame_interface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/endgame_interface.cpp.s
+.PHONY : src/endgame_interface.cpp.s
+
 src/history.obj: src/history.cpp.obj
 .PHONY : src/history.obj
 
@@ -272,29 +296,29 @@ src/kill_enemy.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/kill_enemy.cpp.s
 .PHONY : src/kill_enemy.cpp.s
 
-src/load_playing_interface.obj: src/load_playing_interface.cpp.obj
-.PHONY : src/load_playing_interface.obj
+src/loadgame_interface.obj: src/loadgame_interface.cpp.obj
+.PHONY : src/loadgame_interface.obj
 
 # target to build an object file
-src/load_playing_interface.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/load_playing_interface.cpp.obj
-.PHONY : src/load_playing_interface.cpp.obj
+src/loadgame_interface.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.obj
+.PHONY : src/loadgame_interface.cpp.obj
 
-src/load_playing_interface.i: src/load_playing_interface.cpp.i
-.PHONY : src/load_playing_interface.i
+src/loadgame_interface.i: src/loadgame_interface.cpp.i
+.PHONY : src/loadgame_interface.i
 
 # target to preprocess a source file
-src/load_playing_interface.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/load_playing_interface.cpp.i
-.PHONY : src/load_playing_interface.cpp.i
+src/loadgame_interface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.i
+.PHONY : src/loadgame_interface.cpp.i
 
-src/load_playing_interface.s: src/load_playing_interface.cpp.s
-.PHONY : src/load_playing_interface.s
+src/loadgame_interface.s: src/loadgame_interface.cpp.s
+.PHONY : src/loadgame_interface.s
 
 # target to generate assembly for a file
-src/load_playing_interface.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/load_playing_interface.cpp.s
-.PHONY : src/load_playing_interface.cpp.s
+src/loadgame_interface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.s
+.PHONY : src/loadgame_interface.cpp.s
 
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
@@ -506,6 +530,9 @@ help:
 	@echo ... src/check_game_state.obj
 	@echo ... src/check_game_state.i
 	@echo ... src/check_game_state.s
+	@echo ... src/endgame_interface.obj
+	@echo ... src/endgame_interface.i
+	@echo ... src/endgame_interface.s
 	@echo ... src/history.obj
 	@echo ... src/history.i
 	@echo ... src/history.s
@@ -515,9 +542,9 @@ help:
 	@echo ... src/kill_enemy.obj
 	@echo ... src/kill_enemy.i
 	@echo ... src/kill_enemy.s
-	@echo ... src/load_playing_interface.obj
-	@echo ... src/load_playing_interface.i
-	@echo ... src/load_playing_interface.s
+	@echo ... src/loadgame_interface.obj
+	@echo ... src/loadgame_interface.i
+	@echo ... src/loadgame_interface.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
