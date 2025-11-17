@@ -154,7 +154,6 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
             SDL_RenderPresent(renderer);
             SDL_Delay(16);
         }
-
         next_state = check_game_state(); // check cái này nha ông
 
         if(next_state != GameState::NONE && next_state != current_state){
