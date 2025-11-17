@@ -19,6 +19,7 @@ struct Button{
         button_label = label;
         if (!texture){
             cout << -1 << '\n';
+            cout << button_label << '\n';
             // SDL_Log("Failed to load button texture: %s", SDL_GetError());
         }
     }   
