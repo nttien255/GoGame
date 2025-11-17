@@ -70,6 +70,8 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
         &menu_button
     };
 
+    vector<Button*> loadgame_button_list(SIZE_LIST_SHOW);
+
     SDL_Event e;
 
     while (running) {
@@ -109,7 +111,17 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
 
             if(current_state == GameState::LOAD_GAME){
                 vector<string> save_files = allFileLoadGame();
-                load_handle_event(e, save_files, blackTurn);
+                load_handle_event(renderer, e, save_files, loadgame_button_list);
+                for(auto btn : loadgame_button_list){
+                    btn->handleEvent(e);
+                }
+                for(auto btn : loadgame_button_list){
+                    if(btn->clicked(e)){
+                        LoadGame(blackTurn, btn->button_label);
+                        current_state = GameState::PLAYING;
+                        break;
+                    }
+                }
             }
 
             if (current_state == GameState::END_GAME) {
@@ -137,7 +149,8 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
             SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
             SDL_RenderClear(renderer);
 
-            draw_loadgame_interface(renderer);
+            vector<string> save_files = allFileLoadGame();
+            draw_loadgame_interface(renderer, save_files, loadgame_button_list, font, color);
 
             SDL_RenderPresent(renderer);
             SDL_Delay(16);
@@ -155,14 +168,13 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
             SDL_Delay(16);
         }
 
-        next_state = check_game_state(); // check cái này nha ông
+        next_state = check_game_state();
 
-        if(next_state != GameState::NONE && next_state != current_state){
-            cout << "STATE IS CHANGED \n ";
-            current_state = next_state;
-            if(current_state == GameState::LOAD_GAME){
+        if(current_state == GameState::PLAYING){
+            if(next_state == GameState::LOAD_GAME){
                 init_loadgame_interface();
             }
+            current_state = next_state;
         }
     }
 
