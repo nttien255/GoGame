@@ -54,7 +54,7 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     Button options_button(WINDOW_SIZE / 2 - 250 / 2, 387, 250, 75, "../assets/options.png", renderer, "Options");
     Button exit_button(WINDOW_SIZE / 2 - 250 / 2, 487, 250, 75, "../assets/exit.png", renderer, "Exit");
     Button back_button(10, 10, 60, 60, "../assets/back.png", renderer, "Back");
-    Button exit_button(5, 5, 120, 60, "../assets/home.png", renderer, "Exit");
+    Button home_button(5, 5, 120, 60, "../assets/home.png", renderer, "Exit");
     SDL_Texture* player1_score = nullptr;
     SDL_Texture* player2_score = nullptr;
 
@@ -78,7 +78,7 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     };
     
     vector<Button*> endgame_button_list = {
-        &exit_button
+        &home_button
     };
 
     vector<Button*> loadgame_button_list(SIZE_LIST_SHOW);

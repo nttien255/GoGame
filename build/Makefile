@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\university\CS102\GoGame
+CMAKE_SOURCE_DIR = D:\Git\GoGame
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\university\CS102\GoGame\build
+CMAKE_BINARY_DIR = D:\Git\GoGame\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\university\CS102\GoGame\build\CMakeFiles D:\university\CS102\GoGame\build\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git\GoGame\build\CMakeFiles D:\Git\GoGame\build\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\university\CS102\GoGame\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git\GoGame\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -247,6 +247,30 @@ src/history.s: src/history.cpp.s
 src/history.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/history.cpp.s
 .PHONY : src/history.cpp.s
+
+src/home_interface.obj: src/home_interface.cpp.obj
+.PHONY : src/home_interface.obj
+
+# target to build an object file
+src/home_interface.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/home_interface.cpp.obj
+.PHONY : src/home_interface.cpp.obj
+
+src/home_interface.i: src/home_interface.cpp.i
+.PHONY : src/home_interface.i
+
+# target to preprocess a source file
+src/home_interface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/home_interface.cpp.i
+.PHONY : src/home_interface.cpp.i
+
+src/home_interface.s: src/home_interface.cpp.s
+.PHONY : src/home_interface.s
+
+# target to generate assembly for a file
+src/home_interface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GoGame.dir\build.make CMakeFiles/GoGame.dir/src/home_interface.cpp.s
+.PHONY : src/home_interface.cpp.s
 
 src/inside.obj: src/inside.cpp.obj
 .PHONY : src/inside.obj
@@ -536,6 +560,9 @@ help:
 	@echo ... src/history.obj
 	@echo ... src/history.i
 	@echo ... src/history.s
+	@echo ... src/home_interface.obj
+	@echo ... src/home_interface.i
+	@echo ... src/home_interface.s
 	@echo ... src/inside.obj
 	@echo ... src/inside.i
 	@echo ... src/inside.s

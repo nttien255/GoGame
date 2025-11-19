@@ -52,10 +52,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\university\CS102\GoGame
+CMAKE_SOURCE_DIR = D:\Git\GoGame
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\university\CS102\GoGame\build
+CMAKE_BINARY_DIR = D:\Git\GoGame\build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/GoGame.dir/depend.make
@@ -73,243 +73,258 @@ CMakeFiles/GoGame.dir/codegen:
 
 CMakeFiles/GoGame.dir/src/main.cpp.obj: CMakeFiles/GoGame.dir/flags.make
 CMakeFiles/GoGame.dir/src/main.cpp.obj: CMakeFiles/GoGame.dir/includes_CXX.rsp
-CMakeFiles/GoGame.dir/src/main.cpp.obj: D:/university/CS102/GoGame/src/main.cpp
+CMakeFiles/GoGame.dir/src/main.cpp.obj: D:/Git/GoGame/src/main.cpp
 CMakeFiles/GoGame.dir/src/main.cpp.obj: CMakeFiles/GoGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\university\CS102\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/GoGame.dir/src/main.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/main.cpp.obj -MF CMakeFiles\GoGame.dir\src\main.cpp.obj.d -o CMakeFiles\GoGame.dir\src\main.cpp.obj -c D:\university\CS102\GoGame\src\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Git\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/GoGame.dir/src/main.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/main.cpp.obj -MF CMakeFiles\GoGame.dir\src\main.cpp.obj.d -o CMakeFiles\GoGame.dir\src\main.cpp.obj -c D:\Git\GoGame\src\main.cpp
 
 CMakeFiles/GoGame.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GoGame.dir/src/main.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\university\CS102\GoGame\src\main.cpp > CMakeFiles\GoGame.dir\src\main.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Git\GoGame\src\main.cpp > CMakeFiles\GoGame.dir\src\main.cpp.i
 
 CMakeFiles/GoGame.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GoGame.dir/src/main.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\university\CS102\GoGame\src\main.cpp -o CMakeFiles\GoGame.dir\src\main.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Git\GoGame\src\main.cpp -o CMakeFiles\GoGame.dir\src\main.cpp.s
 
 CMakeFiles/GoGame.dir/src/move.cpp.obj: CMakeFiles/GoGame.dir/flags.make
 CMakeFiles/GoGame.dir/src/move.cpp.obj: CMakeFiles/GoGame.dir/includes_CXX.rsp
-CMakeFiles/GoGame.dir/src/move.cpp.obj: D:/university/CS102/GoGame/src/move.cpp
+CMakeFiles/GoGame.dir/src/move.cpp.obj: D:/Git/GoGame/src/move.cpp
 CMakeFiles/GoGame.dir/src/move.cpp.obj: CMakeFiles/GoGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\university\CS102\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/GoGame.dir/src/move.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/move.cpp.obj -MF CMakeFiles\GoGame.dir\src\move.cpp.obj.d -o CMakeFiles\GoGame.dir\src\move.cpp.obj -c D:\university\CS102\GoGame\src\move.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Git\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/GoGame.dir/src/move.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/move.cpp.obj -MF CMakeFiles\GoGame.dir\src\move.cpp.obj.d -o CMakeFiles\GoGame.dir\src\move.cpp.obj -c D:\Git\GoGame\src\move.cpp
 
 CMakeFiles/GoGame.dir/src/move.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GoGame.dir/src/move.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\university\CS102\GoGame\src\move.cpp > CMakeFiles\GoGame.dir\src\move.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Git\GoGame\src\move.cpp > CMakeFiles\GoGame.dir\src\move.cpp.i
 
 CMakeFiles/GoGame.dir/src/move.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GoGame.dir/src/move.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\university\CS102\GoGame\src\move.cpp -o CMakeFiles\GoGame.dir\src\move.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Git\GoGame\src\move.cpp -o CMakeFiles\GoGame.dir\src\move.cpp.s
 
 CMakeFiles/GoGame.dir/src/board.cpp.obj: CMakeFiles/GoGame.dir/flags.make
 CMakeFiles/GoGame.dir/src/board.cpp.obj: CMakeFiles/GoGame.dir/includes_CXX.rsp
-CMakeFiles/GoGame.dir/src/board.cpp.obj: D:/university/CS102/GoGame/src/board.cpp
+CMakeFiles/GoGame.dir/src/board.cpp.obj: D:/Git/GoGame/src/board.cpp
 CMakeFiles/GoGame.dir/src/board.cpp.obj: CMakeFiles/GoGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\university\CS102\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/GoGame.dir/src/board.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/board.cpp.obj -MF CMakeFiles\GoGame.dir\src\board.cpp.obj.d -o CMakeFiles\GoGame.dir\src\board.cpp.obj -c D:\university\CS102\GoGame\src\board.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Git\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/GoGame.dir/src/board.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/board.cpp.obj -MF CMakeFiles\GoGame.dir\src\board.cpp.obj.d -o CMakeFiles\GoGame.dir\src\board.cpp.obj -c D:\Git\GoGame\src\board.cpp
 
 CMakeFiles/GoGame.dir/src/board.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GoGame.dir/src/board.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\university\CS102\GoGame\src\board.cpp > CMakeFiles\GoGame.dir\src\board.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Git\GoGame\src\board.cpp > CMakeFiles\GoGame.dir\src\board.cpp.i
 
 CMakeFiles/GoGame.dir/src/board.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GoGame.dir/src/board.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\university\CS102\GoGame\src\board.cpp -o CMakeFiles\GoGame.dir\src\board.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Git\GoGame\src\board.cpp -o CMakeFiles\GoGame.dir\src\board.cpp.s
 
 CMakeFiles/GoGame.dir/src/player.cpp.obj: CMakeFiles/GoGame.dir/flags.make
 CMakeFiles/GoGame.dir/src/player.cpp.obj: CMakeFiles/GoGame.dir/includes_CXX.rsp
-CMakeFiles/GoGame.dir/src/player.cpp.obj: D:/university/CS102/GoGame/src/player.cpp
+CMakeFiles/GoGame.dir/src/player.cpp.obj: D:/Git/GoGame/src/player.cpp
 CMakeFiles/GoGame.dir/src/player.cpp.obj: CMakeFiles/GoGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\university\CS102\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/GoGame.dir/src/player.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/player.cpp.obj -MF CMakeFiles\GoGame.dir\src\player.cpp.obj.d -o CMakeFiles\GoGame.dir\src\player.cpp.obj -c D:\university\CS102\GoGame\src\player.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Git\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/GoGame.dir/src/player.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/player.cpp.obj -MF CMakeFiles\GoGame.dir\src\player.cpp.obj.d -o CMakeFiles\GoGame.dir\src\player.cpp.obj -c D:\Git\GoGame\src\player.cpp
 
 CMakeFiles/GoGame.dir/src/player.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GoGame.dir/src/player.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\university\CS102\GoGame\src\player.cpp > CMakeFiles\GoGame.dir\src\player.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Git\GoGame\src\player.cpp > CMakeFiles\GoGame.dir\src\player.cpp.i
 
 CMakeFiles/GoGame.dir/src/player.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GoGame.dir/src/player.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\university\CS102\GoGame\src\player.cpp -o CMakeFiles\GoGame.dir\src\player.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Git\GoGame\src\player.cpp -o CMakeFiles\GoGame.dir\src\player.cpp.s
 
 CMakeFiles/GoGame.dir/src/scoring.cpp.obj: CMakeFiles/GoGame.dir/flags.make
 CMakeFiles/GoGame.dir/src/scoring.cpp.obj: CMakeFiles/GoGame.dir/includes_CXX.rsp
-CMakeFiles/GoGame.dir/src/scoring.cpp.obj: D:/university/CS102/GoGame/src/scoring.cpp
+CMakeFiles/GoGame.dir/src/scoring.cpp.obj: D:/Git/GoGame/src/scoring.cpp
 CMakeFiles/GoGame.dir/src/scoring.cpp.obj: CMakeFiles/GoGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\university\CS102\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/GoGame.dir/src/scoring.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/scoring.cpp.obj -MF CMakeFiles\GoGame.dir\src\scoring.cpp.obj.d -o CMakeFiles\GoGame.dir\src\scoring.cpp.obj -c D:\university\CS102\GoGame\src\scoring.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Git\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/GoGame.dir/src/scoring.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/scoring.cpp.obj -MF CMakeFiles\GoGame.dir\src\scoring.cpp.obj.d -o CMakeFiles\GoGame.dir\src\scoring.cpp.obj -c D:\Git\GoGame\src\scoring.cpp
 
 CMakeFiles/GoGame.dir/src/scoring.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GoGame.dir/src/scoring.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\university\CS102\GoGame\src\scoring.cpp > CMakeFiles\GoGame.dir\src\scoring.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Git\GoGame\src\scoring.cpp > CMakeFiles\GoGame.dir\src\scoring.cpp.i
 
 CMakeFiles/GoGame.dir/src/scoring.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GoGame.dir/src/scoring.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\university\CS102\GoGame\src\scoring.cpp -o CMakeFiles\GoGame.dir\src\scoring.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Git\GoGame\src\scoring.cpp -o CMakeFiles\GoGame.dir\src\scoring.cpp.s
 
 CMakeFiles/GoGame.dir/src/valid.cpp.obj: CMakeFiles/GoGame.dir/flags.make
 CMakeFiles/GoGame.dir/src/valid.cpp.obj: CMakeFiles/GoGame.dir/includes_CXX.rsp
-CMakeFiles/GoGame.dir/src/valid.cpp.obj: D:/university/CS102/GoGame/src/valid.cpp
+CMakeFiles/GoGame.dir/src/valid.cpp.obj: D:/Git/GoGame/src/valid.cpp
 CMakeFiles/GoGame.dir/src/valid.cpp.obj: CMakeFiles/GoGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\university\CS102\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/GoGame.dir/src/valid.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/valid.cpp.obj -MF CMakeFiles\GoGame.dir\src\valid.cpp.obj.d -o CMakeFiles\GoGame.dir\src\valid.cpp.obj -c D:\university\CS102\GoGame\src\valid.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Git\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/GoGame.dir/src/valid.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/valid.cpp.obj -MF CMakeFiles\GoGame.dir\src\valid.cpp.obj.d -o CMakeFiles\GoGame.dir\src\valid.cpp.obj -c D:\Git\GoGame\src\valid.cpp
 
 CMakeFiles/GoGame.dir/src/valid.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GoGame.dir/src/valid.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\university\CS102\GoGame\src\valid.cpp > CMakeFiles\GoGame.dir\src\valid.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Git\GoGame\src\valid.cpp > CMakeFiles\GoGame.dir\src\valid.cpp.i
 
 CMakeFiles/GoGame.dir/src/valid.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GoGame.dir/src/valid.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\university\CS102\GoGame\src\valid.cpp -o CMakeFiles\GoGame.dir\src\valid.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Git\GoGame\src\valid.cpp -o CMakeFiles\GoGame.dir\src\valid.cpp.s
 
 CMakeFiles/GoGame.dir/src/kill_enemy.cpp.obj: CMakeFiles/GoGame.dir/flags.make
 CMakeFiles/GoGame.dir/src/kill_enemy.cpp.obj: CMakeFiles/GoGame.dir/includes_CXX.rsp
-CMakeFiles/GoGame.dir/src/kill_enemy.cpp.obj: D:/university/CS102/GoGame/src/kill_enemy.cpp
+CMakeFiles/GoGame.dir/src/kill_enemy.cpp.obj: D:/Git/GoGame/src/kill_enemy.cpp
 CMakeFiles/GoGame.dir/src/kill_enemy.cpp.obj: CMakeFiles/GoGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\university\CS102\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/GoGame.dir/src/kill_enemy.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/kill_enemy.cpp.obj -MF CMakeFiles\GoGame.dir\src\kill_enemy.cpp.obj.d -o CMakeFiles\GoGame.dir\src\kill_enemy.cpp.obj -c D:\university\CS102\GoGame\src\kill_enemy.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Git\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/GoGame.dir/src/kill_enemy.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/kill_enemy.cpp.obj -MF CMakeFiles\GoGame.dir\src\kill_enemy.cpp.obj.d -o CMakeFiles\GoGame.dir\src\kill_enemy.cpp.obj -c D:\Git\GoGame\src\kill_enemy.cpp
 
 CMakeFiles/GoGame.dir/src/kill_enemy.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GoGame.dir/src/kill_enemy.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\university\CS102\GoGame\src\kill_enemy.cpp > CMakeFiles\GoGame.dir\src\kill_enemy.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Git\GoGame\src\kill_enemy.cpp > CMakeFiles\GoGame.dir\src\kill_enemy.cpp.i
 
 CMakeFiles/GoGame.dir/src/kill_enemy.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GoGame.dir/src/kill_enemy.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\university\CS102\GoGame\src\kill_enemy.cpp -o CMakeFiles\GoGame.dir\src\kill_enemy.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Git\GoGame\src\kill_enemy.cpp -o CMakeFiles\GoGame.dir\src\kill_enemy.cpp.s
 
 CMakeFiles/GoGame.dir/src/inside.cpp.obj: CMakeFiles/GoGame.dir/flags.make
 CMakeFiles/GoGame.dir/src/inside.cpp.obj: CMakeFiles/GoGame.dir/includes_CXX.rsp
-CMakeFiles/GoGame.dir/src/inside.cpp.obj: D:/university/CS102/GoGame/src/inside.cpp
+CMakeFiles/GoGame.dir/src/inside.cpp.obj: D:/Git/GoGame/src/inside.cpp
 CMakeFiles/GoGame.dir/src/inside.cpp.obj: CMakeFiles/GoGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\university\CS102\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/GoGame.dir/src/inside.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/inside.cpp.obj -MF CMakeFiles\GoGame.dir\src\inside.cpp.obj.d -o CMakeFiles\GoGame.dir\src\inside.cpp.obj -c D:\university\CS102\GoGame\src\inside.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Git\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/GoGame.dir/src/inside.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/inside.cpp.obj -MF CMakeFiles\GoGame.dir\src\inside.cpp.obj.d -o CMakeFiles\GoGame.dir\src\inside.cpp.obj -c D:\Git\GoGame\src\inside.cpp
 
 CMakeFiles/GoGame.dir/src/inside.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GoGame.dir/src/inside.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\university\CS102\GoGame\src\inside.cpp > CMakeFiles\GoGame.dir\src\inside.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Git\GoGame\src\inside.cpp > CMakeFiles\GoGame.dir\src\inside.cpp.i
 
 CMakeFiles/GoGame.dir/src/inside.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GoGame.dir/src/inside.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\university\CS102\GoGame\src\inside.cpp -o CMakeFiles\GoGame.dir\src\inside.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Git\GoGame\src\inside.cpp -o CMakeFiles\GoGame.dir\src\inside.cpp.s
 
 CMakeFiles/GoGame.dir/src/history.cpp.obj: CMakeFiles/GoGame.dir/flags.make
 CMakeFiles/GoGame.dir/src/history.cpp.obj: CMakeFiles/GoGame.dir/includes_CXX.rsp
-CMakeFiles/GoGame.dir/src/history.cpp.obj: D:/university/CS102/GoGame/src/history.cpp
+CMakeFiles/GoGame.dir/src/history.cpp.obj: D:/Git/GoGame/src/history.cpp
 CMakeFiles/GoGame.dir/src/history.cpp.obj: CMakeFiles/GoGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\university\CS102\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/GoGame.dir/src/history.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/history.cpp.obj -MF CMakeFiles\GoGame.dir\src\history.cpp.obj.d -o CMakeFiles\GoGame.dir\src\history.cpp.obj -c D:\university\CS102\GoGame\src\history.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Git\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/GoGame.dir/src/history.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/history.cpp.obj -MF CMakeFiles\GoGame.dir\src\history.cpp.obj.d -o CMakeFiles\GoGame.dir\src\history.cpp.obj -c D:\Git\GoGame\src\history.cpp
 
 CMakeFiles/GoGame.dir/src/history.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GoGame.dir/src/history.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\university\CS102\GoGame\src\history.cpp > CMakeFiles\GoGame.dir\src\history.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Git\GoGame\src\history.cpp > CMakeFiles\GoGame.dir\src\history.cpp.i
 
 CMakeFiles/GoGame.dir/src/history.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GoGame.dir/src/history.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\university\CS102\GoGame\src\history.cpp -o CMakeFiles\GoGame.dir\src\history.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Git\GoGame\src\history.cpp -o CMakeFiles\GoGame.dir\src\history.cpp.s
 
 CMakeFiles/GoGame.dir/src/WINDOW_PLAYING.cpp.obj: CMakeFiles/GoGame.dir/flags.make
 CMakeFiles/GoGame.dir/src/WINDOW_PLAYING.cpp.obj: CMakeFiles/GoGame.dir/includes_CXX.rsp
-CMakeFiles/GoGame.dir/src/WINDOW_PLAYING.cpp.obj: D:/university/CS102/GoGame/src/WINDOW_PLAYING.cpp
+CMakeFiles/GoGame.dir/src/WINDOW_PLAYING.cpp.obj: D:/Git/GoGame/src/WINDOW_PLAYING.cpp
 CMakeFiles/GoGame.dir/src/WINDOW_PLAYING.cpp.obj: CMakeFiles/GoGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\university\CS102\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/GoGame.dir/src/WINDOW_PLAYING.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/WINDOW_PLAYING.cpp.obj -MF CMakeFiles\GoGame.dir\src\WINDOW_PLAYING.cpp.obj.d -o CMakeFiles\GoGame.dir\src\WINDOW_PLAYING.cpp.obj -c D:\university\CS102\GoGame\src\WINDOW_PLAYING.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Git\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/GoGame.dir/src/WINDOW_PLAYING.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/WINDOW_PLAYING.cpp.obj -MF CMakeFiles\GoGame.dir\src\WINDOW_PLAYING.cpp.obj.d -o CMakeFiles\GoGame.dir\src\WINDOW_PLAYING.cpp.obj -c D:\Git\GoGame\src\WINDOW_PLAYING.cpp
 
 CMakeFiles/GoGame.dir/src/WINDOW_PLAYING.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GoGame.dir/src/WINDOW_PLAYING.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\university\CS102\GoGame\src\WINDOW_PLAYING.cpp > CMakeFiles\GoGame.dir\src\WINDOW_PLAYING.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Git\GoGame\src\WINDOW_PLAYING.cpp > CMakeFiles\GoGame.dir\src\WINDOW_PLAYING.cpp.i
 
 CMakeFiles/GoGame.dir/src/WINDOW_PLAYING.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GoGame.dir/src/WINDOW_PLAYING.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\university\CS102\GoGame\src\WINDOW_PLAYING.cpp -o CMakeFiles\GoGame.dir\src\WINDOW_PLAYING.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Git\GoGame\src\WINDOW_PLAYING.cpp -o CMakeFiles\GoGame.dir\src\WINDOW_PLAYING.cpp.s
 
 CMakeFiles/GoGame.dir/src/playing_interface.cpp.obj: CMakeFiles/GoGame.dir/flags.make
 CMakeFiles/GoGame.dir/src/playing_interface.cpp.obj: CMakeFiles/GoGame.dir/includes_CXX.rsp
-CMakeFiles/GoGame.dir/src/playing_interface.cpp.obj: D:/university/CS102/GoGame/src/playing_interface.cpp
+CMakeFiles/GoGame.dir/src/playing_interface.cpp.obj: D:/Git/GoGame/src/playing_interface.cpp
 CMakeFiles/GoGame.dir/src/playing_interface.cpp.obj: CMakeFiles/GoGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\university\CS102\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/GoGame.dir/src/playing_interface.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/playing_interface.cpp.obj -MF CMakeFiles\GoGame.dir\src\playing_interface.cpp.obj.d -o CMakeFiles\GoGame.dir\src\playing_interface.cpp.obj -c D:\university\CS102\GoGame\src\playing_interface.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Git\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/GoGame.dir/src/playing_interface.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/playing_interface.cpp.obj -MF CMakeFiles\GoGame.dir\src\playing_interface.cpp.obj.d -o CMakeFiles\GoGame.dir\src\playing_interface.cpp.obj -c D:\Git\GoGame\src\playing_interface.cpp
 
 CMakeFiles/GoGame.dir/src/playing_interface.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GoGame.dir/src/playing_interface.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\university\CS102\GoGame\src\playing_interface.cpp > CMakeFiles\GoGame.dir\src\playing_interface.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Git\GoGame\src\playing_interface.cpp > CMakeFiles\GoGame.dir\src\playing_interface.cpp.i
 
 CMakeFiles/GoGame.dir/src/playing_interface.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GoGame.dir/src/playing_interface.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\university\CS102\GoGame\src\playing_interface.cpp -o CMakeFiles\GoGame.dir\src\playing_interface.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Git\GoGame\src\playing_interface.cpp -o CMakeFiles\GoGame.dir\src\playing_interface.cpp.s
 
 CMakeFiles/GoGame.dir/src/skip.cpp.obj: CMakeFiles/GoGame.dir/flags.make
 CMakeFiles/GoGame.dir/src/skip.cpp.obj: CMakeFiles/GoGame.dir/includes_CXX.rsp
-CMakeFiles/GoGame.dir/src/skip.cpp.obj: D:/university/CS102/GoGame/src/skip.cpp
+CMakeFiles/GoGame.dir/src/skip.cpp.obj: D:/Git/GoGame/src/skip.cpp
 CMakeFiles/GoGame.dir/src/skip.cpp.obj: CMakeFiles/GoGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\university\CS102\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/GoGame.dir/src/skip.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/skip.cpp.obj -MF CMakeFiles\GoGame.dir\src\skip.cpp.obj.d -o CMakeFiles\GoGame.dir\src\skip.cpp.obj -c D:\university\CS102\GoGame\src\skip.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Git\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/GoGame.dir/src/skip.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/skip.cpp.obj -MF CMakeFiles\GoGame.dir\src\skip.cpp.obj.d -o CMakeFiles\GoGame.dir\src\skip.cpp.obj -c D:\Git\GoGame\src\skip.cpp
 
 CMakeFiles/GoGame.dir/src/skip.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GoGame.dir/src/skip.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\university\CS102\GoGame\src\skip.cpp > CMakeFiles\GoGame.dir\src\skip.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Git\GoGame\src\skip.cpp > CMakeFiles\GoGame.dir\src\skip.cpp.i
 
 CMakeFiles/GoGame.dir/src/skip.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GoGame.dir/src/skip.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\university\CS102\GoGame\src\skip.cpp -o CMakeFiles\GoGame.dir\src\skip.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Git\GoGame\src\skip.cpp -o CMakeFiles\GoGame.dir\src\skip.cpp.s
 
 CMakeFiles/GoGame.dir/src/check_game_state.cpp.obj: CMakeFiles/GoGame.dir/flags.make
 CMakeFiles/GoGame.dir/src/check_game_state.cpp.obj: CMakeFiles/GoGame.dir/includes_CXX.rsp
-CMakeFiles/GoGame.dir/src/check_game_state.cpp.obj: D:/university/CS102/GoGame/src/check_game_state.cpp
+CMakeFiles/GoGame.dir/src/check_game_state.cpp.obj: D:/Git/GoGame/src/check_game_state.cpp
 CMakeFiles/GoGame.dir/src/check_game_state.cpp.obj: CMakeFiles/GoGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\university\CS102\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/GoGame.dir/src/check_game_state.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/check_game_state.cpp.obj -MF CMakeFiles\GoGame.dir\src\check_game_state.cpp.obj.d -o CMakeFiles\GoGame.dir\src\check_game_state.cpp.obj -c D:\university\CS102\GoGame\src\check_game_state.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Git\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/GoGame.dir/src/check_game_state.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/check_game_state.cpp.obj -MF CMakeFiles\GoGame.dir\src\check_game_state.cpp.obj.d -o CMakeFiles\GoGame.dir\src\check_game_state.cpp.obj -c D:\Git\GoGame\src\check_game_state.cpp
 
 CMakeFiles/GoGame.dir/src/check_game_state.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GoGame.dir/src/check_game_state.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\university\CS102\GoGame\src\check_game_state.cpp > CMakeFiles\GoGame.dir\src\check_game_state.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Git\GoGame\src\check_game_state.cpp > CMakeFiles\GoGame.dir\src\check_game_state.cpp.i
 
 CMakeFiles/GoGame.dir/src/check_game_state.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GoGame.dir/src/check_game_state.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\university\CS102\GoGame\src\check_game_state.cpp -o CMakeFiles\GoGame.dir\src\check_game_state.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Git\GoGame\src\check_game_state.cpp -o CMakeFiles\GoGame.dir\src\check_game_state.cpp.s
 
 CMakeFiles/GoGame.dir/src/save_load_game.cpp.obj: CMakeFiles/GoGame.dir/flags.make
 CMakeFiles/GoGame.dir/src/save_load_game.cpp.obj: CMakeFiles/GoGame.dir/includes_CXX.rsp
-CMakeFiles/GoGame.dir/src/save_load_game.cpp.obj: D:/university/CS102/GoGame/src/save_load_game.cpp
+CMakeFiles/GoGame.dir/src/save_load_game.cpp.obj: D:/Git/GoGame/src/save_load_game.cpp
 CMakeFiles/GoGame.dir/src/save_load_game.cpp.obj: CMakeFiles/GoGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\university\CS102\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/GoGame.dir/src/save_load_game.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/save_load_game.cpp.obj -MF CMakeFiles\GoGame.dir\src\save_load_game.cpp.obj.d -o CMakeFiles\GoGame.dir\src\save_load_game.cpp.obj -c D:\university\CS102\GoGame\src\save_load_game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Git\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/GoGame.dir/src/save_load_game.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/save_load_game.cpp.obj -MF CMakeFiles\GoGame.dir\src\save_load_game.cpp.obj.d -o CMakeFiles\GoGame.dir\src\save_load_game.cpp.obj -c D:\Git\GoGame\src\save_load_game.cpp
 
 CMakeFiles/GoGame.dir/src/save_load_game.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GoGame.dir/src/save_load_game.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\university\CS102\GoGame\src\save_load_game.cpp > CMakeFiles\GoGame.dir\src\save_load_game.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Git\GoGame\src\save_load_game.cpp > CMakeFiles\GoGame.dir\src\save_load_game.cpp.i
 
 CMakeFiles/GoGame.dir/src/save_load_game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GoGame.dir/src/save_load_game.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\university\CS102\GoGame\src\save_load_game.cpp -o CMakeFiles\GoGame.dir\src\save_load_game.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Git\GoGame\src\save_load_game.cpp -o CMakeFiles\GoGame.dir\src\save_load_game.cpp.s
 
 CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.obj: CMakeFiles/GoGame.dir/flags.make
 CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.obj: CMakeFiles/GoGame.dir/includes_CXX.rsp
-CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.obj: D:/university/CS102/GoGame/src/loadgame_interface.cpp
+CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.obj: D:/Git/GoGame/src/loadgame_interface.cpp
 CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.obj: CMakeFiles/GoGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\university\CS102\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.obj -MF CMakeFiles\GoGame.dir\src\loadgame_interface.cpp.obj.d -o CMakeFiles\GoGame.dir\src\loadgame_interface.cpp.obj -c D:\university\CS102\GoGame\src\loadgame_interface.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Git\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.obj -MF CMakeFiles\GoGame.dir\src\loadgame_interface.cpp.obj.d -o CMakeFiles\GoGame.dir\src\loadgame_interface.cpp.obj -c D:\Git\GoGame\src\loadgame_interface.cpp
 
 CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\university\CS102\GoGame\src\loadgame_interface.cpp > CMakeFiles\GoGame.dir\src\loadgame_interface.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Git\GoGame\src\loadgame_interface.cpp > CMakeFiles\GoGame.dir\src\loadgame_interface.cpp.i
 
 CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\university\CS102\GoGame\src\loadgame_interface.cpp -o CMakeFiles\GoGame.dir\src\loadgame_interface.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Git\GoGame\src\loadgame_interface.cpp -o CMakeFiles\GoGame.dir\src\loadgame_interface.cpp.s
 
 CMakeFiles/GoGame.dir/src/endgame_interface.cpp.obj: CMakeFiles/GoGame.dir/flags.make
 CMakeFiles/GoGame.dir/src/endgame_interface.cpp.obj: CMakeFiles/GoGame.dir/includes_CXX.rsp
-CMakeFiles/GoGame.dir/src/endgame_interface.cpp.obj: D:/university/CS102/GoGame/src/endgame_interface.cpp
+CMakeFiles/GoGame.dir/src/endgame_interface.cpp.obj: D:/Git/GoGame/src/endgame_interface.cpp
 CMakeFiles/GoGame.dir/src/endgame_interface.cpp.obj: CMakeFiles/GoGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\university\CS102\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/GoGame.dir/src/endgame_interface.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/endgame_interface.cpp.obj -MF CMakeFiles\GoGame.dir\src\endgame_interface.cpp.obj.d -o CMakeFiles\GoGame.dir\src\endgame_interface.cpp.obj -c D:\university\CS102\GoGame\src\endgame_interface.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Git\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/GoGame.dir/src/endgame_interface.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/endgame_interface.cpp.obj -MF CMakeFiles\GoGame.dir\src\endgame_interface.cpp.obj.d -o CMakeFiles\GoGame.dir\src\endgame_interface.cpp.obj -c D:\Git\GoGame\src\endgame_interface.cpp
 
 CMakeFiles/GoGame.dir/src/endgame_interface.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GoGame.dir/src/endgame_interface.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\university\CS102\GoGame\src\endgame_interface.cpp > CMakeFiles\GoGame.dir\src\endgame_interface.cpp.i
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Git\GoGame\src\endgame_interface.cpp > CMakeFiles\GoGame.dir\src\endgame_interface.cpp.i
 
 CMakeFiles/GoGame.dir/src/endgame_interface.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GoGame.dir/src/endgame_interface.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\university\CS102\GoGame\src\endgame_interface.cpp -o CMakeFiles\GoGame.dir\src\endgame_interface.cpp.s
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Git\GoGame\src\endgame_interface.cpp -o CMakeFiles\GoGame.dir\src\endgame_interface.cpp.s
+
+CMakeFiles/GoGame.dir/src/home_interface.cpp.obj: CMakeFiles/GoGame.dir/flags.make
+CMakeFiles/GoGame.dir/src/home_interface.cpp.obj: CMakeFiles/GoGame.dir/includes_CXX.rsp
+CMakeFiles/GoGame.dir/src/home_interface.cpp.obj: D:/Git/GoGame/src/home_interface.cpp
+CMakeFiles/GoGame.dir/src/home_interface.cpp.obj: CMakeFiles/GoGame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Git\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/GoGame.dir/src/home_interface.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GoGame.dir/src/home_interface.cpp.obj -MF CMakeFiles\GoGame.dir\src\home_interface.cpp.obj.d -o CMakeFiles\GoGame.dir\src\home_interface.cpp.obj -c D:\Git\GoGame\src\home_interface.cpp
+
+CMakeFiles/GoGame.dir/src/home_interface.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GoGame.dir/src/home_interface.cpp.i"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Git\GoGame\src\home_interface.cpp > CMakeFiles\GoGame.dir\src\home_interface.cpp.i
+
+CMakeFiles/GoGame.dir/src/home_interface.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GoGame.dir/src/home_interface.cpp.s"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Git\GoGame\src\home_interface.cpp -o CMakeFiles\GoGame.dir\src\home_interface.cpp.s
 
 # Object files for target GoGame
 GoGame_OBJECTS = \
@@ -328,7 +343,8 @@ GoGame_OBJECTS = \
 "CMakeFiles/GoGame.dir/src/check_game_state.cpp.obj" \
 "CMakeFiles/GoGame.dir/src/save_load_game.cpp.obj" \
 "CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.obj" \
-"CMakeFiles/GoGame.dir/src/endgame_interface.cpp.obj"
+"CMakeFiles/GoGame.dir/src/endgame_interface.cpp.obj" \
+"CMakeFiles/GoGame.dir/src/home_interface.cpp.obj"
 
 # External object files for target GoGame
 GoGame_EXTERNAL_OBJECTS =
@@ -349,33 +365,34 @@ GoGame.exe: CMakeFiles/GoGame.dir/src/check_game_state.cpp.obj
 GoGame.exe: CMakeFiles/GoGame.dir/src/save_load_game.cpp.obj
 GoGame.exe: CMakeFiles/GoGame.dir/src/loadgame_interface.cpp.obj
 GoGame.exe: CMakeFiles/GoGame.dir/src/endgame_interface.cpp.obj
+GoGame.exe: CMakeFiles/GoGame.dir/src/home_interface.cpp.obj
 GoGame.exe: CMakeFiles/GoGame.dir/build.make
-GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2maind.a
-GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2d.a
-GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2_imaged.a
-GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2_mixerd.a
-GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2_ttfd.a
-GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/debug/lib/libvorbisfile.a
-GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/debug/lib/libvorbis.a
-GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/debug/lib/libogg.a
-GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/debug/lib/libwavpack.a
-GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/lib/libpng16.a
-GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/debug/lib/libfreetyped.a
-GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/lib/libzlib.a
-GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/debug/lib/libbz2d.a
-GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/debug/lib/libpng16d.a
-GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/debug/lib/libzlibd.a
-GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/debug/lib/libbrotlidec.a
-GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/debug/lib/libbrotlicommon.a
-GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/lib/libbz2.a
-GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/lib/libbrotlidec.a
-GoGame.exe: D:/university/CS102/vcpkg/installed/x64-mingw-static/lib/libbrotlicommon.a
+GoGame.exe: D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2maind.a
+GoGame.exe: D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2d.a
+GoGame.exe: D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2_imaged.a
+GoGame.exe: D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2_mixerd.a
+GoGame.exe: D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/debug/lib/libSDL2_ttfd.a
+GoGame.exe: D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/debug/lib/libvorbisfile.a
+GoGame.exe: D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/debug/lib/libvorbis.a
+GoGame.exe: D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/debug/lib/libogg.a
+GoGame.exe: D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/debug/lib/libwavpack.a
+GoGame.exe: D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/lib/libpng16.a
+GoGame.exe: D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/debug/lib/libfreetyped.a
+GoGame.exe: D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/lib/libzlib.a
+GoGame.exe: D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/debug/lib/libbz2d.a
+GoGame.exe: D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/debug/lib/libpng16d.a
+GoGame.exe: D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/debug/lib/libzlibd.a
+GoGame.exe: D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/debug/lib/libbrotlidec.a
+GoGame.exe: D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/debug/lib/libbrotlicommon.a
+GoGame.exe: D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/lib/libbz2.a
+GoGame.exe: D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/lib/libbrotlidec.a
+GoGame.exe: D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/lib/libbrotlicommon.a
 GoGame.exe: CMakeFiles/GoGame.dir/linkLibs.rsp
 GoGame.exe: CMakeFiles/GoGame.dir/objects1.rsp
 GoGame.exe: CMakeFiles/GoGame.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\university\CS102\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable GoGame.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\Git\GoGame\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable GoGame.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\GoGame.dir\link.txt --verbose=$(VERBOSE)
-	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file D:/university/CS102/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/university/CS102/GoGame/build/GoGame.exe -installedDir D:/university/CS102/vcpkg/installed/x64-mingw-static/bin -OutVariable out
+	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file D:/Git/.MyRepo/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/Git/GoGame/build/GoGame.exe -installedDir D:/Git/.MyRepo/vcpkg/installed/x64-mingw-static/bin -OutVariable out
 
 # Rule to build all files generated by this target.
 CMakeFiles/GoGame.dir/build: GoGame.exe
@@ -386,6 +403,6 @@ CMakeFiles/GoGame.dir/clean:
 .PHONY : CMakeFiles/GoGame.dir/clean
 
 CMakeFiles/GoGame.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\university\CS102\GoGame D:\university\CS102\GoGame D:\university\CS102\GoGame\build D:\university\CS102\GoGame\build D:\university\CS102\GoGame\build\CMakeFiles\GoGame.dir\DependInfo.cmake "--color=$(COLOR)" GoGame
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Git\GoGame D:\Git\GoGame D:\Git\GoGame\build D:\Git\GoGame\build D:\Git\GoGame\build\CMakeFiles\GoGame.dir\DependInfo.cmake "--color=$(COLOR)" GoGame
 .PHONY : CMakeFiles/GoGame.dir/depend
 
