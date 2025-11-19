@@ -1,0 +1,9 @@
+#pragma once
+#include <iostream>
+#include <vector>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
+#include <SDL2/SDL_ttf.h>
+#include "button.h"
+
+void draw_home_interface(SDL_Renderer* renderer, std::vector<Button*>& button_list);

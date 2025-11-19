@@ -12,16 +12,16 @@ void Init_History(){
 }
 
 void Undo_Move(){
-    if(PosStatus <= 2) return;
-    PosStatus -=2;
+    if(PosStatus <= 1) return;
+    PosStatus -=1;
     board = history[PosStatus].boardStatus;
     player1 = history[PosStatus].player1;
     player2 = history[PosStatus].player2;
 }
 
 void Redo_Move(){
-    if(PosStatus + 2 >= history.size()) return;
-    PosStatus += 2;
+    if(PosStatus + 1 >= history.size()) return;
+    PosStatus += 1;
     board = history[PosStatus].boardStatus;
     player1 = history[PosStatus].player1;
     player2 = history[PosStatus].player2;

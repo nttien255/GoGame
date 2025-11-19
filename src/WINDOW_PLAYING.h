@@ -2,6 +2,7 @@
 #include <SDL.h>
 
 enum class GameState {
+    HOME,
     MENU,
     PLAYING,
     SETTINGS_PLAYING,

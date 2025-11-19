@@ -17,8 +17,7 @@ using namespace std;
 
 
 extern int start_index;
-extern bool is_playing;
 
 void init_loadgame_interface();
-void draw_loadgame_interface(SDL_Renderer* renderer, vector<string> &save_files, vector<Button*>& loadgame_button_list, TTF_Font* font, SDL_Color color);
+void draw_loadgame_interface(SDL_Renderer* renderer, vector<string> &save_files, vector<Button*>& loadgame_button_list, Button &back_button, TTF_Font* font, SDL_Color color);
 void load_handle_event(SDL_Renderer* renderer, SDL_Event &e, vector<string> &save_files, vector<Button*>& loadgame_button_list);
