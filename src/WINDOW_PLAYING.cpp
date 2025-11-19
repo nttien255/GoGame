@@ -54,7 +54,7 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     Button options_button(WINDOW_SIZE / 2 - 250 / 2, 387, 250, 75, "../assets/options.png", renderer, "Options");
     Button exit_button(WINDOW_SIZE / 2 - 250 / 2, 487, 250, 75, "../assets/exit.png", renderer, "Exit");
     Button back_button(10, 10, 60, 60, "../assets/back.png", renderer, "Back");
-
+    Button exit_button(5, 5, 120, 60, "../assets/home.png", renderer, "Exit");
     SDL_Texture* player1_score = nullptr;
     SDL_Texture* player2_score = nullptr;
 
@@ -78,7 +78,7 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     };
     
     vector<Button*> endgame_button_list = {
-        &menu_button
+        &exit_button
     };
 
     vector<Button*> loadgame_button_list(SIZE_LIST_SHOW);
@@ -237,9 +237,10 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
             // draw yellow screen like board background
             SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
             SDL_RenderClear(renderer);
-
+            
             draw_endgame_interface(renderer, font, color, endgame_button_list);
-
+            
+            // SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
             SDL_RenderPresent(renderer);
             SDL_Delay(16);
         }
