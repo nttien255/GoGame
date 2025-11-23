@@ -6,7 +6,7 @@
             "displayName": "vcpkg MinGW",
             "description": "Configure with vcpkg and MinGW",
             "generator": "MinGW Makefiles",
-            "toolchainFile": "../vcpkg/scripts/buildsystems/vcpkg.cmake",
+            "toolchainFile": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake",
             "binaryDir": "${sourceDir}/build",
             "cacheVariables": {
                 "VCPKG_TARGET_TRIPLET": "x64-mingw-static"

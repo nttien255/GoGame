@@ -36,7 +36,7 @@ inline void from_json(const json& j, DataRecord& dr){
 
 
 void Init_History();
-void Undo_Move();
-void Redo_Move();
+void Undo_Move(bool &blackturn);
+void Redo_Move(bool &blackturn);
 void Pop_History();
 void Push_History();

@@ -40,7 +40,7 @@ add_executable(GoGame
 # --- PHẦN 3: LIÊN KẾT CÁC THƯ VIỆN VÀO GAME ---
 target_link_libraries(GoGame PRIVATE 
     SDL2::SDL2main
-    SDL2::SDL2-static
+    SDL2::SDL2
     SDL2_image::SDL2_image-static
     SDL2_mixer::SDL2_mixer-static
     SDL2_ttf::SDL2_ttf-static
