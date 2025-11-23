@@ -59,11 +59,13 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     SDL_Texture* player2_score = nullptr;
 
     init_board(BOARD_SIZE, BOARD_SIZE, CELL_SIZE, STONE_RADIUS, CLICK_RADIUS, MARGIN, BOARD_LENGTH);
-    Init_History();
-    Init_Player();
     bool running = true;
     bool blackTurn = true;
     int hoverRow = -1, hoverCol = -1;
+
+    Init_Player();
+    Init_History();
+
     GameState current_state = GameState::HOME;
     GameState next_state = current_state;
     
@@ -136,11 +138,11 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
                 }
 
                 if (undo_button.clicked(e)) {
-                    Undo_Move();
+                    Undo_Move(blackTurn);
                     // SaveGame(blackTurn);
                 }
                 if (redo_button.clicked(e)) {
-                    Redo_Move();
+                    Redo_Move(blackTurn);
                 }
                 if (pass_button.clicked(e)) {
                     skip_turn(blackTurn);

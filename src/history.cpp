@@ -1,5 +1,6 @@
 #include <iostream>
 #include "history.h"
+#include "WINDOW_PLAYING.h"
 using namespace std;
 
 deque<DataRecord> history;
@@ -11,20 +12,22 @@ void Init_History(){
     PosStatus = 0;
 }
 
-void Undo_Move(){
-    if(PosStatus <= 1) return;
+void Undo_Move(bool &blackturn){
+    if(PosStatus < 1) return;
     PosStatus -=1;
     board = history[PosStatus].boardStatus;
     player1 = history[PosStatus].player1;
     player2 = history[PosStatus].player2;
+    blackturn = history[PosStatus].blackTurn;
 }
 
-void Redo_Move(){
+void Redo_Move(bool &blackturn){
     if(PosStatus + 1 >= history.size()) return;
     PosStatus += 1;
     board = history[PosStatus].boardStatus;
     player1 = history[PosStatus].player1;
     player2 = history[PosStatus].player2;
+    blackturn = history[PosStatus].blackTurn;
 }
 
 void Pop_History(){
