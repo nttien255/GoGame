@@ -77,7 +77,7 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
 
 
     vector<Button*> playing_button_list = {
-        &undo_button, 
+        &undo_button,
         &redo_button, 
         &pass_button,
         &menu_button
