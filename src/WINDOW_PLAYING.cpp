@@ -29,6 +29,14 @@ int MARGIN = 123;
 const int BOARD_LENGTH = 72 * 7; // 72 = lcm(8, 18)
 const int WINDOW_SIZE = 750;
 
+void init_game(bool &blackTurn) {
+    init_board(BOARD_SIZE, BOARD_SIZE, CELL_SIZE, STONE_RADIUS, CLICK_RADIUS, MARGIN, BOARD_LENGTH);
+    Init_History();
+    Init_Player();
+    init_skip();
+    blackTurn = true;
+}
+
 int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     SDL_SetWindowSize(window, WINDOW_SIZE, WINDOW_SIZE);
     SDL_Texture* black_stone = IMG_LoadTexture(renderer, "../assets/black.png");
@@ -58,15 +66,13 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     SDL_Texture* player1_score = nullptr;
     SDL_Texture* player2_score = nullptr;
 
-    init_board(BOARD_SIZE, BOARD_SIZE, CELL_SIZE, STONE_RADIUS, CLICK_RADIUS, MARGIN, BOARD_LENGTH);
-    Init_History();
-    Init_Player();
     bool running = true;
     bool blackTurn = true;
     int hoverRow = -1, hoverCol = -1;
     GameState current_state = GameState::HOME;
     GameState next_state = current_state;
     
+    init_game(blackTurn);
     stack<GameState> stackState;
 
 
@@ -93,9 +99,9 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     SDL_Event e;
     SDL_Surface* loadedSurface = IMG_Load("../assets/background.png");
     if (loadedSurface == nullptr) {
-    std::cerr << "Lỗi khi load ảnh: " << IMG_GetError() << std::endl;
-    // Có thể return hoặc xử lý lỗi khác ở đây
-}
+        std::cerr << "Lỗi khi load ảnh: " << IMG_GetError() << std::endl;
+        // Có thể return hoặc xử lý lỗi khác ở đây
+    }
     SDL_Texture* backgroundTexture = SDL_CreateTextureFromSurface(renderer, loadedSurface);
     SDL_FreeSurface(loadedSurface);
     while (running) {
@@ -113,6 +119,7 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
                 if (start_button.clicked(e)) {
                     // stackState.push(current_state);
                     current_state = GameState::PLAYING;
+                    init_game(blackTurn);
                     break;
                 }
                 if (loadgame_button.clicked(e)) {
@@ -192,7 +199,9 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
             }
         }
         // draw board background
-        // current_state = check_game_state();
+        // cu
+        // rrent_state = check_game_state();
+        // cout << (int)current_state << endl;
         if (current_state == GameState::HOME) {
             SDL_Rect destRect;
             destRect.x = 0;

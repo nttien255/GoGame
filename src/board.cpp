@@ -13,6 +13,11 @@ vector<vector<Stone>> board;
 
 void init_board(int size, int &BOARD_SIZE, int &CELL_SIZE, int &STONE_RADIUS, int &CLICK_RADIUS, int &MARGIN, int BOARD_LENGTH) {
     board.resize(size, vector<Stone>(size, EMPTY));
+    for (int r = 0; r < size; ++r) {
+        for (int c = 0; c < size; ++c) {
+            board[r][c] = EMPTY;
+        }
+    }
     BOARD_SIZE = size;
     CELL_SIZE = BOARD_LENGTH / (size - 1);
     MARGIN = (WINDOW_SIZE - BOARD_LENGTH) / 2;
