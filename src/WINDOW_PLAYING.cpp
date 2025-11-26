@@ -16,7 +16,7 @@
 #include "loadgame_interface.h"
 #include "endgame_interface.h"
 #include "home_interface.h"
-
+#include "playing_mode_interface.h"
 
 using namespace std;
 
@@ -63,6 +63,9 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     Button exit_button(WINDOW_SIZE / 2 - 250 / 2, 487, 250, 75, "../assets/exit.png", renderer, "Exit");
     Button back_button(10, 10, 60, 60, "../assets/back.png", renderer, "Back");
     Button home_button(5, 5, 120, 60, "../assets/home.png", renderer, "Exit");
+    Button one_player_button(WINDOW_SIZE / 2 - 250 / 2, WINDOW_SIZE / 2, 200, 75, "../assets/1player_p.png", renderer, "1 player mode");
+    Button two_players_button(WINDOW_SIZE / 2 - 250 / 2, WINDOW_SIZE / 2 - 100, 200, 75, "../assets/2players_p.png", renderer, "2 players mode");
+
     SDL_Texture* player1_score = nullptr;
     SDL_Texture* player2_score = nullptr;
 
@@ -101,6 +104,12 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
         &exit_button
     };
 
+    vector<Button*> playing_mode_button_list{
+        &back_button,
+        &one_player_button,
+        &two_players_button
+    };
+
     SDL_Event e;
     SDL_Surface* loadedSurface = IMG_Load("../assets/background.png");
     if (loadedSurface == nullptr) {
@@ -123,7 +132,8 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
 
                 if (start_button.clicked(e)) {
                     // stackState.push(current_state);
-                    current_state = GameState::PLAYING;
+                    // current_state = GameState::PLAYING;
+                    current_state = GameState::GAME_MODE;
                     init_game(blackTurn);
                     break;
                 }
@@ -138,6 +148,20 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
                     running = false;
                     current_state = GameState::NONE;
                     break;
+                }
+            }
+
+            if (current_state == GameState::GAME_MODE){
+                for (auto btn : playing_mode_button_list)
+                    btn->handleEvent(e);
+                if (back_button.clicked(e)){
+                    current_state = GameState::HOME;
+                }
+                if (one_player_button.clicked(e)){
+
+                }
+                if (two_players_button.clicked(e)){
+                    current_state = GameState::PLAYING;
                 }
             }
             
@@ -215,11 +239,25 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
             destRect.h = WINDOW_SIZE; // Chiều cao đích = Chiều cao cửa sổ
             SDL_RenderCopy(renderer, backgroundTexture, NULL, &destRect);
             SDL_SetRenderDrawColor(renderer, 200, 160, 80, 200);
-            // SDL_RenderClear(renderer);
             SDL_RenderFillRect(renderer, &destRect);
 
-
             draw_home_interface(renderer, home_button_list);
+
+            SDL_RenderPresent(renderer);
+            SDL_Delay(16);
+        }
+
+        if (current_state == GameState::GAME_MODE){
+            SDL_Rect destRect;
+            destRect.x = 0;
+            destRect.y = 0;
+            destRect.w = WINDOW_SIZE;  // Chiều rộng đích = Chiều rộng cửa sổ
+            destRect.h = WINDOW_SIZE; // Chiều cao đích = Chiều cao cửa sổ
+            SDL_RenderCopy(renderer, backgroundTexture, NULL, &destRect);
+            SDL_SetRenderDrawColor(renderer, 200, 160, 80, 200);
+            SDL_RenderFillRect(renderer, &destRect);
+
+            draw_playing_mode_interface(renderer, playing_mode_button_list);
 
             SDL_RenderPresent(renderer);
             SDL_Delay(16);
