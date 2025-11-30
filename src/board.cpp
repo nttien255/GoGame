@@ -5,28 +5,44 @@
 #include "board.h"
 #include "move.h"
 #include "valid.h"
+#include <vector>
+#include <cmath>
 
 using namespace std;
+
+const vector<pair<int,int>> star_points_19 = {
+    {3, 3}, {3, 9}, {3, 15},
+    {9, 3}, {9, 9}, {9, 15},
+    {15, 3}, {15, 9}, {15, 15}
+};
+const vector<pair<int,int>> star_points_13 = {
+    {3, 3}, {3, 6}, {3, 9},
+    {6, 3}, {6, 6}, {6, 9},
+    {9, 3}, {9, 6}, {9, 9}
+};
+    
 int Size;
 pair<int,int> tmp;
+vector<pair<int,int>> star_points;
 vector<vector<Stone>> board;
 
-void init_board(int size, int &BOARD_SIZE, int &CELL_SIZE, int &STONE_RADIUS, int &CLICK_RADIUS, int &MARGIN, int BOARD_LENGTH) {
-    board.resize(size, vector<Stone>(size, EMPTY));
-    for (int r = 0; r < size; ++r) {
-        for (int c = 0; c < size; ++c) {
+void init_board(int &BOARD_SIZE, int &CELL_SIZE, int &STONE_RADIUS, int &CLICK_RADIUS, int &MARGIN, int BOARD_LENGTH) {
+    board.resize(BOARD_SIZE, vector<Stone>(BOARD_SIZE, EMPTY));
+    for (int r = 0; r < BOARD_SIZE; ++r) {
+        for (int c = 0; c < BOARD_SIZE; ++c) {
             board[r][c] = EMPTY;
         }
     }
-    BOARD_SIZE = size;
-    CELL_SIZE = BOARD_LENGTH / (size - 1);
+    CELL_SIZE = BOARD_LENGTH / (BOARD_SIZE - 1);
     MARGIN = (WINDOW_SIZE - BOARD_LENGTH) / 2;
-    if (size == 19) {
+    if (BOARD_SIZE == 19) {
         STONE_RADIUS = 15;
         CLICK_RADIUS = 17;
-    } else if (size == 9) {
-        STONE_RADIUS = 27;
-        CLICK_RADIUS = 29;
+        star_points = star_points_19;
+    } else if (BOARD_SIZE == 13) {
+        STONE_RADIUS = 20;
+        CLICK_RADIUS = 22;
+        star_points = star_points_13;
     } else {
         SDL_Log("Unsupported board size!");
     }
@@ -37,13 +53,25 @@ int board_size(){
 }
 
 void draw_board(int hoverRow, int hoverCol, bool blackTurn, SDL_Renderer* renderer, SDL_Texture* black_stone, SDL_Texture* white_stone) {
-    
     // draw grid
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     for (int i = 0; i < BOARD_SIZE; ++i) {
         int pos = MARGIN + i * CELL_SIZE;
         SDL_RenderDrawLine(renderer, MARGIN, pos, MARGIN + (BOARD_SIZE - 1) * CELL_SIZE, pos);
         SDL_RenderDrawLine(renderer, pos, MARGIN, pos, MARGIN + (BOARD_SIZE - 1) * CELL_SIZE);
+    }
+
+    for (const auto& point : star_points) {
+        int cx = MARGIN + point.first * CELL_SIZE;
+        int cy = MARGIN + point.second * CELL_SIZE;
+        for (int x = cx - 4; x <= cx + 4; ++x) {
+            for (int y = cy - 4; y <= cy + 4; ++y) {
+                // draw circle center at (cx, cy) with radius 4
+                if ((x - cx) * (x - cx) + (y - cy) * (y - cy) <= 16) {
+                    SDL_RenderDrawPoint(renderer, x, y);
+                }
+            }
+        }
     }
 
     // draw stones
