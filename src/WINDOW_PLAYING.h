@@ -8,6 +8,8 @@ enum class GameState {
     SETTINGS_PLAYING,
     LOAD_GAME,
     END_GAME,
+    GAME_MODE,
+    BOARD_MODE,
     NONE
 };
 int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer);

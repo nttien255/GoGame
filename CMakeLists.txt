@@ -33,6 +33,8 @@ add_executable(GoGame
         src/loadgame_interface.cpp
         src/endgame_interface.cpp
         src/home_interface.cpp
+        src/playing_mode_interface.cpp
+        src/menu_interface.cpp
     )
 # (Nếu main.cpp ở ngang hàng)
 # add_executable(GoGame main.cpp)

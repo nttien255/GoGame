@@ -17,7 +17,7 @@ int cnt;
 bool check_black;
 bool check_white;
 queue<pair<int,int>> Q;
-vector<vector<bool>> visited( BOARD_SIZE,vector<bool>( BOARD_SIZE,false));
+vector<vector<bool>> visited;
 
 void add_score(Player &player, int score){
     player.kill += score;
@@ -45,6 +45,7 @@ void BFS_Score(int x, int y){
 }
 
 void calc_place_score(){
+    visited.resize(BOARD_SIZE, vector<bool>(BOARD_SIZE, false));
     for(int i=0;i<BOARD_SIZE;i++)
         for(int j=0;j<BOARD_SIZE;j++)
             visited[i][j] = false;

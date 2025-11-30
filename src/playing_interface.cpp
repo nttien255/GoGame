@@ -11,14 +11,14 @@
 using namespace std;
 
 void draw_playing_interface(SDL_Renderer* renderer, SDL_Texture* black_stone, SDL_Texture* white_stone, 
-    int hoverRow, int hoverCol, bool blackTurn, 
-    vector<Button*> button_list, 
-    SDL_Texture* player1_score, SDL_Texture* player2_score, TTF_Font* font, SDL_Color color) {
+    int hoverRow, int hoverCol, bool blackTurn, vector<Button*> button_list, TTF_Font* font, SDL_Color color) {
     draw_board(hoverRow, hoverCol, blackTurn, renderer, black_stone, white_stone);
     for (auto button : button_list) {
         button->draw_button(renderer);
     }
-    // Draw player scores
+        // Draw player scores
+    SDL_Texture* player1_score = nullptr;
+    SDL_Texture* player2_score = nullptr;
     string score_text1 = "Player 1 Score: " + Score_Player(player1);
     string score_text2 = "Player 2 Score: " + Score_Player(player2);
     SDL_DestroyTexture(player1_score);

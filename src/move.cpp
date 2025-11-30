@@ -30,6 +30,7 @@ bool make_move(SDL_Event& e, std::vector<std::vector<Stone>>& board, bool& black
             }
         }
     }
+
     if (bestRow != -1 && valid(bestRow, bestCol, blackTurn)) { 
         cnt_skips_turn = 0;
         Pop_History();
@@ -42,5 +43,6 @@ bool make_move(SDL_Event& e, std::vector<std::vector<Stone>>& board, bool& black
         Push_History();
         return 1;
     }
+    
     return 0;
 }
