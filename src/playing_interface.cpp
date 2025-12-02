@@ -21,8 +21,6 @@ void draw_playing_interface(SDL_Renderer* renderer, SDL_Texture* black_stone, SD
     SDL_Texture* player2_score = nullptr;
     string score_text1 = "Player 1 Score: " + Score_Player(player1);
     string score_text2 = "Player 2 Score: " + Score_Player(player2);
-    SDL_DestroyTexture(player1_score);
-    SDL_DestroyTexture(player2_score);
     player1_score = renderText(renderer, font, score_text1, color);
     player2_score = renderText(renderer, font, score_text2, color);
     int w1, h1;
@@ -33,4 +31,6 @@ void draw_playing_interface(SDL_Renderer* renderer, SDL_Texture* black_stone, SD
     SDL_Rect dst2 = {WINDOW_SIZE - w2 - 15, 50, w2, h2};
     SDL_RenderCopy(renderer, player1_score, NULL, &dst1);
     SDL_RenderCopy(renderer, player2_score, NULL, &dst2);
+    SDL_DestroyTexture(player1_score);
+    SDL_DestroyTexture(player2_score);
 }

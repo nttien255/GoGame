@@ -19,7 +19,6 @@ void draw_endgame_interface(SDL_Renderer* renderer, TTF_Font* font, SDL_Color co
     int cup_size = 500;
     SDL_Rect cup_rect = {WINDOW_SIZE / 2 - cup_size / 2, WINDOW_SIZE / 2 - cup_size / 2, cup_size, cup_size};
     SDL_RenderCopy(renderer, cup_texture, NULL, &cup_rect);
-    SDL_DestroyTexture(cup_texture);
     
     if (player1.Score + player1.kill > player2.Score + player2.kill) {
         SDL_Texture* winner_text = renderText(renderer, font, "Player 1", color);
@@ -43,13 +42,11 @@ void draw_endgame_interface(SDL_Renderer* renderer, TTF_Font* font, SDL_Color co
     for (auto& button : button_list) {
         button->draw_button(renderer);
     }
-
+    
     SDL_Texture* player1_score = nullptr;
     SDL_Texture* player2_score = nullptr;
     string score_text1 = "Player 1 Score: " + Score_Player(player1);
     string score_text2 = "Player 2 Score: " + Score_Player(player2);
-    SDL_DestroyTexture(player1_score);
-    SDL_DestroyTexture(player2_score);
     player1_score = renderText(renderer, font, score_text1, color);
     player2_score = renderText(renderer, font, score_text2, color);
     int w1, h1;
@@ -60,4 +57,8 @@ void draw_endgame_interface(SDL_Renderer* renderer, TTF_Font* font, SDL_Color co
     SDL_Rect dst2 = {WINDOW_SIZE - w2 - 15, 70, w2, h2};
     SDL_RenderCopy(renderer, player1_score, NULL, &dst1);
     SDL_RenderCopy(renderer, player2_score, NULL, &dst2);    
+    
+    SDL_DestroyTexture(player1_score);
+    SDL_DestroyTexture(player2_score);
+    SDL_DestroyTexture(cup_texture);
 }

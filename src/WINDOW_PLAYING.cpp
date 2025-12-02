@@ -45,7 +45,8 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     SDL_SetWindowSize(window, WINDOW_SIZE, WINDOW_SIZE);
     SDL_Texture* black_stone = IMG_LoadTexture(renderer, "../assets/black.png");
     SDL_Texture* white_stone = IMG_LoadTexture(renderer, "../assets/white.png");
-    TTF_Font* font = TTF_OpenFont("../assets/BAUHS93.ttf", 24);
+    TTF_Font* font1 = TTF_OpenFont("../assets/BAUHS93.ttf", 24);
+    TTF_Font* font2 = TTF_OpenFont("../assets/BAUHS93.ttf", 48);
     SDL_Color color = {0, 0, 0};
 
     if (!black_stone) {
@@ -54,6 +55,11 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     }
     if (!white_stone) {
         SDL_Log("Failed to load white stone images");
+        return -1;
+    }
+    
+    if (!font2) {
+        SDL_Log("Failed to load font");
         return -1;
     }
 
@@ -72,10 +78,18 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     Button two_players_button(WINDOW_SIZE / 2 - 250 / 2, WINDOW_SIZE / 2 + 40, 195, 85, "../assets/1player_p.png", renderer, "2 players mode");
     Button board_mode_19_button(WINDOW_SIZE / 2 - 250 / 2, WINDOW_SIZE / 2 - 80, 200, 75, "../assets/board_19x19.png", renderer, "Board 19x19");
     Button board_mode_13_button(WINDOW_SIZE / 2 - 250 / 2, WINDOW_SIZE / 2 + 40, 200, 75, "../assets/board_13x13.png", renderer, "Board 13x13");
-
+    Button sound_effect_button(135, 100, 120, 60, "../assets/sound_effect.png", renderer, "Sound Effect");
+    Button music_button(135, 190, 120, 60, "../assets/music.png", renderer, "Music");
+    Button increase_music_button(435, 200, 30, 20, "../assets/increase.png", renderer, "Increase Music");
+    Button increase_sound_effect_button(435, 110, 30, 20, "../assets/increase.png", renderer, "Increase Sound Effect");
+    Button decrease_music_button(485, 200, 30, 20, "../assets/decrease.png", renderer, "Decrease Music");
+    Button decrease_sound_effect_button(485, 110, 30, 20, "../assets/decrease.png", renderer, "Decrease Sound Effect");
+    // 380-50 = 330 / 2 = 165
+    // 700 / 2 - 165 = 185 - 50 = 135
     Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
-    Mix_Music* bgm = Mix_LoadMUS("../assets/bgmusic.wav");
-    Mix_PlayMusic(bgm, -1);
+    LongSound bgm(Mix_LoadMUS("../assets/bgmusic.wav"), 5, false);
+    ShortSound place_stone_sound(Mix_LoadWAV("../assets/stone_effect.wav"), 5, false);
+    bgm.play();
 
     bool running = true;
     bool blackTurn = true;
@@ -100,6 +114,15 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     };
 
     vector<Button*> loadgame_button_list(SIZE_LIST_SHOW);
+    for(int i = 0; i < SIZE_LIST_SHOW; i++){
+        loadgame_button_list[i] = new Button(WINDOW_SIZE / 2 - BUTTON_WIDTH / 2,
+                                             (WINDOW_SIZE - LIST_LOAD_LENGTH) / 2 + i * BUTTON_HEIGHT * 3 / 2,
+                                             BUTTON_WIDTH, 
+                                             BUTTON_HEIGHT,
+                                             "../assets/bar.png",
+                                             renderer,
+                                             "");
+    }
 
     vector<Button*> home_button_list{
         &start_button,
@@ -124,6 +147,16 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
         &back_button,
         &board_mode_19_button,
         &board_mode_13_button
+    };
+
+    vector<Button*> options_button_list{
+        &back_button,
+        &music_button,
+        &sound_effect_button,
+        &increase_music_button,
+        &decrease_music_button,
+        &increase_sound_effect_button,
+        &decrease_sound_effect_button
     };
 
     SDL_Event e;
@@ -156,6 +189,13 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
                     stackState.push(current_state);
                     current_state = GameState::LOAD_GAME;
                     init_loadgame_interface();
+                    break;
+                }
+
+                if (options_button.clicked(e)) {
+                    // Handle options button click
+                    stackState.push(current_state);
+                    current_state = GameState::OPTION;
                     break;
                 }
 
@@ -217,7 +257,6 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
 
                 if (undo_button.clicked(e)) {
                     Undo_Move(blackTurn);
-                    // SaveGame(blackTurn);
                 }
                 if (redo_button.clicked(e)) {
                     Redo_Move(blackTurn);
@@ -232,9 +271,8 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
                 }
 
                 if (e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT) {
-                    if (hoverCol < 0 || hoverRow < 0) continue;
                     if (hoverRow != -1 && board[hoverRow][hoverCol] == EMPTY){
-                        make_move(e, board, blackTurn);
+                        make_move(e, board, blackTurn, place_stone_sound);
                     }
                 }
             }
@@ -252,20 +290,56 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
                         stackState.pop();
                     }
                 }
+                if (options_button.clicked(e)){
+                    stackState.push(current_state);
+                    current_state = GameState::OPTION;
+                }
+            }
+
+            if (current_state == GameState::OPTION){
+                for (auto btn : options_button_list)
+                    btn->handleEvent(e);
+                if (back_button.clicked(e)){
+                    current_state = stackState.top();
+                    stackState.pop();
+                }
+
+                if (music_button.clicked(e)){
+                    bgm.switchMute();
+                }
+
+                if (sound_effect_button.clicked(e)){
+                    // Toggle sound effect on/off
+                    place_stone_sound.switchMute();
+                }
+
+                if (increase_music_button.clicked(e)){
+                    bgm.adjustVolume(1);
+                }   
+                if (decrease_music_button.clicked(e)){
+                    bgm.adjustVolume(-1);
+                }
+                if (increase_sound_effect_button.clicked(e)){
+                    place_stone_sound.adjustVolume(1);
+                }
+                if (decrease_sound_effect_button.clicked(e)){
+                    place_stone_sound.adjustVolume(-1);
+                }
             }
 
             if(current_state == GameState::LOAD_GAME){
                 vector<string> save_files = allFileLoadGame();
                 load_handle_event(renderer, e, save_files, loadgame_button_list);
-                for(auto btn : loadgame_button_list){
-                    btn->handleEvent(e);
+                for (int i = 0; i < SIZE_LIST_SHOW; i++){
+                    if (start_index + i >= save_files.size()) break;
+                    loadgame_button_list[i]->handleEvent(e);
                 }
-                back_button.handleEvent(e);
 
+                back_button.handleEvent(e);
                 for(int i = 0; i < SIZE_LIST_SHOW; i++){
-                    Button* btn = loadgame_button_list[i];
-                    if(btn->clicked(e)){
-                        LoadGame(blackTurn, btn->button_label);
+                    if (start_index + i >= save_files.size()) break;
+                    if(loadgame_button_list[i]->clicked(e)){
+                        LoadGame(blackTurn, save_files[start_index + i]);
                         current_state = GameState::PLAYING;
                         break;
                     }
@@ -287,10 +361,8 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
                 }
             }
         }
+        // MENU
         // draw board background
-        // cu
-        // rrent_state = check_game_state();
-        // cout << (int)current_state << endl;
         if (current_state == GameState::HOME) {
             SDL_Rect destRect;
             destRect.x = 0;
@@ -343,7 +415,7 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
             SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
             SDL_RenderClear(renderer);
 
-            draw_playing_interface(renderer, black_stone, white_stone, hoverRow, hoverCol, blackTurn, playing_button_list, font, color);
+            draw_playing_interface(renderer, black_stone, white_stone, hoverRow, hoverCol, blackTurn, playing_button_list, font1, color);
 
             SDL_RenderPresent(renderer);
             SDL_Delay(16);
@@ -365,13 +437,29 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
             SDL_Delay(16);
         }
 
+        if (current_state == GameState::OPTION){
+            SDL_Rect destRect;
+            destRect.x = 0;
+            destRect.y = 0;
+            destRect.w = WINDOW_SIZE;  // Chiều rộng đích = Chiều rộng cửa sổ
+            destRect.h = WINDOW_SIZE; // Chiều cao đích = Chiều cao cửa sổ
+            SDL_RenderCopy(renderer, backgroundTexture, NULL, &destRect);
+            SDL_SetRenderDrawColor(renderer, 200, 160, 80, 200);
+            SDL_RenderFillRect(renderer, &destRect);
+
+            draw_options_interface(renderer, options_button_list, bgm.volume * (bgm.muted == 0), place_stone_sound.volume * (place_stone_sound.muted == 0));
+
+            SDL_RenderPresent(renderer);
+            SDL_Delay(16);
+        }
+
         if (current_state == GameState::LOAD_GAME){
             SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
             SDL_RenderClear(renderer);
 
             vector<string> save_files = allFileLoadGame();
             load_handle_event(renderer, e, save_files, loadgame_button_list);
-            draw_loadgame_interface(renderer, save_files, loadgame_button_list, back_button, font, color);
+            draw_loadgame_interface(renderer, save_files, loadgame_button_list, back_button, font1, color);
 
             SDL_RenderPresent(renderer);
             SDL_Delay(16);
@@ -385,9 +473,9 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
                 SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
                 SDL_RenderClear(renderer);
                 
-                draw_playing_interface(renderer, black_stone, white_stone, hoverRow, hoverCol, blackTurn, playing_button_list, font, color);
+                draw_playing_interface(renderer, black_stone, white_stone, hoverRow, hoverCol, blackTurn, playing_button_list, font1, color);
                 
-                TTF_Font* font = TTF_OpenFont("../assets/BAUHS93.ttf", 48);
+                
                 SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
                 SDL_SetRenderDrawColor(renderer, 0, 0, 0, 128); // 50% transparent black
                 SDL_Rect bgRect = {0, 0, WINDOW_SIZE, WINDOW_SIZE};
@@ -397,15 +485,15 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
                 SDL_Texture* KO_threat = nullptr;
                 SDL_Color textColor = {255, 0, 0, 255};
                 string KO_threat_text = "GAME OVER";
-                SDL_DestroyTexture(KO_threat);
-                KO_threat = renderText(renderer, font, KO_threat_text, textColor);
-
+                KO_threat = renderText(renderer, font2, KO_threat_text, textColor);
+                
                 int w, h;
                 SDL_QueryTexture(KO_threat, NULL, NULL, &w, &h);
                 SDL_Rect dst = {(WINDOW_SIZE - w) / 2, (WINDOW_SIZE - h) / 2, w, h};
                 SDL_RenderCopy(renderer, KO_threat, NULL, &dst);
-
+                
                 SDL_RenderPresent(renderer);
+                SDL_DestroyTexture(KO_threat);
                 SDL_Delay(16);
                 continue;
             }
@@ -414,7 +502,7 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
             SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
             SDL_RenderClear(renderer);
             
-            draw_endgame_interface(renderer, font, color, endgame_button_list);
+            draw_endgame_interface(renderer, font1, color, endgame_button_list);
             
             SDL_RenderPresent(renderer);
             SDL_Delay(16);
@@ -433,6 +521,12 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
         }
     }
 
-    if (bgm != nullptr) Mix_FreeMusic(bgm);
+    SDL_DestroyTexture(black_stone);
+    SDL_DestroyTexture(white_stone);
+    SDL_DestroyTexture(backgroundTexture);
+    TTF_CloseFont(font1);
+    TTF_CloseFont(font2);
+    bgm.MixFree();
+    place_stone_sound.MixFree();
     return 0;
 }
