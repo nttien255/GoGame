@@ -1,10 +1,13 @@
 #include "easy_mode.h"
+#include <iostream>
+#include <vector>
+using namespace std;
 
 
 
 
 
-void easy_mode_move(bool &blackTurn){
+void easy_mode_move(bool &blackTurn, int &who_plays_first){
     vector<pair<int,int>> possible_moves;
     for(int i=0; i < BOARD_SIZE; i++){
         for(int j = 0; j < BOARD_SIZE; j++){
@@ -14,7 +17,7 @@ void easy_mode_move(bool &blackTurn){
         }
     }
     if(possible_moves.size() == 0){
-        skip_turn(blackTurn);
+        skip_turn(blackTurn, who_plays_first);
         return;
     }
     int idx = rand() % possible_moves.size();
@@ -26,8 +29,9 @@ void easy_mode_move(bool &blackTurn){
     
     board[bestRow][bestCol] = blackTurn ? BLACK : WHITE;
     blackTurn = !blackTurn;
-
+    who_plays_first = !(who_plays_first - 1) + 1;
+    
     kill_enemy_stones(bestRow, bestCol, blackTurn, 1);
     Run_Score();
-    Push_History();
+    Push_History(blackTurn, who_plays_first);
 }

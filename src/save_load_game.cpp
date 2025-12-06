@@ -30,7 +30,7 @@ bool createFolders(string namefolder){
 
 
 void SaveGame(bool &blackTurn){
-    SaveDataGame currentState(board, player1, player2, blackTurn, history, PosStatus, cnt_skips_turn);
+    SaveDataGame currentState(board, player1, player2, blackTurn, history, PosStatus, cnt_skips_turn, BOARD_SIZE, CELL_SIZE, STONE_RADIUS, CLICK_RADIUS, MARGIN);
     string filename = currentState.Time;
     if(!createFolders("saves")) return;
 
@@ -59,7 +59,7 @@ void LoadGame(bool &blackTurn, string filename){
     file.close();
 
     currentState = j["currentState"].get<SaveDataGame>();
-    currentState.Update(board, player1, player2, blackTurn, history, PosStatus, cnt_skips_turn);
+    currentState.Update(board, player1, player2, blackTurn, history, PosStatus, cnt_skips_turn, BOARD_SIZE, CELL_SIZE, STONE_RADIUS, CLICK_RADIUS, MARGIN);
 }
 
 

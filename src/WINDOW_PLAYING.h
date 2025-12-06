@@ -12,7 +12,15 @@ enum class GameState {
     GAME_MODE,
     BOARD_MODE,
     OPTION,
+    CHOOSE_MODE,
     NONE
+};
+
+enum class AIState {
+    NONE,
+    EASY_PLAY,
+    MEDIUM_PLAY,
+    HARD_PLAY
 };
 
 struct LongSound{

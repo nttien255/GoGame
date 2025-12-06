@@ -9,8 +9,9 @@
 #include "history.h"
 #include "skip.h"
 #include "WINDOW_PLAYING.h"
+#include "AI/hard_mode.h"
 
-bool make_move(SDL_Event& e, std::vector<std::vector<Stone>>& board, bool& blackTurn, ShortSound place_stone_sound) {
+bool make_move(SDL_Event& e, std::vector<std::vector<Stone>>& board, bool& blackTurn, int &who_plays_first, KataGoAI &katago, AIState &ai_state, ShortSound place_stone_sound) {
     int x = e.button.x;
     int y = e.button.y;
 
@@ -35,12 +36,16 @@ bool make_move(SDL_Event& e, std::vector<std::vector<Stone>>& board, bool& black
         cnt_skips_turn = 0;
         Pop_History();
         
+        int moveColor = blackTurn ? 1 : 2;
         board[bestRow][bestCol] = blackTurn ? BLACK : WHITE;
+        if(ai_state == AIState::HARD_PLAY)
+            katago.playMove(bestRow, bestCol, moveColor);
         blackTurn = !blackTurn;
+        who_plays_first = !(who_plays_first - 1) + 1;
 
         kill_enemy_stones(bestRow, bestCol, blackTurn, 1);
         Run_Score();
-        Push_History();
+        Push_History(blackTurn, who_plays_first, bestRow, bestCol);
         return 1;
     }
     

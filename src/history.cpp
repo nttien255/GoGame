@@ -6,28 +6,30 @@ using namespace std;
 deque<DataRecord> history;
 int PosStatus;
 
-void Init_History(){
+void Init_History(bool &blackTurn, int &who_plays_first){
     history.clear();
-    history.push_back({board, player1, player2, true});
+    history.push_back({board, player1, player2, blackTurn, who_plays_first, -1, -1});
     PosStatus = 0;
 }
 
-void Undo_Move(bool &blackturn){
+void Undo_Move(bool &blackturn, int &who_plays_first){
     if(PosStatus < 1) return;
     PosStatus -=1;
     board = history[PosStatus].boardStatus;
     player1 = history[PosStatus].player1;
     player2 = history[PosStatus].player2;
     blackturn = history[PosStatus].blackTurn;
+    who_plays_first = history[PosStatus].who_plays_first;
 }
 
-void Redo_Move(bool &blackturn){
+void Redo_Move(bool &blackturn, int &who_plays_first){
     if(PosStatus + 1 >= history.size()) return;
     PosStatus += 1;
     board = history[PosStatus].boardStatus;
     player1 = history[PosStatus].player1;
     player2 = history[PosStatus].player2;
     blackturn = history[PosStatus].blackTurn;
+    who_plays_first = history[PosStatus].who_plays_first;
 }
 
 void Pop_History(){
@@ -36,14 +38,8 @@ void Pop_History(){
     }
 }
 
-void Push_History(){
+// lastRow, lastCol = -1 means pass/skip
+void Push_History(bool &blackTurn, int &who_plays_first, int lastRow, int lastCol){
     PosStatus++;
-    history.push_back({board, player1, player2, (PosStatus % 2 == 0)});
-    // cout << PosStatus <<":\n";
-    // for(int i=0; i<BOARD_SIZE; i++){
-    //     for(int j=0; j<BOARD_SIZE; j++){
-    //         cout << history[PosStatus].boardStatus[i][j] << " ";
-    //     }
-    //     cout << endl;
-    // }
+    history.push_back({board, player1, player2, blackTurn, who_plays_first, lastRow, lastCol});
 }

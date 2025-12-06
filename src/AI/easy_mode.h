@@ -7,4 +7,4 @@
 #include "../skip.h"
 
 
-void easy_mode_move(bool &blackTurn);
+void easy_mode_move(bool &blackTurn, int &who_plays_first);
