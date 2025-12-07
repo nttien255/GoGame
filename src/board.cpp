@@ -15,6 +15,7 @@ const vector<pair<int,int>> star_points_19 = {
     {9, 3}, {9, 9}, {9, 15},
     {15, 3}, {15, 9}, {15, 15}
 };
+
 const vector<pair<int,int>> star_points_13 = {
     {3, 3}, {3, 6}, {3, 9},
     {6, 3}, {6, 6}, {6, 9},

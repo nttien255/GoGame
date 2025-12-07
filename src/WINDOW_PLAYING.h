@@ -15,6 +15,13 @@ enum class GameState {
     NONE
 };
 
+enum class BackgroundTheme {
+    RICE_PAPER,
+    SOFT_MIST,
+    WOOD,
+    DARK_GREY
+};
+
 struct LongSound{
     Mix_Music* music;
     int volume;

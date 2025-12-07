@@ -46,6 +46,7 @@ struct Button{
     }
 
     void draw_button(SDL_Renderer* renderer){
+        SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
         if (is_hover) SDL_SetTextureAlphaMod(texture, 155); // Slightly transparent when hovered
         else SDL_SetTextureAlphaMod(texture, 255); // Fully opaque otherwise
         SDL_RenderCopy(renderer, texture, NULL, &position);

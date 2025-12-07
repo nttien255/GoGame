@@ -84,7 +84,16 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     Button increase_sound_effect_button(435, 110, 30, 20, "../assets/increase.png", renderer, "Increase Sound Effect");
     Button decrease_music_button(485, 200, 30, 20, "../assets/decrease.png", renderer, "Decrease Music");
     Button decrease_sound_effect_button(485, 110, 30, 20, "../assets/decrease.png", renderer, "Decrease Sound Effect");
+    // button for changing playing background color theme, position is under music and sound effect buttons, respectively, on one line
+    
+    Button button_color_rice_paper(135, 350, 150, 40, "../assets/rice_paper.png", renderer, "Rice Paper");
+    Button button_color_soft_mist(300, 350, 150, 40, "../assets/soft_mist.png", renderer, "Soft Mist");
+    Button button_color_wood(465, 350, 150, 40, "../assets/wood.png", renderer, "Wood");
     // 380-50 = 330 / 2 = 165
+    SDL_Texture* bg_rice_paper = IMG_LoadTexture(renderer, "../assets/rice_paper.png");
+    SDL_Texture* bg_soft_mist = IMG_LoadTexture(renderer, "../assets/soft_mist.png");
+    SDL_Texture* bg_wood = IMG_LoadTexture(renderer, "../assets/wood.png");
+    SDL_Texture* current_background = bg_wood;
     // 700 / 2 - 165 = 185 - 50 = 135
     Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
     LongSound bgm(Mix_LoadMUS("../assets/bgmusic.wav"), 5, false);
@@ -98,7 +107,8 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
 
     GameState current_state = GameState::HOME;
     GameState next_state = current_state;
-    
+    BackgroundTheme current_theme = BackgroundTheme::WOOD;
+
     stack<GameState> stackState;
 
 
@@ -156,7 +166,10 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
         &increase_music_button,
         &decrease_music_button,
         &increase_sound_effect_button,
-        &decrease_sound_effect_button
+        &decrease_sound_effect_button,
+        &button_color_rice_paper,
+        &button_color_soft_mist,
+        &button_color_wood
     };
 
     SDL_Event e;
@@ -325,6 +338,19 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
                 if (decrease_sound_effect_button.clicked(e)){
                     place_stone_sound.adjustVolume(-1);
                 }
+
+                if (button_color_rice_paper.clicked(e)){
+                    current_theme = BackgroundTheme::RICE_PAPER;
+                    current_background = bg_rice_paper;
+                }
+                if (button_color_soft_mist.clicked(e)){
+                    current_theme = BackgroundTheme::SOFT_MIST;
+                    current_background = bg_soft_mist;
+                }
+                if (button_color_wood.clicked(e)){
+                    current_theme = BackgroundTheme::WOOD;
+                    current_background = bg_wood;
+                }
             }
 
             if(current_state == GameState::LOAD_GAME){
@@ -354,7 +380,7 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
                 for (auto btn : endgame_button_list) {
                     btn->handleEvent(e);
                 }
-                if (menu_button.clicked(e)) {
+                if (home_button1.clicked(e)) {
                     current_state = GameState::HOME;
                     while (stackState.size() > 0)
                         stackState.pop();
@@ -412,9 +438,22 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
         }
 
         if (current_state == GameState::PLAYING){
-            SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
+            // SDL_SetRenderDrawColor(renderer, 40, 44, 52, 255);
+            // SDL_SetRenderDrawColor(renderer, 245, 240, 225, 255);
+            // SDL_SetRenderDrawColor(renderer, 210, 220, 230, 255);
+            // SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
+            if (current_theme == BackgroundTheme::RICE_PAPER) {
+                SDL_SetRenderDrawColor(renderer, 245, 240, 225, 255);
+            } else if (current_theme == BackgroundTheme::SOFT_MIST) {
+                SDL_SetRenderDrawColor(renderer, 210, 220, 230, 255);
+            } else if (current_theme == BackgroundTheme::WOOD) {
+                SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
+            }
             SDL_RenderClear(renderer);
-
+                
+            SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
+            SDL_Rect boardRect = {MARGIN - CELL_SIZE / 2, MARGIN - CELL_SIZE / 2, CELL_SIZE * BOARD_SIZE, CELL_SIZE * BOARD_SIZE};
+            SDL_RenderFillRect(renderer, &boardRect);
             draw_playing_interface(renderer, black_stone, white_stone, hoverRow, hoverCol, blackTurn, playing_button_list, font1, color);
 
             SDL_RenderPresent(renderer);
@@ -447,7 +486,7 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
             SDL_SetRenderDrawColor(renderer, 200, 160, 80, 200);
             SDL_RenderFillRect(renderer, &destRect);
 
-            draw_options_interface(renderer, options_button_list, bgm.volume * (bgm.muted == 0), place_stone_sound.volume * (place_stone_sound.muted == 0));
+            draw_options_interface(renderer, options_button_list, bgm.volume * (bgm.muted == 0), place_stone_sound.volume * (place_stone_sound.muted == 0), font1, color, current_background);
 
             SDL_RenderPresent(renderer);
             SDL_Delay(16);
@@ -469,10 +508,18 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
         if (current_state == GameState::END_GAME) {
             Uint32 current_time = SDL_GetTicks();
             if (current_time - endgame_time < 1500) {
-                // Draw playing interface for 3 seconds before showing endgame interface
-                SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
+                if (current_theme == BackgroundTheme::RICE_PAPER) {
+                    SDL_SetRenderDrawColor(renderer, 245, 240, 225, 255);
+                } else if (current_theme == BackgroundTheme::SOFT_MIST) {
+                    SDL_SetRenderDrawColor(renderer, 210, 220, 230, 255);
+                } else if (current_theme == BackgroundTheme::WOOD) {
+                    SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
+                }
                 SDL_RenderClear(renderer);
                 
+                SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
+                SDL_Rect boardRect = {MARGIN - CELL_SIZE / 2, MARGIN - CELL_SIZE / 2, CELL_SIZE * BOARD_SIZE, CELL_SIZE * BOARD_SIZE};
+                SDL_RenderFillRect(renderer, &boardRect);
                 draw_playing_interface(renderer, black_stone, white_stone, hoverRow, hoverCol, blackTurn, playing_button_list, font1, color);
                 
                 
@@ -520,6 +567,31 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
             current_state = next_state;
         }
     }
+    undo_button.destroy();
+    redo_button.destroy();
+    pass_button.destroy();
+    menu_button.destroy();
+    home_button1.destroy();
+    home_button2.destroy();
+    one_player_button.destroy();
+    two_players_button.destroy();
+    start_button.destroy();
+    loadgame_button.destroy();
+    options_button.destroy();
+    exit_button.destroy();
+    back_button.destroy();
+    board_mode_19_button.destroy();
+    board_mode_13_button.destroy();
+    sound_effect_button.destroy();
+    music_button.destroy();
+    increase_music_button.destroy();
+    decrease_music_button.destroy();
+    increase_sound_effect_button.destroy();
+    decrease_sound_effect_button.destroy();
+    undo_button.destroy();
+    redo_button.destroy();
+    pass_button.destroy();
+    menu_button.destroy();
 
     SDL_DestroyTexture(black_stone);
     SDL_DestroyTexture(white_stone);
@@ -528,5 +600,9 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     TTF_CloseFont(font2);
     bgm.MixFree();
     place_stone_sound.MixFree();
+
+    SDL_DestroyTexture(bg_rice_paper);
+    SDL_DestroyTexture(bg_soft_mist);
+    SDL_DestroyTexture(bg_wood);
     return 0;
 }

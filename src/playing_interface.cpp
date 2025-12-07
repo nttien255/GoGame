@@ -12,6 +12,7 @@ using namespace std;
 
 void draw_playing_interface(SDL_Renderer* renderer, SDL_Texture* black_stone, SDL_Texture* white_stone, 
     int hoverRow, int hoverCol, bool blackTurn, vector<Button*> button_list, TTF_Font* font, SDL_Color color) {
+    color = {139, 69, 19};
     draw_board(hoverRow, hoverCol, blackTurn, renderer, black_stone, white_stone);
     for (auto button : button_list) {
         button->draw_button(renderer);
@@ -29,8 +30,18 @@ void draw_playing_interface(SDL_Renderer* renderer, SDL_Texture* black_stone, SD
     SDL_QueryTexture(player2_score, NULL, NULL, &w2, &h2);
     SDL_Rect dst1 = {15, 50, w1, h1};
     SDL_Rect dst2 = {WINDOW_SIZE - w2 - 15, 50, w2, h2};
-    SDL_RenderCopy(renderer, player1_score, NULL, &dst1);
-    SDL_RenderCopy(renderer, player2_score, NULL, &dst2);
+    if (blackTurn) {
+        SDL_SetTextureBlendMode(player2_score, SDL_BLENDMODE_BLEND);
+        SDL_SetTextureAlphaMod(player2_score, 100);
+        SDL_RenderCopy(renderer, player1_score, NULL, &dst1);
+        SDL_RenderCopy(renderer, player2_score, NULL, &dst2);
+    } else {
+        SDL_SetTextureBlendMode(player1_score, SDL_BLENDMODE_BLEND);
+        SDL_SetTextureAlphaMod(player1_score, 100);
+        SDL_RenderCopy(renderer, player1_score, NULL, &dst1);
+        SDL_RenderCopy(renderer, player2_score, NULL, &dst2);
+    }
+
     SDL_DestroyTexture(player1_score);
     SDL_DestroyTexture(player2_score);
 }
