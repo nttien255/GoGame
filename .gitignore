@@ -1,7 +1,7 @@
 build/
 .git/
 .vscode/
-vcpkg/installed/
+vcpkg_installed/
 vcpkg/packages/
 vcpkg/downloads/
 vcpkg/buildtrees/

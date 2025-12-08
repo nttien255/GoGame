@@ -34,13 +34,13 @@ struct SaveDataGame{
     int PosStatus;
 
     int cnt_skips_turn;
-
+    int BOARD_SIZE, CELL_SIZE, STONE_RADIUS, CLICK_RADIUS, MARGIN;
     string Time;
 
     SaveDataGame() {}
-    SaveDataGame(vector<vector<Stone>> b, Player p1, Player p2, bool bt, deque<DataRecord> h, int ps, int cst, string t = getTime())
-        : board(b), player1(p1), player2(p2), blackTurn(bt), history(h), PosStatus(ps), cnt_skips_turn(cst), Time(t) {}
-    void Update(vector<vector<Stone>> &b, Player &p1, Player &p2, bool &bt, deque<DataRecord> &h, int &ps, int &cst){
+    SaveDataGame(vector<vector<Stone>> b, Player p1, Player p2, bool bt, deque<DataRecord> h, int ps, int cst, int board_size, int cell_size, int stone_radius, int click_radius, int margin, string t = getTime())
+        : board(b), player1(p1), player2(p2), blackTurn(bt), history(h), PosStatus(ps), cnt_skips_turn(cst), BOARD_SIZE(board_size), CELL_SIZE(cell_size), STONE_RADIUS(stone_radius), CLICK_RADIUS(click_radius), MARGIN(margin), Time(t) {}
+    void Update(vector<vector<Stone>> &b, Player &p1, Player &p2, bool &bt, deque<DataRecord> &h, int &ps, int &cst, int &board_size, int &cell_size, int &stone_radius, int &click_radius, int &margin){
         b = board;
         p1 = player1;
         p2 = player2;
@@ -48,6 +48,11 @@ struct SaveDataGame{
         h = history;
         ps = PosStatus;
         cst = cnt_skips_turn;
+        board_size = BOARD_SIZE;
+        cell_size = CELL_SIZE;
+        stone_radius = STONE_RADIUS;
+        click_radius = CLICK_RADIUS;
+        margin = MARGIN;
     }
 };
 
@@ -61,6 +66,11 @@ inline void to_json(json& j, const SaveDataGame& SDG){
         {"history", SDG.history},
         {"PosStatus", SDG.PosStatus},
         {"cnt_skips_turn", SDG.cnt_skips_turn},
+        {"BOARD_SIZE", SDG.BOARD_SIZE},
+        {"CELL_SIZE", SDG.CELL_SIZE},
+        {"STONE_RADIUS", SDG.STONE_RADIUS},
+        {"CLICK_RADIUS", SDG.CLICK_RADIUS},
+        {"MARGIN", SDG.MARGIN},
         {"Time", SDG.Time}
 
     };
@@ -74,6 +84,11 @@ inline void from_json(const json& j, SaveDataGame& SDG){
     j.at("history").get_to(SDG.history);
     j.at("PosStatus").get_to(SDG.PosStatus);
     j.at("cnt_skips_turn").get_to(SDG.cnt_skips_turn);
+    j.at("BOARD_SIZE").get_to(SDG.BOARD_SIZE);
+    j.at("CELL_SIZE").get_to(SDG.CELL_SIZE);
+    j.at("STONE_RADIUS").get_to(SDG.STONE_RADIUS);
+    j.at("CLICK_RADIUS").get_to(SDG.CLICK_RADIUS);
+    j.at("MARGIN").get_to(SDG.MARGIN);
     j.at("Time").get_to(SDG.Time);
 }
 

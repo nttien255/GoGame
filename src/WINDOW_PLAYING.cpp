@@ -20,7 +20,10 @@
 #include "playing_mode_interface.h"
 #include "menu_interface.h"
 #include "text_utlish.h"
-
+#include "AI/easy_mode.h"
+#include "AI/medium_mode.h"
+#include "AI/hard_mode.h"
+#include "choose_mode_interface.h"
 using namespace std;
 
 int BOARD_SIZE = 13;
@@ -32,13 +35,15 @@ int MARGIN = 123;
 const int BOARD_LENGTH = 72 * 7; // 72 = lcm(8, 18)
 const int WINDOW_SIZE = 700;
 
-void init_game(bool &blackTurn, const int board_mode) {
+void init_game(bool &blackTurn, int &who_plays_first, const int board_mode, KataGoAI &katago) {
+    blackTurn = true;
+    who_plays_first = rand() % 2 + 1;
     BOARD_SIZE = board_mode;
     init_board(BOARD_SIZE, CELL_SIZE, STONE_RADIUS, CLICK_RADIUS, MARGIN, BOARD_LENGTH);
-    Init_History();
     Init_Player();
     init_skip();
-    blackTurn = true;
+    Init_History(blackTurn, who_plays_first);
+    katago.init(BOARD_SIZE);
 }
 
 int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
@@ -89,6 +94,9 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     Button button_color_rice_paper(135, 350, 150, 40, "../assets/rice_paper.png", renderer, "Rice Paper");
     Button button_color_soft_mist(300, 350, 150, 40, "../assets/soft_mist.png", renderer, "Soft Mist");
     Button button_color_wood(465, 350, 150, 40, "../assets/wood.png", renderer, "Wood");
+    Button easy_mode_button(WINDOW_SIZE / 2 - 250 / 2, WINDOW_SIZE / 2 - 113, 250, 75,"../assets/easy.png", renderer, "Easy Mode"); 
+    Button medium_mode_button(WINDOW_SIZE / 2 - 250 / 2, WINDOW_SIZE / 2, 250, 75, "../assets/medium.png", renderer, "Medium Mode");   
+    Button hard_mode_button(WINDOW_SIZE / 2 - 250 / 2, WINDOW_SIZE / 2 + 113, 250, 75, "../assets/hard.png", renderer, "Hard Mode");
     // 380-50 = 330 / 2 = 165
     SDL_Texture* bg_rice_paper = IMG_LoadTexture(renderer, "../assets/rice_paper.png");
     SDL_Texture* bg_soft_mist = IMG_LoadTexture(renderer, "../assets/soft_mist.png");
@@ -100,17 +108,21 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     ShortSound place_stone_sound(Mix_LoadWAV("../assets/stone_effect.wav"), 5, false);
     bgm.play();
 
+    srand(time(0));
     bool running = true;
     bool blackTurn = true;
+    int who_plays_first; // 1: ai, 2: player
     int hoverRow = -1, hoverCol = -1;
     Uint32 endgame_time;
 
     GameState current_state = GameState::HOME;
     GameState next_state = current_state;
     BackgroundTheme current_theme = BackgroundTheme::WOOD;
+    AIState ai_state = AIState::NONE;
 
     stack<GameState> stackState;
 
+    KataGoAI katago;
 
     vector<Button*> playing_button_list = {
         &undo_button,
@@ -172,6 +184,13 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
         &button_color_wood
     };
 
+    vector<Button*> choose_mode_button_list{
+        &back_button,
+        &easy_mode_button,
+        &medium_mode_button,
+        &hard_mode_button
+    };
+
     SDL_Event e;
     SDL_Surface* loadedSurface = IMG_Load("../assets/background.png");
     if (loadedSurface == nullptr) {
@@ -228,15 +247,17 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
                 }
 
                 if (board_mode_19_button.clicked(e)){
-                    init_game(blackTurn, 19);
+                    init_game(blackTurn, who_plays_first, 19, katago);
                     stackState.push(current_state);
                     current_state = GameState::GAME_MODE;
+                    break;
                 }
 
                 if (board_mode_13_button.clicked(e)){
-                    init_game(blackTurn, 13);
+                    init_game(blackTurn, who_plays_first, 13, katago);
                     stackState.push(current_state);
                     current_state = GameState::GAME_MODE;
+                    break;
                 }
             }
 
@@ -250,43 +271,126 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
                 }
 
                 if (one_player_button.clicked(e)){
-                    // current_state = GameState::PLAYING;
-                    // while (stackState.size() > 0)
-                    //     stackState.pop();
+                    current_state = GameState::CHOOSE_MODE;
+                    break;
+
                 }
 
                 if (two_players_button.clicked(e)){
                     current_state = GameState::PLAYING;
+                    ai_state = AIState::NONE;
                     while (stackState.size() > 0)
                         stackState.pop();
+                    break;
+                }
+            }
+
+            if(current_state == GameState::CHOOSE_MODE){
+                for(auto btn: choose_mode_button_list)
+                    btn->handleEvent(e);
+                
+                if (back_button.clicked(e)){
+                    current_state = stackState.top();
+                    stackState.pop();
+                }
+                if (easy_mode_button.clicked(e)){
+                    current_state = GameState::PLAYING;
+                    ai_state = AIState::EASY_PLAY;
+                    while (stackState.size() > 0)
+                        stackState.pop();
+                    break;
+                }
+                if (medium_mode_button.clicked(e)){
+                    current_state = GameState::PLAYING;
+                    ai_state = AIState::MEDIUM_PLAY;
+                    while (stackState.size() > 0)
+                        stackState.pop();
+                    break;
+                }
+                if (hard_mode_button.clicked(e)){
+                    current_state = GameState::PLAYING;
+                    ai_state = AIState::HARD_PLAY;
+                    while (stackState.size() > 0)
+                        stackState.pop();
+                    break;
                 }
             }
 
             if (current_state == GameState::PLAYING) {
+                // cout << blackTurn << " " << who_plays_first << endl;
                 board_handle_event(e, hoverRow, hoverCol);
                 for (auto btn : playing_button_list) {
                     btn->handleEvent(e);
                 }
 
-                if (undo_button.clicked(e)) {
-                    Undo_Move(blackTurn);
-                }
-                if (redo_button.clicked(e)) {
-                    Redo_Move(blackTurn);
-                }
-                if (pass_button.clicked(e)) {
-                    skip_turn(blackTurn);
-                }
-                if (menu_button.clicked(e)) {
-                    stackState.push(current_state);
-                    current_state = GameState::MENU;
-                    break;
-                }
-
-                if (e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT) {
-                    if (hoverRow != -1 && board[hoverRow][hoverCol] == EMPTY){
-                        make_move(e, board, blackTurn, place_stone_sound);
+                // Player's turn 
+                if(ai_state == AIState::NONE){
+                    if (undo_button.clicked(e)) {
+                        Undo_Move(blackTurn, who_plays_first);
                     }
+                    if (redo_button.clicked(e)) {
+                        Redo_Move(blackTurn, who_plays_first);
+                    }
+                    if (pass_button.clicked(e)) {
+                        skip_turn(blackTurn, who_plays_first);
+                    }
+                    if (menu_button.clicked(e)) {
+                        stackState.push(current_state);
+                        current_state = GameState::MENU;
+                        break;
+                    }
+                    if (e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT) {
+                        if (hoverRow != -1 && board[hoverRow][hoverCol] == EMPTY){
+                            make_move(e, board, blackTurn, who_plays_first, katago, ai_state, place_stone_sound);
+                        }
+                    }
+                }
+                else{
+                    // Player's turn
+                    if(who_plays_first == 2){
+                        if (undo_button.clicked(e)) {
+                            if (ai_state == AIState::HARD_PLAY) {
+                                katago.undoMove();  // Undo AI move
+                                katago.undoMove();  // Undo player move
+                            }
+                            Undo_Move(blackTurn, who_plays_first);
+                            Undo_Move(blackTurn, who_plays_first);
+                        }
+                        if (redo_button.clicked(e)) {
+                            if (ai_state == AIState::HARD_PLAY) {
+                                katago.redoMoves(2);  // Redo 2 moves (player + AI)
+                            }
+                            Redo_Move(blackTurn, who_plays_first);
+                            Redo_Move(blackTurn, who_plays_first);
+                        }
+                        if (pass_button.clicked(e)) {
+                            skip_turn(blackTurn, who_plays_first);
+                        }
+                        if (menu_button.clicked(e)) {
+                            stackState.push(current_state);
+                            current_state = GameState::MENU;
+                            break;
+                        }
+
+                        if (e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT) {
+                            if (hoverRow != -1 && board[hoverRow][hoverCol] == EMPTY){
+                                make_move(e, board, blackTurn, who_plays_first, katago, ai_state, place_stone_sound);
+                            }
+                        }
+                    }
+                    // AI turn 
+                    else if (current_state == GameState::PLAYING && ai_state != AIState::NONE && who_plays_first == 1) {
+                        if(ai_state == AIState::EASY_PLAY){
+                            easy_mode_move(blackTurn, who_plays_first);
+                        }
+                        else if(ai_state == AIState::MEDIUM_PLAY){
+                            medium_mode_move(blackTurn, who_plays_first);
+                        }
+                        else if(ai_state == AIState::HARD_PLAY){
+                            hard_mode_move(blackTurn, who_plays_first, katago);
+                        }
+                    }
+
                 }
             }
 
@@ -366,6 +470,8 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
                     if (start_index + i >= save_files.size()) break;
                     if(loadgame_button_list[i]->clicked(e)){
                         LoadGame(blackTurn, save_files[start_index + i]);
+                        // Sync KataGo with loaded board state
+                        katago.syncBoard(board, blackTurn);
                         current_state = GameState::PLAYING;
                         break;
                     }
@@ -387,6 +493,8 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
                 }
             }
         }
+        
+        
         // MENU
         // draw board background
         if (current_state == GameState::HOME) {
@@ -437,6 +545,22 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
             SDL_Delay(16);
         }
 
+        if(current_state == GameState::CHOOSE_MODE){
+            SDL_Rect destRect;
+            destRect.x = 0;
+            destRect.y = 0;
+            destRect.w = WINDOW_SIZE;  // Chiều rộng đích = Chiều rộng cửa sổ
+            destRect.h = WINDOW_SIZE; // Chiều cao đích = Chiều cao cửa sổ
+            SDL_RenderCopy(renderer, backgroundTexture, NULL, &destRect);
+            SDL_SetRenderDrawColor(renderer, 200, 160, 80, 200);
+            SDL_RenderFillRect(renderer, &destRect);
+
+            draw_choose_mode_interface(renderer, choose_mode_button_list, back_button);
+
+            SDL_RenderPresent(renderer);
+            SDL_Delay(16);
+        }
+
         if (current_state == GameState::PLAYING){
             // SDL_SetRenderDrawColor(renderer, 40, 44, 52, 255);
             // SDL_SetRenderDrawColor(renderer, 245, 240, 225, 255);
@@ -475,7 +599,7 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
             SDL_RenderPresent(renderer);
             SDL_Delay(16);
         }
-
+    
         if (current_state == GameState::OPTION){
             SDL_Rect destRect;
             destRect.x = 0;
