@@ -85,10 +85,10 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     Button board_mode_13_button(WINDOW_SIZE / 2 - 250 / 2, WINDOW_SIZE / 2 + 40, 200, 75, "../assets/board_13x13.png", renderer, "Board 13x13");
     Button sound_effect_button(135, 100, 120, 60, "../assets/sound_effect.png", renderer, "Sound Effect");
     Button music_button(135, 190, 120, 60, "../assets/music.png", renderer, "Music");
-    Button increase_music_button(435, 200, 30, 20, "../assets/increase.png", renderer, "Increase Music");
-    Button increase_sound_effect_button(435, 110, 30, 20, "../assets/increase.png", renderer, "Increase Sound Effect");
-    Button decrease_music_button(485, 200, 30, 20, "../assets/decrease.png", renderer, "Decrease Music");
-    Button decrease_sound_effect_button(485, 110, 30, 20, "../assets/decrease.png", renderer, "Decrease Sound Effect");
+    Button increase_music_button(485, 200, 30, 20, "../assets/increase.png", renderer, "Increase Music"); // 435 200
+    Button increase_sound_effect_button(485, 110, 30, 20, "../assets/increase.png", renderer, "Increase Sound Effect"); // 435 110
+    Button decrease_music_button(435, 200, 30, 20, "../assets/decrease.png", renderer, "Decrease Music"); // 485 200
+    Button decrease_sound_effect_button(435, 110, 30, 20, "../assets/decrease.png", renderer, "Decrease Sound Effect"); // 485 110
     // button for changing playing background color theme, position is under music and sound effect buttons, respectively, on one line
     
     Button button_color_rice_paper(135, 350, 150, 40, "../assets/rice_paper.png", renderer, "Rice Paper");
