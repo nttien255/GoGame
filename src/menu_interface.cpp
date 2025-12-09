@@ -7,6 +7,18 @@
 #include "text_utlish.h"
 #include "button.h"
 
+void draw_confirm_interface(SDL_Renderer* renderer, std::vector<Button*>& button_list, TTF_Font* font, SDL_Color color, const std::string& message) {
+    for (const auto &btn : button_list){
+        btn->draw_button(renderer);
+    }
+    SDL_Texture* message_texture = renderText(renderer, font, message, color);
+    int w, h;
+    SDL_QueryTexture(message_texture, NULL, NULL, &w, &h);
+    SDL_Rect message_rect = { (700 - w) / 2, 200, w, h };
+    SDL_RenderCopy(renderer, message_texture, NULL, &message_rect);
+    SDL_DestroyTexture(message_texture);
+}
+
 void draw_options_interface(SDL_Renderer* renderer, std::vector<Button*>& button_list, int music_volume, int sound_effect_volume, TTF_Font* font, SDL_Color color, SDL_Texture* current_background){
     for (const auto &btn : button_list){
         btn->draw_button(renderer);

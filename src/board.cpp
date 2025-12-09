@@ -28,12 +28,7 @@ vector<pair<int,int>> star_points;
 vector<vector<Stone>> board;
 
 void init_board(int &BOARD_SIZE, int &CELL_SIZE, int &STONE_RADIUS, int &CLICK_RADIUS, int &MARGIN, int BOARD_LENGTH) {
-    board.resize(BOARD_SIZE, vector<Stone>(BOARD_SIZE, EMPTY));
-    for (int r = 0; r < BOARD_SIZE; ++r) {
-        for (int c = 0; c < BOARD_SIZE; ++c) {
-            board[r][c] = EMPTY;
-        }
-    }
+    board.assign(BOARD_SIZE, vector<Stone>(BOARD_SIZE, EMPTY));
     CELL_SIZE = BOARD_LENGTH / (BOARD_SIZE - 1);
     MARGIN = (WINDOW_SIZE - BOARD_LENGTH) / 2;
     if (BOARD_SIZE == 19) {

@@ -13,6 +13,7 @@ enum class GameState {
     BOARD_MODE,
     OPTION,
     CHOOSE_MODE,
+    CONFIRM,
     NONE
 };
 
