@@ -14,6 +14,7 @@
 #include <filesystem> 
 #include <fstream>
 #include <nlohmann/json.hpp>
+#include "WINDOW_PLAYING.h"
 
 #include <SDL2/SDL.h>
 
@@ -29,22 +30,26 @@ struct SaveDataGame{
     vector<vector<Stone>> board;
     Player player1, player2;
     bool blackTurn;
-    
+    int who_plays_first;
+
     deque<DataRecord> history;
     int PosStatus;
 
     int cnt_skips_turn;
     int BOARD_SIZE, CELL_SIZE, STONE_RADIUS, CLICK_RADIUS, MARGIN;
+    AIState ai_state;
+
     string Time;
 
     SaveDataGame() {}
-    SaveDataGame(vector<vector<Stone>> b, Player p1, Player p2, bool bt, deque<DataRecord> h, int ps, int cst, int board_size, int cell_size, int stone_radius, int click_radius, int margin, string t = getTime())
-        : board(b), player1(p1), player2(p2), blackTurn(bt), history(h), PosStatus(ps), cnt_skips_turn(cst), BOARD_SIZE(board_size), CELL_SIZE(cell_size), STONE_RADIUS(stone_radius), CLICK_RADIUS(click_radius), MARGIN(margin), Time(t) {}
-    void Update(vector<vector<Stone>> &b, Player &p1, Player &p2, bool &bt, deque<DataRecord> &h, int &ps, int &cst, int &board_size, int &cell_size, int &stone_radius, int &click_radius, int &margin){
+    SaveDataGame(vector<vector<Stone>> b, Player p1, Player p2, bool bt, int wpf, deque<DataRecord> h, int ps, int cst, int board_size, int cell_size, int stone_radius, int click_radius, int margin, AIState as, string t = getTime())
+        : board(b), player1(p1), player2(p2), blackTurn(bt), who_plays_first(wpf), history(h), PosStatus(ps), cnt_skips_turn(cst), BOARD_SIZE(board_size), CELL_SIZE(cell_size), STONE_RADIUS(stone_radius), CLICK_RADIUS(click_radius), MARGIN(margin), ai_state(as), Time(t) {}
+    void Update(vector<vector<Stone>> &b, Player &p1, Player &p2, bool &bt, int &wpf, deque<DataRecord> &h, int &ps, int &cst, int &board_size, int &cell_size, int &stone_radius, int &click_radius, int &margin, AIState &as){
         b = board;
         p1 = player1;
         p2 = player2;
         bt = blackTurn;
+        wpf = who_plays_first;
         h = history;
         ps = PosStatus;
         cst = cnt_skips_turn;
@@ -53,6 +58,7 @@ struct SaveDataGame{
         stone_radius = STONE_RADIUS;
         click_radius = CLICK_RADIUS;
         margin = MARGIN;
+        as = ai_state;
     }
 };
 
@@ -63,6 +69,7 @@ inline void to_json(json& j, const SaveDataGame& SDG){
         {"player1", SDG.player1},
         {"player2", SDG.player2},
         {"blackTurn", SDG.blackTurn},
+        {"who_plays_first", SDG.who_plays_first},
         {"history", SDG.history},
         {"PosStatus", SDG.PosStatus},
         {"cnt_skips_turn", SDG.cnt_skips_turn},
@@ -71,8 +78,8 @@ inline void to_json(json& j, const SaveDataGame& SDG){
         {"STONE_RADIUS", SDG.STONE_RADIUS},
         {"CLICK_RADIUS", SDG.CLICK_RADIUS},
         {"MARGIN", SDG.MARGIN},
-        {"Time", SDG.Time}
-
+        {"Time", SDG.Time},
+        {"ai_state", SDG.ai_state}
     };
 }
 
@@ -81,6 +88,7 @@ inline void from_json(const json& j, SaveDataGame& SDG){
     j.at("player1").get_to(SDG.player1);
     j.at("player2").get_to(SDG.player2);
     j.at("blackTurn").get_to(SDG.blackTurn);
+    j.at("who_plays_first").get_to(SDG.who_plays_first);
     j.at("history").get_to(SDG.history);
     j.at("PosStatus").get_to(SDG.PosStatus);
     j.at("cnt_skips_turn").get_to(SDG.cnt_skips_turn);
@@ -90,12 +98,13 @@ inline void from_json(const json& j, SaveDataGame& SDG){
     j.at("CLICK_RADIUS").get_to(SDG.CLICK_RADIUS);
     j.at("MARGIN").get_to(SDG.MARGIN);
     j.at("Time").get_to(SDG.Time);
+    j.at("ai_state").get_to(SDG.ai_state);
 }
 
 bool createFolders(std::string namefolder);
 // int countFiles(filesystem::path &path);
-void SaveGame(bool &blackTurn);
-void LoadGame(bool &blackTurn, string filename);
+void SaveGame(bool &blackTurn, int &who_plays_first, AIState &ai_state);
+void LoadGame(bool &blackTurn, int &who_plays_first, AIState &ai_state, string filename);
 vector<string> allFileLoadGame();
 
 

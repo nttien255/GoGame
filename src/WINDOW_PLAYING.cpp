@@ -1,6 +1,8 @@
 #include <vector>
 #include <iostream>
 #include <stack>
+#include <thread>
+#include <atomic>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_ttf.h>
@@ -33,6 +35,10 @@ int CLICK_RADIUS = 22;
  
 int MARGIN = 123;
 const int BOARD_LENGTH = 72 * 7; // 72 = lcm(8, 18)
+
+// AI Thread management
+static atomic<bool> g_ai_thinking(false);
+static thread g_ai_thread;
 const int WINDOW_SIZE = 700;
 
 void init_game(bool &blackTurn, int &who_plays_first, KataGoAI &katago, bool AI_enabled = true) {
@@ -368,8 +374,8 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
                     }
                 }
                 else{
-                    // Player's turn
-                    if(who_plays_first == 2){
+                    // Player's turn (only when AI is not thinking)
+                    if(who_plays_first == 2 && !g_ai_thinking){
                         if (undo_button.clicked(e)) {
                             if (ai_state == AIState::HARD_PLAY) {
                                 katago.undoMove();  // Undo AI move
@@ -401,28 +407,40 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
                         }
                     }
                     // AI turn 
-                    else if (current_state == GameState::PLAYING && ai_state != AIState::NONE && who_plays_first == 1) {
-                        if(ai_state == AIState::EASY_PLAY){
-                            easy_mode_move(blackTurn, who_plays_first);
+                    else if (who_plays_first == 1 && !g_ai_thinking) {
+                        g_ai_thinking = true;
+                        
+                        if (g_ai_thread.joinable()) {
+                            g_ai_thread.join();
                         }
-                        else if(ai_state == AIState::MEDIUM_PLAY){
-                            medium_mode_move(blackTurn, who_plays_first);
-                        }
-                        else if(ai_state == AIState::HARD_PLAY){
-                            hard_mode_move(blackTurn, who_plays_first, katago);
-                        }
+                        
+                        g_ai_thread = thread([&blackTurn, &who_plays_first, &katago, ai_state]() {
+                            if(ai_state == AIState::EASY_PLAY){
+                                easy_mode_move(blackTurn, who_plays_first);
+                            }
+                            else if(ai_state == AIState::MEDIUM_PLAY){
+                                medium_mode_move(blackTurn, who_plays_first);
+                            }
+                            else if(ai_state == AIState::HARD_PLAY){
+                                hard_mode_move(blackTurn, who_plays_first, katago);
+                            }
+                            g_ai_thinking = false;
+                        });
                     }
                 }
 
-                if (save_button.clicked(e)) {
-                    // SaveGame(blackTurn, who_plays_first);
-                    break;
-                }
+                // Block save/reset when AI is thinking
+                if (!g_ai_thinking) {
+                    if (save_button.clicked(e)) {
+                        SaveGame(blackTurn, who_plays_first, ai_state);
+                        break;
+                    }
 
-                if (reset_button.clicked(e)){
-                    stackState.push(current_state);
-                    current_state = GameState::CONFIRM;
-                    break;
+                    if (reset_button.clicked(e)){
+                        stackState.push(current_state);
+                        current_state = GameState::CONFIRM;
+                        break;
+                    }
                 }
             }
 
@@ -522,9 +540,11 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
                 for(int i = 0; i < SIZE_LIST_SHOW; i++){
                     if (start_index + i >= save_files.size()) break;
                     if(loadgame_button_list[i]->clicked(e)){
-                        LoadGame(blackTurn, save_files[start_index + i]);
-                        // Sync KataGo with loaded board state
-                        katago.syncBoard(board, blackTurn);
+                        LoadGame(blackTurn, who_plays_first, ai_state, save_files[start_index + i]);
+                        if(ai_state == AIState::HARD_PLAY){
+                            katago.init(BOARD_SIZE);
+                            katago.syncBoard(board, blackTurn);
+                        }
                         current_state = GameState::PLAYING;
                         break;
                     }
@@ -631,7 +651,10 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
             SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
             SDL_Rect boardRect = {MARGIN - CELL_SIZE / 2, MARGIN - CELL_SIZE / 2, CELL_SIZE * BOARD_SIZE, CELL_SIZE * BOARD_SIZE};
             SDL_RenderFillRect(renderer, &boardRect);
-            draw_playing_interface(renderer, black_stone, white_stone, hoverRow, hoverCol, blackTurn, playing_button_list, font1, color);
+            if(g_ai_thinking)
+                draw_playing_interface(renderer, black_stone, white_stone, hoverRow, hoverCol, !blackTurn, playing_button_list, font1, color);
+            else
+                draw_playing_interface(renderer, black_stone, white_stone, hoverRow, hoverCol, blackTurn, playing_button_list, font1, color);
 
             SDL_RenderPresent(renderer);
             SDL_Delay(16);
@@ -785,6 +808,11 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
     redo_button.destroy();
     pass_button.destroy();
     menu_button.destroy();
+
+    // Cleanup AI thread
+    if (g_ai_thread.joinable()) {
+        g_ai_thread.join();
+    }
 
     SDL_DestroyTexture(black_stone);
     SDL_DestroyTexture(white_stone);

@@ -155,7 +155,7 @@ rules = japanese
 
 # Search limits - max strength in 3 seconds
 maxTime = 3.0
-numSearchThreads = 8
+numSearchThreads = 5
 ponderingEnabled = false
 
 # Neural net cache - larger cache = less recalculation
@@ -180,7 +180,7 @@ useGraphSearch = true
 useNoisePruning = true
 
 # Root optimizations - sample symmetries for better eval
-rootNumSymmetriesToSample = 8
+rootNumSymmetriesToSample = 5
 rootSymmetryPruning = true
 
 # Disable randomization
