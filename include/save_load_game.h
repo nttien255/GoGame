@@ -14,7 +14,7 @@
 #include <filesystem> 
 #include <fstream>
 #include <nlohmann/json.hpp>
-#include "WINDOW_PLAYING.h"
+#include "game.h"
 
 #include <SDL2/SDL.h>
 

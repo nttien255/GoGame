@@ -21,30 +21,36 @@ find_package(SDL2_ttf CONFIG REQUIRED)
 find_package(nlohmann_json CONFIG REQUIRED)
 
 # --- PHẦN 2: TẠO FILE THỰC THI ---
+# Include directory for header files
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
 add_executable(GoGame
     src/main.cpp 
-    src/move.cpp 
-    src/board.cpp
-    src/player.cpp
-    src/scoring.cpp
-    src/valid.cpp
-    src/kill_enemy.cpp
-    src/inside.cpp
-    src/history.cpp
-    src/WINDOW_PLAYING.cpp
-    src/playing_interface.cpp
-    src/skip.cpp
-    src/check_game_state.cpp
-    src/save_load_game.cpp
-    src/loadgame_interface.cpp
-    src/endgame_interface.cpp
-    src/home_interface.cpp
-    src/playing_mode_interface.cpp
-    src/menu_interface.cpp
+    src/game.cpp
+    # AI
     src/AI/easy_mode.cpp
-    src/AI/hard_mode.cpp
-    src/choose_mode_interface.cpp
     src/AI/medium_mode.cpp
+    src/AI/hard_mode.cpp
+    # Interface
+    src/interface/board.cpp
+    src/interface/playing_interface.cpp
+    src/interface/loadgame_interface.cpp
+    src/interface/endgame_interface.cpp
+    src/interface/home_interface.cpp
+    src/interface/playing_mode_interface.cpp
+    src/interface/menu_interface.cpp
+    src/interface/choose_mode_interface.cpp
+    # Logic
+    src/logic/move.cpp
+    src/logic/player.cpp
+    src/logic/scoring.cpp
+    src/logic/valid.cpp
+    src/logic/kill_enemy.cpp
+    src/logic/inside.cpp
+    src/logic/history.cpp
+    src/logic/skip.cpp
+    src/logic/check_game_state.cpp
+    src/logic/save_load_game.cpp
 )
 
 # --- PHẦN 3: LIÊN KẾT CÁC THƯ VIỆN ---

@@ -8,8 +8,8 @@
 #include "scoring.h"
 #include "history.h"
 #include "skip.h"
-#include "WINDOW_PLAYING.h"
-#include "AI/hard_mode.h"
+#include "game.h"
+#include "hard_mode.h"
 
 bool make_move(SDL_Event& e, std::vector<std::vector<Stone>>& board, bool& blackTurn, int &who_plays_first, KataGoAI &katago, AIState &ai_state, ShortSound place_stone_sound) {
     int x = e.button.x;

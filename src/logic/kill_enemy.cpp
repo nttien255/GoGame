@@ -1,6 +1,6 @@
 #include "kill_enemy.h"
 #include "board.h"
-#include "Player.h"
+#include "player.h"
 #include "inside.h"
 #include <iostream>
 #include <queue>

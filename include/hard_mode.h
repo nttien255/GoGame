@@ -1,11 +1,11 @@
 #pragma once
 #include <utility>
 #include <vector>
-#include "../board.h"
+#include "board.h"
 
 using namespace std;
 
-// KataGo AI for Hard Mode
+
 class KataGoAI {
 public:
     KataGoAI();

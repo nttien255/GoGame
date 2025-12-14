@@ -5,7 +5,7 @@
 #include <SDL2/SDL_ttf.h>
 #include <SDL2/SDL_mixer.h>
 #include "board.h"
-#include "WINDOW_PLAYING.h"
+#include "game.h"
 
 using namespace std;
 

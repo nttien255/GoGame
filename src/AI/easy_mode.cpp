@@ -1,6 +1,13 @@
 #include "easy_mode.h"
+#include "board.h"
+#include "valid.h"
+#include "kill_enemy.h"
+#include "scoring.h"
+#include "history.h"
+#include "skip.h"
 #include <iostream>
 #include <vector>
+#include <cstdlib>
 using namespace std;
 
 

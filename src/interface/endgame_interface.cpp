@@ -4,7 +4,7 @@
 #include "endgame_interface.h"
 #include "text_utlish.h"
 #include "player.h"
-#include "WINDOW_PLAYING.h"
+#include "game.h"
 #include "scoring.h"
 #include "board.h"
 

@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include "save_load_game.h"
-#include "WINDOW_PLAYING.h"
+#include "game.h"
 #include "button.h"
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>

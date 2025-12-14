@@ -4,6 +4,11 @@
 #endif
 
 #include "hard_mode.h"
+#include "skip.h"
+#include "history.h"
+#include "board.h"
+#include "scoring.h"
+#include "kill_enemy.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -13,11 +18,6 @@
 #include <vector>
 #include <thread>
 #include <chrono>
-#include "../skip.h"
-#include "../history.h"
-#include "../board.h"
-#include "../scoring.h"
-#include "../kill_enemy.h"
 
 #ifndef _WIN32
 #include <unistd.h>

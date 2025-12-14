@@ -1,13 +1,12 @@
 #include "medium_mode.h"
-#include "../skip.h"
-#include "../history.h"
-#include "../board.h"
-#include "../scoring.h"
-#include "../kill_enemy.h"
-#include "../valid.h"
-#include "../scoring.h"
-#include "../inside.h"
-#include "../player.h"
+#include "skip.h"
+#include "history.h"
+#include "board.h"
+#include "scoring.h"
+#include "kill_enemy.h"
+#include "valid.h"
+#include "inside.h"
+#include "player.h"
 #include <random>
 #include <stack>
 

@@ -1,6 +1,6 @@
 #include <iostream>
 #include "history.h"
-#include "WINDOW_PLAYING.h"
+#include "game.h"
 using namespace std;
 
 deque<DataRecord> history;

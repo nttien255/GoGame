@@ -11,7 +11,7 @@
 #include "move.h"
 #include "history.h"
 #include "button.h"
-#include "WINDOW_PLAYING.h"
+#include "game.h"
 #include "playing_interface.h"
 #include "skip.h"
 #include "check_game_state.h"
@@ -22,9 +22,9 @@
 #include "playing_mode_interface.h"
 #include "menu_interface.h"
 #include "text_utlish.h"
-#include "AI/easy_mode.h"
-#include "AI/medium_mode.h"
-#include "AI/hard_mode.h"
+#include "easy_mode.h"
+#include "medium_mode.h"
+#include "hard_mode.h"
 #include "choose_mode_interface.h"
 using namespace std;
 
