@@ -10,7 +10,7 @@
 
 using namespace std;
 
-void draw_endgame_interface(SDL_Renderer* renderer, TTF_Font* font, SDL_Color color, vector<Button*> &button_list) {
+void draw_endgame_interface(SDL_Renderer* renderer, TTF_Font* font, SDL_Color color, vector<Button*> &button_list, SDL_Texture* black_stone, SDL_Texture* white_stone) {
     SDL_Texture* cup_texture = IMG_LoadTexture(renderer, "../assets/honour.png");
     if (!cup_texture) {
         SDL_Log("Failed to load honour texture");
@@ -28,6 +28,8 @@ void draw_endgame_interface(SDL_Renderer* renderer, TTF_Font* font, SDL_Color co
         SDL_Rect text_rect = {WINDOW_SIZE / 2 - w / 2, WINDOW_SIZE / 2 - cup_size / 4 + 260, w, h};
         SDL_RenderCopy(renderer, winner_text, NULL, &text_rect);
         SDL_DestroyTexture(winner_text);
+        SDL_Rect winner_avatar_rect = {WINDOW_SIZE / 2 - 125, WINDOW_SIZE / 2 - 135, 250, 250};
+        SDL_RenderCopy(renderer, black_stone, NULL, &winner_avatar_rect);
     } else if (player1.Score + player1.kill < player2.Score + player2.kill) {
         SDL_Texture* winner_text = renderText(renderer, font, "Player 2", color);
         int w, h;
@@ -36,6 +38,8 @@ void draw_endgame_interface(SDL_Renderer* renderer, TTF_Font* font, SDL_Color co
         SDL_Rect text_rect = {WINDOW_SIZE / 2 - w / 2, WINDOW_SIZE / 2 - cup_size / 4 + 260, w, h};
         SDL_RenderCopy(renderer, winner_text, NULL, &text_rect);
         SDL_DestroyTexture(winner_text);
+        SDL_Rect winner_avatar_rect = {WINDOW_SIZE / 2 - 125, WINDOW_SIZE / 2 - 135, 250, 250};
+        SDL_RenderCopy(renderer, white_stone, NULL, &winner_avatar_rect);
     } else {
         SDL_Log("It's a tie!");
     }

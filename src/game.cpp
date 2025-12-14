@@ -765,7 +765,7 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
             SDL_SetRenderDrawColor(renderer, 200, 160, 80, 255);
             SDL_RenderClear(renderer);
             
-            draw_endgame_interface(renderer, font1, color, endgame_button_list);
+            draw_endgame_interface(renderer, font1, color, endgame_button_list, black_stone, white_stone);
             
             SDL_RenderPresent(renderer);
             SDL_Delay(16);
