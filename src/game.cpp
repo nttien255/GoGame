@@ -407,25 +407,23 @@ int RUN_PLAYING(SDL_Window* window, SDL_Renderer* renderer) {
                         }
                     }
                     // AI turn 
-                    else if (who_plays_first == 1 && !g_ai_thinking) {
-                        g_ai_thinking = true;
-                        
-                        if (g_ai_thread.joinable()) {
-                            g_ai_thread.join();
+                    else if (who_plays_first == 1) {                        
+                        if(ai_state == AIState::EASY_PLAY){
+                            easy_mode_move(blackTurn, who_plays_first);
                         }
-                        
-                        g_ai_thread = thread([&blackTurn, &who_plays_first, &katago, ai_state]() {
-                            if(ai_state == AIState::EASY_PLAY){
-                                easy_mode_move(blackTurn, who_plays_first);
+                        else if(ai_state == AIState::MEDIUM_PLAY){
+                            medium_mode_move(blackTurn, who_plays_first);
+                        }
+                        else if(ai_state == AIState::HARD_PLAY && !g_ai_thinking){
+                            g_ai_thinking = true;
+                            if (g_ai_thread.joinable()) {
+                                g_ai_thread.join();
                             }
-                            else if(ai_state == AIState::MEDIUM_PLAY){
-                                medium_mode_move(blackTurn, who_plays_first);
-                            }
-                            else if(ai_state == AIState::HARD_PLAY){
+                            g_ai_thread = thread([&blackTurn, &who_plays_first, &katago, ai_state]() {
                                 hard_mode_move(blackTurn, who_plays_first, katago);
-                            }
-                            g_ai_thinking = false;
-                        });
+                                g_ai_thinking = false;
+                            });
+                        }
                     }
                 }
 
